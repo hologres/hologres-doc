@@ -1,5 +1,5 @@
 ####################
-Data Integration
+Data Ingestion
 ####################
 
 .. toctree::

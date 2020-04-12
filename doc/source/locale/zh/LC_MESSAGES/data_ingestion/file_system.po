@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-12 12:45-0700\n"
+"POT-Creation-Date: 2020-04-12 13:33-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../source/data_integration/file_system.md:1
+#: ../../source/data_ingestion/file_system.md:1
 msgid "File System"
 msgstr ""
 
-#: ../../source/data_integration/file_system.md:3
+#: ../../source/data_ingestion/file_system.md:3
 msgid "AWS S3"
 msgstr ""
 
-#: ../../source/data_integration/file_system.md:5
+#: ../../source/data_ingestion/file_system.md:5
 msgid "HDFS"
 msgstr ""
 
-#: ../../source/data_integration/file_system.md:7
+#: ../../source/data_ingestion/file_system.md:7
 msgid "AliCloud OSS (Object Storage Service)"
 msgstr ""
 

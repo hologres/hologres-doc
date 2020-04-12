@@ -19,9 +19,10 @@ Hologres
    product/index
    quickstart/index
    sql_manual/index
-   data_integration/index
-   roles/index
+   data_ingestion/index
+   data_consumption/index
    bi_tools/index
+   roles/index
    contribute
    community_and_getting_help
    
