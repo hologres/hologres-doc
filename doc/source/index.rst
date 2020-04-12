@@ -14,6 +14,7 @@ Hologres
 ========
 
 .. toctree::
+   :maxdepth: 2
 
    product/index
    quickstart/index
