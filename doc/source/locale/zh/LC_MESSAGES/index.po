@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-12 12:45-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/index.rst:7
+msgid "Welcome to Hologres documentation!"
+msgstr ""
+
+#: ../../source/index.rst:10
+msgid ""
+"Hologres is a truly streaming-first data warehouse. Data ingested can be "
+"immediately available to query."
+msgstr ""
+
+#: ../../source/index.rst:14
+msgid "Hologres"
+msgstr ""
+
+#~ msgid ""
+#~ "Hologres is a truly streaming-first "
+#~ "data warehouse. Data ingested is "
+#~ "immediately available to query."
+#~ msgstr ""
+
+#~ msgid "Streaming-first"
+#~ msgstr ""
+

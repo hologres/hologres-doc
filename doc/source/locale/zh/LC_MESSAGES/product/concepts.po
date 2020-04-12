@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-12 12:45-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/product/concepts.md:1
+msgid "Basic Concepts and Terminology"
+msgstr ""
+
+#: ../../source/product/concepts.md:3
+msgid "Instance"
+msgstr ""
+
+#: ../../source/product/concepts.md:5
+msgid "In Hologres, an instance is a cluster that contains multiple databases."
+msgstr ""
+
+#: ../../source/product/concepts.md:7
+msgid "Database"
+msgstr ""
+
+#: ../../source/product/concepts.md:9
+msgid ""
+"Hologres is fully compatible with Postgres. A database in Hologres is a "
+"set of schemas, which is the same with Postgres's definition."
+msgstr ""
+
+#: ../../source/product/concepts.md:11
+msgid "All the operations on tabels, functions, etc are inside a database."
+msgstr ""
+
+#: ../../source/product/concepts.md:13
+msgid "Table"
+msgstr ""
+
+#: ../../source/product/concepts.md:15
+msgid "Table is the unit of data storage."
+msgstr ""
+
