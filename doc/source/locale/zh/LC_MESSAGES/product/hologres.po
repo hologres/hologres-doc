@@ -27,12 +27,13 @@ msgid ""
 "enterprises with online analytics service with high availability and low "
 "latency. It is fully compatible with PostgreSQL 11 and seamless connected"
 " with big data ecosystem."
-msgstr ""
+msgstr "交互式分析（Hologres）是一款全面兼容PostgreSQL 11协议并与大数据生态"
+"无缝打通的实时交互式分析产品，为企业提供高可用低延时的海量数据在线查询分析服务。"
 
 #: ../../source/product/hologres.md:5
 msgid ""
 "Hologres is distributed and separates computation and storage, empowering"
 " users to dynamically scale their resources up and down according to "
 "business requirements."
-msgstr ""
+msgstr "Hologres 采用存储计算分离、分布式架构，用户可以根据业务特性动态升降配和扩缩容。"
 

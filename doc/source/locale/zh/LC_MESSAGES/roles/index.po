@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/roles/index.rst:3
 msgid "Roles"
-msgstr ""
+msgstr "角色与权限"
 

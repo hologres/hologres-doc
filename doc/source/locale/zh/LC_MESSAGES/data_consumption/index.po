@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/data_consumption/index.rst:3
 msgid "Data Consumption"
-msgstr ""
+msgstr "数据的消费"
 

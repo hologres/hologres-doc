@@ -19,17 +19,17 @@ msgstr ""
 
 #: ../../source/index.rst:7
 msgid "Welcome to Hologres documentation!"
-msgstr ""
+msgstr "欢迎来到 Hologres 文档！"
 
 #: ../../source/index.rst:10
 msgid ""
 "Hologres is a truly streaming-first data warehouse. Data ingested can be "
 "immediately available to query."
-msgstr ""
+msgstr "Hologres 是一款流原生的、流数据为先的数据仓库。导入的数据立即可查，无额外延时。"
 
 #: ../../source/index.rst:14
 msgid "Hologres"
-msgstr ""
+msgstr "Hologres"
 
 #~ msgid ""
 #~ "Hologres is a truly streaming-first "

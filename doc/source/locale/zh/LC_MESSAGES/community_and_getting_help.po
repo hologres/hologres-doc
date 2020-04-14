@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/community_and_getting_help.md:1
 msgid "Community and Getting Help"
-msgstr ""
+msgstr "社区与帮助"
 
 #: ../../source/community_and_getting_help.md:4
 msgid ""

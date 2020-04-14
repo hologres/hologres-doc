@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/quickstart/index.rst:3
 msgid "Quickstart"
-msgstr ""
+msgstr "快速开始"
 

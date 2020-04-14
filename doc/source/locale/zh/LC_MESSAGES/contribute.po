@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/contribute.md:1
 msgid "Contribute"
-msgstr ""
+msgstr "贡献社区"
 
 #: ../../source/contribute.md:3
 msgid "There are many ways to contribute to Hologres community."

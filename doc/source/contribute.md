@@ -67,8 +67,9 @@ Once you have finished modifying the markdown files in English, it's time to fin
 First, extract translatable messages into pot files, and generate the po files for Chinese translation:
 
 ```
-$ make gettext									# Extract translatable messages into pot files
-$ sphinx-intl update -p build/gettext -l zh	# Generate po files
+$ make clean		# clean the cached build files
+$ make gettext	# Extract translatable messages into pot files
+$ sphinx-intl update -p build/gettext -l zh		# Generate po files
 ```
 
 Once completed, the generated po files will be placed in the `/locale/zh/LC_MESSAGES` directory.

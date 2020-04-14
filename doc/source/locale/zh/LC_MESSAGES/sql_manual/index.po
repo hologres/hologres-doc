@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/sql_manual/index.rst:3
 msgid "SQL Manual"
-msgstr ""
+msgstr "SQL 手册"
 

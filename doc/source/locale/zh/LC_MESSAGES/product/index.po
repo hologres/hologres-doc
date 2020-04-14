@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/product/index.rst:3
 msgid "Product"
-msgstr ""
+msgstr "产品"
 

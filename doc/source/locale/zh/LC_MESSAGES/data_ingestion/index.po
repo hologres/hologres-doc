@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/data_ingestion/index.rst:3
 msgid "Data Ingestion"
-msgstr ""
+msgstr "数据的导入"
 
