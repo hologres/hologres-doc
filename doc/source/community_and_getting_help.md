@@ -21,4 +21,4 @@ Slack channel: [https://hologres.slack.com/](https://hologres.slack.com/). To jo
 
 Dingtalk group: To join, scan the following QR code from your Dingtalk App 
 
-![qrcode](./images/community_and_getting_help/qrcode.png) 
+![](./images/community_and_getting_help/qrcode.png) 

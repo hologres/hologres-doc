@@ -1,9 +1,9 @@
 ####################
-Connect to BI Tools
+Releases
 ####################
 
 .. toctree::
-   tableau
+   
 
    
    

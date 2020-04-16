@@ -17,10 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../source/bi_tools/index.rst:3
-msgid "Connect to BI Tools"
+#: ../../source/data_load/index.rst:3
+msgid "Load Data Into Hologres"
 msgstr ""
-
-#~ msgid "BI Tools"
-#~ msgstr ""
 

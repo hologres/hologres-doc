@@ -16,13 +16,19 @@ Hologres
 .. toctree::
    :maxdepth: 2
 
-   product/index
+   introduction/index
+   use_cases
    quickstart/index
    sql_manual/index
-   data_ingestion/index
-   data_consumption/index
+   data_load/index
+   data_read_and_unload/index
+   install_and_operate/index
    bi_tools/index
    roles/index
+   powered_by
+   project
+   releases/index
+   roadmap
    contribute
    community_and_getting_help
    

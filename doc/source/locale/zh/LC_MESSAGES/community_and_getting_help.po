@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-12 12:45-0700\n"
+"POT-Creation-Date: 2020-04-15 17:54-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,6 @@ msgstr ""
 msgid "Dingtalk group: To join, scan the following QR code from your Dingtalk App"
 msgstr ""
 
-#: ../../source/community_and_getting_help.md:24
-msgid "qrcode"
-msgstr ""
+#~ msgid "qrcode"
+#~ msgstr ""
 
