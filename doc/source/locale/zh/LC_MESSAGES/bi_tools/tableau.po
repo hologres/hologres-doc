@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-12 12:45-0700\n"
+"POT-Creation-Date: 2020-04-21 21:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,5 +19,9 @@ msgstr ""
 
 #: ../../source/bi_tools/tableau.md:1
 msgid "Tableau"
-msgstr ""
+msgstr "Tableau"
+
+#: ../../source/bi_tools/tableau.md:3
+msgid "Tableau is a popular BI tool for interactive analysis."
+msgstr "Tableau 是一款流行的用于交互式分析的BI工具"
 

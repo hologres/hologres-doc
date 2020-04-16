@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/data_load/index.rst:3
 msgid "Load Data Into Hologres"
-msgstr ""
+msgstr "写入数据到 Hologres"
 

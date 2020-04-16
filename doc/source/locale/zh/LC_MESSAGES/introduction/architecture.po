@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-15 17:54-0700\n"
+"POT-Creation-Date: 2020-04-27 13:20-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,103 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../source/introduction/architecture.md:1
+#: ../../source/introduction/architecture.rst:2
 msgid "Architecture"
 msgstr ""
+
+#: ../../source/introduction/architecture.rst:6
+msgid "HSAP (Hybrid Serving/Analytics Processing)"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:8
+msgid "Built as unify data storage for unified data service."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:12
+msgid "Optimized for Row-based and Column-based Storage"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:14
+msgid ""
+"Supports both row-based and column-based storage. Row-based storage for "
+"data serving, and column-based storage for analytics."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:16
+msgid "One piece of data in Hologres unifies two set of data infrastructures."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:20
+msgid "Separating Computation and Storage"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:22
+msgid "Resources are managed and scaled independenyly."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:26
+msgid "Written in C++"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:28
+msgid "To deliver the ultimate performance!"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:32
+msgid "Ultimate Storage Engine"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:35
+msgid "Completely Asyc"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:37
+msgid "Completely Async in the whole stack."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:40
+msgid "No Locking"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:42
+msgid "Lock-free for resources. No waiting on locks, no part to slow you down."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:45
+msgid "Memory Management"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:47
+msgid ""
+"Customized memory management with precise control for the ultimate "
+"results."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:51
+msgid "Modern Compute Engine"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:54
+msgid "Custimized Scheduler & High Concurrency"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:57
+msgid "Vectorization"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:60
+msgid "Optimized for Hologres Storage"
+msgstr ""
+
+#~ msgid "written in C++ and completely async stack for the best performance"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "fully compatible with PostgreSQL and its"
+#~ " ecosystem, with JDBC/ODBC and RPC "
+#~ "APIs"
+#~ msgstr ""
+
+#~ msgid "supports both row-based and column-based storage"
+#~ msgstr ""
 

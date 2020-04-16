@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/powered_by.md:1
 msgid "Powered By"
-msgstr ""
+msgstr "客户"
 

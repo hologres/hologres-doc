@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/bi_tools/index.rst:3
 msgid "Connect to BI Tools"
-msgstr ""
+msgstr "连接到 BI 工具"
 
 #~ msgid "BI Tools"
 #~ msgstr ""

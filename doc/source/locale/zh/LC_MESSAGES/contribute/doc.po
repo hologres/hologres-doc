@@ -1,0 +1,442 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-21 11:48-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/contribute/doc.md:1
+msgid "Contribute to Documentation"
+msgstr ""
+
+#: ../../source/contribute/doc.md:3
+msgid "Pre-requisite: Fork the repository and downdload"
+msgstr ""
+
+#: ../../source/contribute/doc.md:5
+msgid ""
+"Forking the Github repository, and downdloading your forked repo locally "
+"are the required pre-requisites to get started with any efforts below."
+msgstr ""
+
+#: ../../source/contribute/doc.md:7
+msgid ""
+"Please find the following Github instructions on how to fork a "
+"repository, how to configure the remote upstream branch for the forked "
+"one, and how to sync a fork."
+msgstr ""
+
+#: ../../source/contribute/doc.md:9
+msgid "fork a repo"
+msgstr "[fork a repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)"
+
+#: ../../source/contribute/doc.md:10
+msgid "configure a remote for a fork"
+msgstr "[configure a remote for a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork)"
+
+#: ../../source/contribute/doc.md:11
+msgid "sync a fort"
+msgstr "[sync a fort](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)"
+
+#: ../../source/contribute/doc.md:13
+msgid "Build Documentation Locally"
+msgstr "本地构建文档"
+
+#: ../../source/contribute/doc.md:15
+msgid "Step 1: Install Sphinx"
+msgstr ""
+
+#: ../../source/contribute/doc.md:17
+msgid "For a quickstart with Sphinx and ReadTheDoc, please check out here."
+msgstr ""
+
+#: ../../source/contribute/doc.md:19
+msgid ""
+"To build the documentation website locally, you need to first install "
+"Sphinx and several extensions we use."
+msgstr ""
+
+#: ../../source/contribute/doc.md:29
+msgid "Step 2: Generate HTMLs"
+msgstr ""
+
+#: ../../source/contribute/doc.md:31
+msgid ""
+"First, fork and clone the hologres-doc repository to your computer. Go to"
+" the /docs directory and generate HTMLs with:"
+msgstr ""
+
+#: ../../source/contribute/doc.md:38
+msgid ""
+"HTMLs generated are located in /build directory, and should never be "
+"checked into source code."
+msgstr ""
+
+#: ../../source/contribute/doc.md:40
+msgid "To clean up any existing HTMLs cached in /build directory, run:"
+msgstr ""
+
+#: ../../source/contribute/doc.md:46
+msgid "Step 3: Check the website"
+msgstr ""
+
+#: ../../source/contribute/doc.md:48 ../../source/contribute/doc.md:111
+msgid ""
+"Open /build/html/index.html with your browser, and you should be able to "
+"see the newly generated documentation website locally."
+msgstr ""
+
+#: ../../source/contribute/doc.md:50
+msgid "Develop and Modify Documentations"
+msgstr ""
+
+#: ../../source/contribute/doc.md:52
+msgid "Step 1: Develop and Modify Markdown Files"
+msgstr ""
+
+#: ../../source/contribute/doc.md:54
+msgid "Develop and modify Markdown Files as you wish."
+msgstr ""
+
+#: ../../source/contribute/doc.md:56
+msgid "All original files should be written in English."
+msgstr ""
+
+#: ../../source/contribute/doc.md:58
+msgid ""
+"All content should following the requirements stated in \"Formatting "
+"Rules\" below."
+msgstr ""
+
+#: ../../source/contribute/doc.md:60
+msgid "Step 2: Generate Localization Files"
+msgstr ""
+
+#: ../../source/contribute/doc.md:62
+msgid ""
+"Hologres documentation right now supports both English and Chinese. (More"
+" localizations and languages are welcome!)"
+msgstr ""
+
+#: ../../source/contribute/doc.md:64
+msgid ""
+"To understand how Sphinx and sphinx-intel tranlation flow works, read "
+"this guide."
+msgstr ""
+
+#: ../../source/contribute/doc.md:66
+msgid ""
+"Each commit should make sure the English and Chinese documentations are "
+"in sync."
+msgstr ""
+
+#: ../../source/contribute/doc.md:68
+msgid ""
+"Once you have finished modifying the markdown files in English, it's time"
+" to finish the Chinese counterpart."
+msgstr ""
+
+#: ../../source/contribute/doc.md:70
+msgid ""
+"First, extract translatable messages into pot files, and generate the po "
+"files for Chinese translation:"
+msgstr ""
+
+#: ../../source/contribute/doc.md:78
+msgid ""
+"Once completed, the generated po files will be placed in the "
+"/locale/zh/LC_MESSAGES directory."
+msgstr ""
+
+#: ../../source/contribute/doc.md:80
+msgid ""
+"Note! For deleted or renamed Markdown files, their corresponding original"
+" .po files may not be automatically deleted, you need to manually delete "
+"them."
+msgstr ""
+
+#: ../../source/contribute/doc.md:82
+msgid "Step 3: Translate .po Files"
+msgstr ""
+
+#: ../../source/contribute/doc.md:84
+msgid ""
+"AS noted above, these are located in the ./locale/<lang>/LC_MESSAGES "
+"directory."
+msgstr ""
+
+#: ../../source/contribute/doc.md:86
+msgid "An example of one such file, from Sphinx, builders.po, is given below."
+msgstr ""
+
+#: ../../source/contribute/doc.md:99
+msgid "Step 4: Build Translated Document"
+msgstr ""
+
+#: ../../source/contribute/doc.md:101
+msgid ""
+"You need a language parameter in conf.py to build documents for a "
+"specific language. By default, it's English (en)."
+msgstr ""
+
+#: ../../source/contribute/doc.md:103
+msgid ""
+"The easiet to build Chinese documents is to specify the parameter on the "
+"build command line."
+msgstr ""
+
+#: ../../source/contribute/doc.md:105
+msgid "For for BSD/GNU make, run:"
+msgstr ""
+
+#: ../../source/contribute/doc.md:113
+msgid "Step 5: Submit Pull Requests"
+msgstr ""
+
+#: ../../source/contribute/doc.md:115
+msgid ""
+"Submit Pull Requests to the original repository (from which you forked) "
+"by following Github instructions here."
+msgstr ""
+
+#: ../../source/contribute/doc.md:117
+msgid "Deploy"
+msgstr ""
+
+#: ../../source/contribute/doc.md:119
+msgid ""
+"Once any changes are committed in Github, Github will notify readthedoc "
+"via webhook, and trigger build process. If it builds successfully, "
+"documentations will automatically be deployed; otherwise, it fails and "
+"waits to be fixed."
+msgstr ""
+
+#: ../../source/contribute/doc.md:121
+msgid "The build page can be found here."
+msgstr ""
+
+#: ../../source/contribute/doc.md:123
+msgid "Formatting Rules"
+msgstr ""
+
+#: ../../source/contribute/doc.md:125
+msgid "Hologres documentation are written in markdown format."
+msgstr ""
+
+#: ../../source/contribute/doc.md:127
+msgid "Page and Section Tiles"
+msgstr ""
+
+#: ../../source/contribute/doc.md:129
+msgid "Title of each markdown file or page should use '#' as heading."
+msgstr ""
+
+#: ../../source/contribute/doc.md:131
+msgid "Subtitles of sections inside should then use '##', '###', etc."
+msgstr ""
+
+#: ../../source/contribute/doc.md:133
+msgid "Images"
+msgstr ""
+
+#: ../../source/contribute/doc.md:135
+msgid ""
+"Images in markdown files should be placed in the directory of /image, and"
+" the directory should reflect the same document structure of the markdown"
+" files."
+msgstr ""
+
+#: ../../source/contribute/doc.md:137
+msgid ""
+"E.g. images of page /doc/source/introduction/concepts.md should be placed"
+" in directory /doc/source/images/introduction/."
+msgstr ""
+
+#: ../../source/contribute/doc.md:139
+msgid "Tables"
+msgstr ""
+
+#: ../../source/contribute/doc.md:141
+msgid "Markdown doesn't support tables natively. To author tables like:"
+msgstr ""
+
+#: ../../source/contribute/doc.md:162
+msgid ""
+"you have to install the sphinx-makrdown-tables as mentioned in pre-"
+"requisites above, and author in the following format:"
+msgstr ""
+
+#: ../../source/contribute/doc.md:171
+msgid "Cross-Reference Another File"
+msgstr ""
+
+#: ../../source/contribute/doc.md:173
+msgid ""
+"You can cross reference another markdown file in the same repository by "
+"using the absolute path in the root directory of /source."
+msgstr ""
+
+#: ../../source/contribute/doc.md:175
+msgid ""
+"E.g. say we have two files in /doc/source/dir1/doc1.md and "
+"/doc/source/dir2/doc2.md. To reference doc1.md in doc2.md, author:"
+msgstr ""
+
+#: ../../source/contribute/doc.md:182
+msgid "Hyperlinks"
+msgstr ""
+
+#: ../../source/contribute/doc.md:184
+msgid "Special Attention here!"
+msgstr ""
+
+#: ../../source/contribute/doc.md:186
+msgid ""
+"Hyperlinks will not be generated automatically in your translation. To "
+"keep the hyperlink in translated sentences, you have to put the hyperlink"
+" again in the translation."
+msgstr ""
+
+#: ../../source/contribute/doc.md:188
+msgid "Here's an example. Say you have hyperlink in the English page, like"
+msgstr ""
+
+#: ../../source/contribute/doc.md:194
+msgid "Then in your translation's .po file, you have to do:"
+msgstr ""
+
+#: ../../source/contribute/doc.md:203
+msgid "Punctuations"
+msgstr ""
+
+#: ../../source/contribute/doc.md:205
+msgid "DO NOT forget to put the correct punctuations in your translations!"
+msgstr ""
+
+#: ../../source/contribute/doc.md:207
+msgid ""
+"If the original sentense ends with a English period ., translators should"
+" end their translated sentense with a Chinese period 。. E.g."
+msgstr ""
+
+#: ../../source/contribute/doc.md:216
+msgid "Committing Rules"
+msgstr ""
+
+#: ../../source/contribute/doc.md:218
+msgid "Each commit"
+msgstr ""
+
+#: ../../source/contribute/doc.md:220
+msgid ""
+"must be submitted in a Pull Request (PR) first, reviewed by a community "
+"trusted member, then merge via the PR. No commit can be pushed to "
+"repository directly by the ones who have commit priviledge."
+msgstr ""
+
+#: ../../source/contribute/doc.md:222
+msgid ""
+"must have both the English and Chinese changes to keep our multi-language"
+" documentations in sync."
+msgstr ""
+
+#: ../../source/contribute/doc.md:224
+msgid "The only exception is for initial documentation migration commits."
+msgstr ""
+
+#: ../../source/contribute/doc.md:226
+msgid "Theme"
+msgstr ""
+
+#: ../../source/contribute/doc.md:228
+msgid "We use ReadTheDoc's native theme, sphinx_rtd_theme."
+msgstr ""
+
+#: ../../source/contribute/doc.md:230
+msgid "Installation and configuration of the theme can be found here."
+msgstr ""
+
+#~ msgid "Step 1: Fork the repository and downdload"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fork the documentation repository, and "
+#~ "downdload your forked repo locally by"
+#~ " following Github instruction here."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The instruction also demonstrates how to"
+#~ " keep your forked repo up-to-"
+#~ "date with the upstream repository."
+#~ msgstr ""
+
+#~ msgid "Step 2: Install Sphinx"
+#~ msgstr ""
+
+#~ msgid "Step 3: Generate HTMLs"
+#~ msgstr ""
+
+#~ msgid "Step 4: Check the website"
+#~ msgstr ""
+
+#~ msgid "Step 2: Develop and Modify Markdown Files"
+#~ msgstr ""
+
+#~ msgid "Step 3: Generate Localization Files"
+#~ msgstr ""
+
+#~ msgid "Step 4: Translate .po Files"
+#~ msgstr ""
+
+#~ msgid "Step 5: Build Translated Document"
+#~ msgstr ""
+
+#~ msgid "Step 6: Submit Pull Requests"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "https://help.github.com/en/github/getting-started-with-"
+#~ "github/fork-a-repo"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "https://help.github.com/en/github/collaborating-with-"
+#~ "issues-and-pull-requests/configuring-a-remote-"
+#~ "for-a-fork"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "https://help.github.com/en/github/collaborating-with-"
+#~ "issues-and-pull-requests/syncing-a-fork"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Title of each markdown file should "
+#~ "use '#' as heading. Subtitles should "
+#~ "then use '##', '###', etc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Images in markdown files should be "
+#~ "placed in the directory of /image, "
+#~ "and the directory should reflect the "
+#~ "same document structure of the markdown"
+#~ " files. E.g. images of page "
+#~ "/doc/source/introduction/concepts.md should be "
+#~ "placed in directory "
+#~ "/doc/source/images/introduction/."
+#~ msgstr ""
+

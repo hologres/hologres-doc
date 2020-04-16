@@ -4,10 +4,10 @@ Hologres
 
 .. toctree::
    
-
-   hologres
-   concepts
+   
+   features
    architecture
-   deployment
+   concepts
    performance
+   comparisons
 

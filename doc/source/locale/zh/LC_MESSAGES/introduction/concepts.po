@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-15 17:54-0700\n"
+"POT-Creation-Date: 2020-04-26 18:13-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,32 +22,44 @@ msgid "Basic Concepts and Terminology"
 msgstr "基本概念与术语"
 
 #: ../../source/introduction/concepts.md:3
+msgid "image"
+msgstr ""
+
+#: ../../source/introduction/concepts.md:5
+msgid "FE: Frontend - compute engine"
+msgstr ""
+
+#: ../../source/introduction/concepts.md:6
+msgid "Blackhole - storeage engine"
+msgstr ""
+
+#: ../../source/introduction/concepts.md:8
 msgid "Instance"
 msgstr "实例"
 
-#: ../../source/introduction/concepts.md:5
+#: ../../source/introduction/concepts.md:10
 msgid "In Hologres, an instance is a cluster that contains multiple databases."
 msgstr ""
 
-#: ../../source/introduction/concepts.md:7
+#: ../../source/introduction/concepts.md:12
 msgid "Database"
 msgstr "数据库"
 
-#: ../../source/introduction/concepts.md:9
+#: ../../source/introduction/concepts.md:14
 msgid ""
 "Hologres is fully compatible with Postgres. A database in Hologres is a "
 "set of schemas, which is the same with Postgres's definition."
 msgstr ""
 
-#: ../../source/introduction/concepts.md:11
+#: ../../source/introduction/concepts.md:16
 msgid "All the operations on tabels, functions, etc are inside a database."
 msgstr ""
 
-#: ../../source/introduction/concepts.md:13
+#: ../../source/introduction/concepts.md:18
 msgid "Table"
 msgstr "表"
 
-#: ../../source/introduction/concepts.md:15
+#: ../../source/introduction/concepts.md:20
 msgid "Table is the unit of data storage."
 msgstr ""
 

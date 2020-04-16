@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-12 12:45-0700\n"
+"POT-Creation-Date: 2020-04-27 13:21-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,13 +21,344 @@ msgstr ""
 msgid "Welcome to Hologres documentation!"
 msgstr "欢迎来到 Hologres 文档！"
 
-#: ../../source/index.rst:10
-msgid ""
-"Hologres is a truly streaming-first data warehouse. Data ingested can be "
-"immediately available to query."
-msgstr "Hologres 是一款流原生的、流数据为先的数据仓库。导入的数据立即可查，无额外延时。"
+#: ../../source/introduction/features.rst:2
+msgid "Hologres Introduction"
+msgstr ""
 
-#: ../../source/index.rst:14
+#: ../../source/introduction/features.rst:4
+msgid ""
+"Hologres is a HSAP (Hybrid Serving/Analytics Processing) real-time data "
+"warehouse, unified for both PS-scale real-time data analytics and serving"
+" data for fast point-lookups."
+msgstr ""
+
+#: ../../source/introduction/features.rst:8
+msgid "What is HSAP？"
+msgstr ""
+
+#: ../../source/introduction/features.rst:10
+msgid "HSAP is short for Hybrid Serving/Analytics Processing."
+msgstr ""
+
+#: ../../source/introduction/features.rst:12
+msgid "<to be added>"
+msgstr ""
+
+#: ../../source/introduction/features.rst:18
+msgid "Key Features"
+msgstr ""
+
+#: ../../source/introduction/features.rst:23
+msgid "High Performance"
+msgstr ""
+
+#: ../../source/introduction/features.rst:25
+msgid ""
+"Ingest real-time and batch data at extremely high throughput (hundreds of"
+" millions RPS) and low ingestion latency. Data ingested is immediately "
+"queryable!"
+msgstr ""
+
+#: ../../source/introduction/features.rst:30
+msgid "Fast Point-Lookup"
+msgstr ""
+
+#: ../../source/introduction/features.rst:32
+msgid ""
+"Extremely fast to point-lookup a needle in your haystack with datum's "
+"primary keys."
+msgstr ""
+
+#: ../../source/introduction/features.rst:37
+msgid "Low Latency"
+msgstr ""
+
+#: ../../source/introduction/features.rst:39
+msgid ""
+"Query PB-Scale data in sub-second latency, maximizing business values "
+"with multi-dimensional interactive analytics."
+msgstr ""
+
+#: ../../source/introduction/features.rst:44
+msgid "High Concurrency"
+msgstr ""
+
+#: ../../source/introduction/features.rst:46
+msgid ""
+"Hologres can run hundreds of large queries at the same time without "
+"compromising query performance!"
+msgstr ""
+
+#: ../../source/introduction/features.rst:48
+msgid ""
+"Has your team's productivity been restricted by some products that can "
+"only run a handful of queries at the same time otherwise your query "
+"performance will degrade substantially?"
+msgstr ""
+
+#: ../../source/introduction/features.rst:50
+msgid "If so, Hologres is the a game changer for your team."
+msgstr ""
+
+#: ../../source/introduction/features.rst:55
+msgid "BI Native"
+msgstr ""
+
+#: ../../source/introduction/features.rst:57
+msgid ""
+"Seamlessly connect to your favourite BI tools, like Tableau, PowerBI, "
+"Qlik, AWS Quicksight, via JDBC/ODBC"
+msgstr ""
+
+#: ../../source/introduction/features.rst:62
+msgid "Fully Compatible with PostgreSQL"
+msgstr ""
+
+#: ../../source/introduction/features.rst:64
+msgid ""
+"Hologres embraces the mature ecosystem of Postgres for all the standards "
+"and protocols."
+msgstr ""
+
+#: ../../source/introduction/features.rst:66
+msgid "That means, you can:"
+msgstr ""
+
+#: ../../source/introduction/features.rst:68
+msgid "reuse all your existing favourite PostgreSQL tools without any migration"
+msgstr ""
+
+#: ../../source/introduction/features.rst:69
+msgid ""
+"operate the same way as you operate a PostgreSQL instance. Minimum "
+"learning curving for people who are familiar with PostgreSQL."
+msgstr ""
+
+#: ../../source/introduction/features.rst:70
+msgid "leverage existing rich PostgreSQL extensions to get your jobs done"
+msgstr ""
+
+#: ../../source/introduction/features.rst:75
+msgid "Upsert At-Scale As You Wish"
+msgstr ""
+
+#: ../../source/introduction/features.rst:77
+msgid "Update and delete data as you wish!"
+msgstr ""
+
+#: ../../source/introduction/features.rst:79
+msgid ""
+"Hologres empowering you to update and delete data at-scale with strong "
+"consistency. You can update and delete data as frequently as you want "
+"without having to worry about performance degrade and scalability. Data "
+"updated and deleted is strongly consistent across the cluster "
+"immediately."
+msgstr ""
+
+#: ../../source/introduction/features.rst:81
+msgid ""
+"Are you tired of a data warehouse let you only insert data but not update"
+" and delete? Don't let the technology limitation become your business' "
+"bottleneck."
+msgstr ""
+
+#: ../../source/introduction/features.rst:86
+msgid "Schema Enforcement"
+msgstr ""
+
+#: ../../source/introduction/features.rst:88
+msgid ""
+"Validate your input data for free. Get no surprise when retrieving and "
+"using your data."
+msgstr ""
+
+#: ../../source/introduction/features.rst:93
+msgid "Built-in CDC (alpha)"
+msgstr ""
+
+#: ../../source/introduction/features.rst:95
+msgid ""
+"Replicate your production OLTP database to Hologres directly for OLAP "
+"without any middleware required, for the ultimate simplicity"
+msgstr ""
+
+#: ../../source/introduction/features.rst:100
+msgid "Full SQL Capability in ANSI Standard SQL"
+msgstr ""
+
+#: ../../source/introduction/features.rst:102
+msgid ""
+"Run complex joins on your real-time and batch data for 360-degree "
+"insights."
+msgstr ""
+
+#: ../../source/introduction/features.rst:107
+msgid "Low Cost"
+msgstr ""
+
+#: ../../source/introduction/features.rst:109
+msgid ""
+"Buy a license, then run as many queries as you like, and scan as much "
+"data as you like! We don't charge you on the data usage!"
+msgstr ""
+
+#: ../../source/introduction/features.rst:111
+msgid ""
+"You can even scale resources up and down on demand by benefiting from "
+"Hologres' architecture separating compute and storage."
+msgstr ""
+
+#: ../../source/introduction/features.rst:116
+msgid "Flexible Deployment"
+msgstr ""
+
+#: ../../source/introduction/features.rst:118
+msgid ""
+"Cloud-Native. Run anywhere: single machine, bare metal, Docker, "
+"Kubernetes."
+msgstr ""
+
+#: ../../source/introduction/features.rst:121
+msgid "Minimum deployment dependencies."
+msgstr ""
+
+#: ../../source/introduction/features.rst:126
+msgid "Secure and Reliable"
+msgstr ""
+
+#: ../../source/introduction/features.rst:128
+msgid "Fault tolerent and highly available, data is replicated for redundancy."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:2
+msgid "Architecture"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:7
+msgid "HSAP (Hybrid Serving/Analytics Processing)"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:9
+msgid "Built as unify data storage for unified data service."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:14
+msgid "Optimized for Row-based and Column-based Storage"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:16
+msgid ""
+"Supports both row-based and column-based storage. Row-based storage for "
+"data serving, and column-based storage for analytics."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:18
+msgid "One piece of data in Hologres unifies two set of data infrastructures."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:23
+msgid "Separating Computation and Storage"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:25
+msgid "Resources are managed and scaled independenyly."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:30
+msgid "Written in C++"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:32
+msgid "To deliver the ultimate performance!"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:37
+msgid "Ultimate Storage Engine"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:40
+msgid "Completely Asyc"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:42
+msgid "Completely Async in the whole stack."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:46
+msgid "No Locking"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:48
+msgid "Lock-free for resources. No waiting on locks, no part to slow you down."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:52
+msgid "Memory Management"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:54
+msgid ""
+"Customized memory management with precise control for the ultimate "
+"results."
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:59
+msgid "Modern Compute Engine"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:62
+msgid "Custimized Scheduler & High Concurrency"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:66
+msgid "Vectorization"
+msgstr ""
+
+#: ../../source/introduction/architecture.rst:70
+msgid "Optimized for Hologres Storage"
+msgstr ""
+
+#: ../../source/index.rst:17
+msgid "Use Cases:"
+msgstr ""
+
+#: ../../source/index.rst:19
+msgid "Real-time data warehouse"
+msgstr ""
+
+#: ../../source/index.rst:20
+msgid ""
+"Unified real-time and batch analytics, a single warehouse for your real-"
+"time and batch data"
+msgstr ""
+
+#: ../../source/index.rst:21
+msgid ""
+"Unified data serving, why not serving k-v data for extemely fast point-"
+"lookup with your warehouse, rather than keeping additional data stores"
+msgstr ""
+
+#: ../../source/index.rst:22
+msgid "One-stop data solution for small and median-sized team"
+msgstr ""
+
+#: ../../source/index.rst:23
+msgid "Unified data layer for machine learning"
+msgstr ""
+
+#: ../../source/index.rst:24
+msgid "Metrics and monitoring"
+msgstr ""
+
+#: ../../source/index.rst:26
+msgid "..."
+msgstr ""
+
+#: ../../source/index.rst:28
+msgid "For more use cases, please see \"Use Cases\" section."
+msgstr ""
+
+#: ../../source/index.rst:31
 msgid "Hologres"
 msgstr "Hologres"
 
@@ -38,5 +369,204 @@ msgstr "Hologres"
 #~ msgstr ""
 
 #~ msgid "Streaming-first"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Hologres is a truly streaming-first "
+#~ "data warehouse. Data ingested can be "
+#~ "immediately available to query."
+#~ msgstr "Hologres 是一款流原生的、流数据为先的数据仓库。导入的数据立即可查，无额外延时。"
+
+#~ msgid ""
+#~ "Designs: - written in C++ and "
+#~ "completely async stack for the best "
+#~ "performance - fully compatible with "
+#~ "PostgreSQL and its ecosystem, with "
+#~ "JDBC/ODBC and RPC APIs"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Use Cases: - unified real-time and"
+#~ " batch analytics, a single warehouse "
+#~ "for your real-time and batch data"
+#~ " - unified data serving, why not "
+#~ "serving k-v data for extemely fast "
+#~ "point-lookup with your warehouse, rather"
+#~ " than keeping additional data stores "
+#~ "- One-stop data solution for small"
+#~ " and median-sized team - machine "
+#~ "learning - metrics and monitoring ..."
+#~ msgstr ""
+
+#~ msgid "real-time data warehouse"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "unified real-time and batch analytics,"
+#~ " a single warehouse for your real-"
+#~ "time and batch data"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "unified data serving, why not serving"
+#~ " k-v data for extemely fast point-"
+#~ "lookup with your warehouse, rather than"
+#~ " keeping additional data stores"
+#~ msgstr ""
+
+#~ msgid "machine learning"
+#~ msgstr ""
+
+#~ msgid "metrics and monitoring"
+#~ msgstr ""
+
+#~ msgid "For more use cases, please see [here](use_cases.md)"
+#~ msgstr ""
+
+#~ msgid "Key features:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "High Performance: Ingest real-time and"
+#~ " batch data at extremely high "
+#~ "throughput (hundreds of millions RPS), "
+#~ "data ingested is immediately queryable"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Low Latency: Query PB-Scale with "
+#~ "high concurrentcy but in sub-second "
+#~ "latency, maximizing business values with "
+#~ "multi-dimensional interactive analytics"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Full SQL Capability: run complex joins"
+#~ " on your real-time and batch "
+#~ "data for 360-degree insights"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Low Cost: separete compute and storage,"
+#~ " users can scale resources up and "
+#~ "down on demand"
+#~ msgstr ""
+
+#~ msgid "Cloud-Native, run anywhere: bare metal, docker, Kubernetes"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Secure and Reliable: fault tolerent and"
+#~ " highly available, data is replicated "
+#~ "for redundancy"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Built-in CDC: replicate your production"
+#~ " OLTP database to Hologres directly "
+#~ "for OLAP without any middleware required"
+#~ msgstr ""
+
+#~ msgid "Designs:"
+#~ msgstr ""
+
+#~ msgid "written in C++ and completely async stack for the best performance"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "fully compatible with PostgreSQL and its"
+#~ " ecosystem, with JDBC/ODBC and RPC "
+#~ "APIs"
+#~ msgstr ""
+
+#~ msgid "supports both row-based and column-based storage"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Hologres is a HSAP (Hybrid Serving "
+#~ "and Analytics Processing) data warehouse "
+#~ "for real-time and batch data, "
+#~ "supporting querying PB-scale data with"
+#~ " high-concurrency and low latency, "
+#~ "integrating seamlessly with your BI "
+#~ "tools for multi-dimensional interactive "
+#~ "analytics."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Ingest real-time and batch data at"
+#~ " extremely high throughput (hundreds of "
+#~ "millions RPS), data ingested is "
+#~ "immediately queryable!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Extremely fast to point-lookup a "
+#~ "needle in your haystack with primary "
+#~ "keys."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Run hundreds of large queries at "
+#~ "the same time without compromising query"
+#~ " performance! Support small and big "
+#~ "teams working at the same time "
+#~ "without interfering with each other."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Seamlessly connect to your favourite BI"
+#~ " tools, like Tableau, PowerBI, Qlik, "
+#~ "via JDBC/ODBC"
+#~ msgstr ""
+
+#~ msgid "Embrace mature ecosystem for all the standards and protocols."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Reuse all your existing favourite "
+#~ "PostgreSQL tools without any migration."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Operate the same way as you "
+#~ "operate a PostgreSQL instance. Minimum "
+#~ "learning curving for people who are "
+#~ "familiar with PostgreSQL."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Update and delete data as you "
+#~ "wish! Hologres empowering you to update"
+#~ " and delete data at-scale with "
+#~ "strong consistency. You can update and"
+#~ " delete data as frequently as you "
+#~ "want without having to worry about "
+#~ "performance degrade and scalability. Data "
+#~ "updated and deleted is strongly "
+#~ "consistency across the cluster immediately."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A modern data warehouse should NOT "
+#~ "let you only insert data but not"
+#~ " update and delete. Don't let the "
+#~ "technology limitation become your business'"
+#~ " bottleneck."
+#~ msgstr ""
+
+#~ msgid "Full SQL Capability"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Scale resources up and down on "
+#~ "demand by benefiting from Hologres' "
+#~ "architecture separating compute and storage."
+#~ msgstr ""
+
+#~ msgid "Cloud-Native. Run anywhere: bare metal, docker, Kubernetes"
+#~ msgstr ""
+
+#~ msgid "Fault tolerent and highly available, data is replicated for redundancy"
 #~ msgstr ""
 

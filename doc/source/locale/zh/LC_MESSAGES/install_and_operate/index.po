@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/install_and_operate/index.rst:3
 msgid "Install and Operate Hologres"
-msgstr ""
+msgstr "安装与运维"
 

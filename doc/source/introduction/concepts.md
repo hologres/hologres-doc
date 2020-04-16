@@ -1,5 +1,13 @@
 # Basic Concepts and Terminology
 
+![image](../images/introduction/components.png)
+
+
+* FE: Frontend - compute engine
+* Blackhole - storeage engine
+
+
+
 ### Instance
 
 In Hologres, an instance is a cluster that contains multiple databases.
@@ -13,4 +21,5 @@ All the operations on tabels, functions, etc are inside a database.
 ### Table
 
 Table is the unit of data storage.
+
 

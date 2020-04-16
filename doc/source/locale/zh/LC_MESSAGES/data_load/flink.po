@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-15 17:54-0700\n"
+"POT-Creation-Date: 2020-04-20 22:53-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,206 @@ msgstr ""
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../source/data_load/flink.md:1
-msgid "Ingest Data in Real-time with Apache Flink"
-msgstr ""
+msgid "Apache Flink"
+msgstr "Apache Flink"
+
+#: ../../source/data_load/flink.md:3
+msgid ""
+"Apache Flink is an open-source, distributed stream-processing framework "
+"for stateful computations over unbounded and bounded data streams."
+msgstr "Apache Flink 是一个开源、分布式的流处理框架, 用来对无限流和有限流（批）数据进行有状态的计算。"
+
+#: ../../source/data_load/flink.md:5
+msgid ""
+"This documentation will walk you through how to use Apache Flink to write"
+" data to Hologres in both real-time streaming and batch fashions."
+msgstr "这篇文档将带你了解如何使用 Apache Flink 向 Hologres 写入实时数据和批数据。"
+
+#: ../../source/data_load/flink.md:7
+msgid "Supported Flink versions"
+msgstr "支持的 Flink 版本"
+
+#: ../../source/data_load/flink.md:9
+msgid "1.9, 1.10"
+msgstr "1.9, 1.10"
+
+#: ../../source/data_load/flink.md:11
+msgid "Hologres Streaming Sink"
+msgstr "Hologres 流式 Sink"
+
+#: ../../source/data_load/flink.md:13
+msgid ""
+"What's critically unique about Hologres is that it is a real-time data "
+"warehouse that can truly handle streaming use cases. By leveraging Flink "
+"and Hologres streaming sink, users can write streaming data from Flink to"
+" Hologres, and data is immediately available to query!"
+msgstr "Hologres 的一个非常重要的独特性在于它是一款实时数据仓库，可以解决客户对实时数据的需求。通过Flink和Hologres的流式sink，用户可以将实时数据写入Hologres，写入的数据立即可见！"
+
+#: ../../source/data_load/flink.md:15
+msgid ""
+"What's better is that Hologres streaming sink can guarantee end-to-end "
+"exactly-once semantics even upon failure recoveries."
+msgstr "更好地是，Hologres流式sink可以保证端到端 exactly-once 语义。"
+
+#: ../../source/data_load/flink.md:17
+msgid ""
+"These characteristics fundamentally change how users imagine about their "
+"streaming pipeline, and how fast they can turn data into real values by "
+"querying real-time data in Hologres from BI tools."
+msgstr "这些特点从根本上扭转了客户如何构建实时数据管道、如何将他们手中的数据实时展现在BI报表中从而真正转化为商业价值。"
+
+#: ../../source/data_load/flink.md:19
+msgid ""
+"Hologres streaming sink continuously writes data into Hologres, and "
+"should be used in Flink streaming job to continuously writing data into "
+"Hologres."
+msgstr "适用于持续不断往Hologres写入数据的场景，写入的数据立即可查。"
+
+#: ../../source/data_load/flink.md:22
+msgid "Semantics"
+msgstr "语义"
+
+#: ../../source/data_load/flink.md:24
+msgid ""
+"Hologres streaming sink can provide end-to-end exactly-once or at-least-"
+"once semantics, depending on configurations of the sink and attributes of"
+" the Hologres destination table."
+msgstr "根据sink的配置和Hologres表属性，sink可以提供exactly-once或at-least-once保证。"
+
+#: ../../source/data_load/flink.md:26
+msgid "End-to-end Exactly-Once Guarantee"
+msgstr "端到端Exactly-Once保证"
+
+#: ../../source/data_load/flink.md:28
+msgid ""
+"When the Hologres destination table is created with primary keys, "
+"Hologres streaming sink can guarantee end-to-end exactly-once semantics "
+"with Flink via idempotency."
+msgstr "当Hologres表设有主键（primary key）时，Hologres sink可通过幂等性（idempotent）提供exactly-once语义。"
+
+#: ../../source/data_load/flink.md:30
+msgid ""
+"In such scenarios, users can configure the streaming sink's upsert_type "
+"and tell how Hologres should proceed when multiple records with the same "
+"values as primary key are written to the table:"
+msgstr "在有主键的情况下，用户可以配置流式sink的 ‘upsert_type’ 项来告诉Hologres如何处理同主键值的数据出现多次的情况："
+
+#: ../../source/data_load/flink.md:32
+msgid ""
+"insert-or-ignore: default semantics, Hologres will keep the first record "
+"that it receives and ingore all the following records"
+msgstr "insert-or-ignore：默认语义，保留首次出现的数据，忽略之后的所有数据"
+
+#: ../../source/data_load/flink.md:33
+msgid ""
+"insert-or-replace: the record that comes later will completely replace "
+"the existing record"
+msgstr "insert-or-replace：后出现的数据整行替换已有数据"
+
+#: ../../source/data_load/flink.md:34
+msgid ""
+"insert-or-update: the record that comes later will partially replace the "
+"existing record."
+msgstr "insert-or-update：部分替换已有数据"
+
+#: ../../source/data_load/flink.md:35
+msgid ""
+"e.g. Let's say we have a table X that has 4 columns, a, b, c, d, with a "
+"being the primary key. In the above scenario, when a new record with just"
+" two fields a and b comes, Hologres will only update the value of column "
+"b, and the values of c and d of existing data remain unchanged."
+msgstr "例如一张表有a，b，c，d四个字段，a是pk，然后写入的时候只写入a，b两个字段，在pk重复的情况下，会只更新b字段，c，d原有的值不变。"
+
+#: ../../source/data_load/flink.md:38
+msgid "End-to-end At-Least-Once Guarantee"
+msgstr "端到端At-Least-Once保证"
+
+#: ../../source/data_load/flink.md:40
+msgid ""
+"In all other circumstances, the streaming sink provides at-least-once "
+"guarantee."
+msgstr "其他情况下，流式sink保证at-least-once语义"
+
+#: ../../source/data_load/flink.md:42 ../../source/data_load/flink.md:98
+msgid "Write to Partitioned Tables"
+msgstr "写分区表"
+
+#: ../../source/data_load/flink.md:44
+msgid "By default, the streaming sink can only write to a non-partitioned table."
+msgstr "默认情况下streaming sink只能往一张具体的Hologres表导入数据。"
+
+#: ../../source/data_load/flink.md:46
+msgid ""
+"To write to a partitioned table, the 'connector.table' should be the "
+"table's name, and users have to enable the sink configuration with "
+"'connector.partition_router'='true'. If users don't set the "
+"configuration, the sink can still write successfully to Hologres but no "
+"data will show up."
+msgstr "可以通过设置参数 'connector.partition_router'='true', 开启自动将数据路由到对应分区子表的功能。"
+"否则，虽然导入成功，但在Hologres中查询不出数据。'connector.table'参数填写的是父表表名"
+
+#: ../../source/data_load/flink.md:48
+msgid ""
+"When writing to a partitioned table, partitions will not be created "
+"automatically, so users have to create those partitions before hand."
+msgstr "数据写入过程中不会自动创建分区子表，需要提前在Hologres中创建接收数据的分区子表。"
+
+#: ../../source/data_load/flink.md:51 ../../source/data_load/flink.md:102
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/data_load/flink.md:53 ../../source/data_load/flink.md:104
+msgid "The SQL connector can be defined as:"
+msgstr "使用SQL"
+
+#: ../../source/data_load/flink.md:73
+msgid "To use streaming sink in Flink DataStream application:"
+msgstr "使用DataStream API"
+
+#: ../../source/data_load/flink.md:87
+msgid "Hologres Batch Sink"
+msgstr "Hologres 批式 Sink"
+
+#: ../../source/data_load/flink.md:89
+msgid ""
+"Hologres batch sink bulk loads data into Hologres. All data is loaded "
+"within a single transaction, so either all data is loaded successfully or"
+" none is loaded, and thus it guarantees end-to-end exactly-once."
+msgstr "Bulkload sink 语义适用于一次性批量、高速导入大量数据。数据全部导入后才可见。"
+"写入的所有数据在一个事务（transaction）中，即所有数据都加载成功或者都不成功，并保证exactly-once。"
+
+#: ../../source/data_load/flink.md:91
+msgid ""
+"Data is invisible in the middle of the transaction, and only becomes "
+"visible once the bulk load transaction finishes."
+msgstr "数据在加载过程中不可见，只有全部加载完后才可见。"
+
+#: ../../source/data_load/flink.md:94
+msgid "Hologres batch sink is optimized for high thoughput write."
+msgstr "批式sink针对高吞吐进行了优化。"
+
+#: ../../source/data_load/flink.md:96
+msgid ""
+"Hologres streaming sink should be used in Flink batch job, for use cases "
+"like data migration and backfill."
+msgstr "批式sink推荐在Flink批作业中使用，适用于数据迁移和回填。"
+
+#: ../../source/data_load/flink.md:100
+msgid "Hologres batch sink can only write to a partition of a partitioned table."
+msgstr "有分区表时，批式sink只能导入数据到子分区。"
+
+#: ../../source/data_load/flink.md:125
+msgid ""
+"It's not recommended to use batch sink in Flink DataStream application, "
+"as its implementation is quite complicated. However, if you really wish "
+"to use it, please reference the source code of HologresBulkloadTableSink."
+msgstr "由于批式sink的实现比较复杂，不推荐在Flink DataStream API中使用。如果想使用，"
+"请参考源码中的HologresBulkloadTableSink类"
+
+#: ../../source/data_load/flink.md:127
+msgid "Data Types Mapping"
+msgstr "数据类型转换"
+
+#~ msgid "Ingest Data in Real-time with Apache Flink"
+#~ msgstr ""
 

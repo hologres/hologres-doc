@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/data_read_and_unload/index.rst:3
 msgid "Read and Unload Data from Hologres"
-msgstr ""
+msgstr "读取和转移 Hologres 数据"
 

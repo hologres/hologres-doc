@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../source/use_cases.md:1
 msgid "Use Cases"
-msgstr ""
+msgstr "案例与场景"
 
