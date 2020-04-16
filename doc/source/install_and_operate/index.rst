@@ -6,6 +6,7 @@ Install and Operate Hologres
 	 
 	installation
 	metrics
+	logging
 
    
    

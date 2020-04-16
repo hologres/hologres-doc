@@ -17,10 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../source/roadmap.md:1
-msgid "Roadmap"
+#: ../../source/connect_to_hologres.md:1
+msgid "Connect to Hologres"
 msgstr ""
 
-#~ msgid "Releases and Roadmap"
-#~ msgstr ""
+#: ../../source/connect_to_hologres.md:4
+msgid "psql"
+msgstr ""
+
+#: ../../source/connect_to_hologres.md:7
+msgid "JDBC"
+msgstr ""
 

@@ -19,14 +19,14 @@ Hologres
    introduction/index
    use_cases
    quickstart/index
+   connect_to_hologres
    sql_manual/index
    data_load/index
    data_read_and_unload/index
    install_and_operate/index
    bi_tools/index
-   roles/index
+   security_and_user_management/index
    powered_by
-   project
    releases/index
    roadmap
    contribute
