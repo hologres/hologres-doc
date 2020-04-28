@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-26 14:05-0700\n"
+"POT-Creation-Date: 2020-04-28 13:39-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,5 +19,266 @@ msgstr ""
 
 #: ../../source/quickstart/quickstart.md:1
 msgid "Hologres in 20 Minutes"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:3
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:5
+msgid ""
+"This tutorial requires a database and table to load and query data. "
+"Creating Hologres objects requires a user with a role with the necessary "
+"access control permissions."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:7
+msgid ""
+"In addition, psql (PostgreSQL Client) of PostgreSQL version 11 or above "
+"is required to execute the SQL statements in the tutorial. Please search "
+"online and see how to install psql in your machine, whether it's MacOS, "
+"Linux, Windows, etc."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:9
+msgid "Download Sample Data Files"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:11
+msgid ""
+"Download the set of sample data files by clicking getting-started.zip, or"
+" right-click the file and save the link/file to your local file system."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:13
+msgid ""
+"Unpack the sample files in any location. However, we recommend using the "
+"directories referenced in the tutorial examples:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:15
+msgid "Linux/macOS: /tmp"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:17
+msgid "Windows: C:\\temp"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:19
+msgid ""
+"The sample files include randomly generate customer data in CSV format "
+"with a few records each. The delimiter between each field is the comma "
+"(,) character."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:21
+msgid "Log into Hologres via psql"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:23
+msgid "Open a terminal windoww"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:24
+msgid "Start psql as"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:30
+msgid ""
+"*Note: PostgreSQL instance always comes with a built-in database "
+"\"postgres\"."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:32
+msgid "Create Hologres Objects"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:34
+msgid "Create a Database"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:40
+msgid ""
+"Note that you do not need to create a schema in the database because each"
+" database created in Hologres/Postgres contains a default schema named "
+"public."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:42
+msgid "Reconnect to the new Database"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:44
+msgid "Run"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:50
+msgid ""
+"to quit the connection and reconnect to the newly created database "
+"quickstart with"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:56
+msgid ""
+"Note that this time the parameter following -d should be quickstart "
+"rather than postgres."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:58
+msgid ""
+"This reconnection is necessary since psql doesn't allow users to switch "
+"databases."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:60
+msgid "Create a Table"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:73
+msgid ""
+"Note that the number of columns in the table, their positions, and their "
+"data types correspond to the fields in the sample CSV data files that you"
+" will be staging in the next step in this tutorial."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:75
+msgid "Copy CSV Data into Hologres"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:77
+msgid ""
+"Open a new terminal on your machine. Run the following commands to copy "
+"the local sample data to Hologres with standard input stream:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:79
+msgid "Linux/macOS"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:85
+msgid "Windows"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:91
+msgid ""
+"The terminal then pops up a commandline to let you enter your password. "
+"Enter password then hit \"Enter\" key on your keyboard."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:94
+msgid "The command returns the following response:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:100
+msgid "Query the Loaded Data"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:102
+msgid "Switch back to the 1st terminal where the customers table is created."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:104
+msgid ""
+"You can query the data loaded in the customers table using standard SQL "
+"and any supported functions and operators."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:106
+msgid ""
+"You can also manipulate the data, such as updating the loaded data or "
+"inserting more data, using standard DML commands."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:108
+msgid "Query All Data"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:110
+msgid "Return all rows and columns from the table:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:116
+#: ../../source/quickstart/quickstart.md:140
+#: ../../source/quickstart/quickstart.md:162
+#: ../../source/quickstart/quickstart.md:176
+#: ../../source/quickstart/quickstart.md:194
+msgid "Result is displayed as:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:132
+msgid "Count Total Number of Rows"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:134
+msgid ""
+"Count total number of rows, and should see 24 rows which was copied into "
+"the table in above steps."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:150
+msgid "Insert Additional Rows of Data"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:152
+msgid ""
+"In addition to loading data from staged files into a table, you can "
+"insert rows directly into a table using the INSERT DML command."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:154
+msgid "For example, to insert two additional rows into the table:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:168
+msgid "Query Rows Based on Email Address"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:170
+msgid ""
+"Return a list of email addresses with United Kingdom domain names using "
+"the LIKE function:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:186
+msgid "Query Rows Based on Start Date"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:188
+msgid ""
+"Add 90 days to customer registration dates using the PostgreSQL's "
+"date/time operator to calculate when marketing campaign for certain "
+"customers might start. Filter the list by customers whose registration "
+"date occurred earlier than January 1, 2017:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:205
+msgid "Summary and Clean Up"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:207
+msgid ""
+"Congratulations! You have successfully completed this introductory "
+"tutorial!"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:209
+msgid ""
+"Please take a few minutes to review a short summary and the key points "
+"covered in the tutorial. You might also want to consider cleaning up by "
+"dropping any objects you created in the tutorial."
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:211
+msgid "Tutorial Clean Up (Optional)"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:213
+msgid ""
+"Execute the following DROP statements to return your system to its state "
+"before you began the tutorial:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart.md:219
+msgid "Switch back to postgres database, and run:"
 msgstr ""
 
