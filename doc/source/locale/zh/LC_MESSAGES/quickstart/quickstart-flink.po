@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-26 14:05-0700\n"
+"POT-Creation-Date: 2020-04-29 16:53-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,4 +20,260 @@ msgstr ""
 #: ../../source/quickstart/quickstart-flink.md:1
 msgid "Using Hologres with Flink"
 msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:3
+msgid "In this tutorial, we will walk through examples of using Flink to"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:5
+msgid "write real-time streaming data into Hologres"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:6
+msgid "bulk load batch data into Hologres"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:7
+msgid "bulk read all existing data from Hologres"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:9
+msgid ""
+"For more detailed information of how to use Flink and Hologres together "
+"and how end-to-end exactly-once works, please see the following "
+"documents:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:11
+msgid "write data to Hologres using Flink"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:12
+msgid "read data from Holgores using Flink"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:14
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:16
+msgid ""
+"This tutorial requires a database and table to load and query data. "
+"Creating Hologres objects requires a user with a role with the necessary "
+"access control permissions."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:18
+msgid ""
+"In addition, psql (PostgreSQL Client) of PostgreSQL version 11 or above "
+"is required to execute the SQL statements in the tutorial. Please search "
+"online and see how to install psql in your machine, whether it's MacOS, "
+"Linux, Windows, etc."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:20
+msgid ""
+"An IDE like IntelliJ IDEA or Eclipse is highly recommend to run examples "
+"jobs, though these jobs can be run as junit tests via Maven from "
+"commandline as well. In this tutorial, we will use IntelliJ IDEA as "
+"example."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:22
+msgid ""
+"At last, the Flink examples requires JDK to run. It's recommended that "
+"you have JDK 1.8 installed in the environment."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:24
+msgid "Create Hologres Objects"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:26
+msgid "Create a Database"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:28
+msgid ""
+"Following the steps in Hologres in 20 minutes to create a database named "
+"quickstart and connect to it via psql."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:30
+msgid "Create a Table"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:32
+msgid "Create an orders table with the following command"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:44
+msgid "Downdload the Project and Import in IDE"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:46
+msgid "Download the project from following example repository from Github"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:48
+msgid "https://github.com/hologres/hologres-flink-examples"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:50
+msgid "Import Project in IntelliJ IDEA"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:52
+msgid ""
+"Open IntelliJ IDEA, import the downloaded project as Maven project, and "
+"select the \"JDK for importer\" as 1.8. The other part of the process is "
+"exactly the same as importing as other Maven projects."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:54
+msgid "You should see the following product structure and files:"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:71
+msgid "Set Hologres Configurations"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:73
+msgid ""
+"In order to interact with a Hologres instance, you have to set Hologres "
+"configurations."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:75
+msgid ""
+"Take a look at JobTestBase.java file now, and it contains 5 variables, "
+"DATABASE, USERNAME, PASSWORD, ENDPOINT, and TABLE. The TABLE variable has"
+" been predefined as orders to match name of the table that is just "
+"created in Hologres."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:77
+msgid ""
+"There are two ways to set the other four variables. You can either "
+"replace them in the .java file with plain strings, or set them in your "
+"environment variables. Note that if you set environment variables, you "
+"have to completely shutdown IntelliJ and restart for it to pick up new "
+"environment variables."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:79
+msgid "Write Real-Time Streaming Data into Hologres"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:81
+msgid ""
+"In this job, we will run a single-parallelism Flink streaming job which "
+"generates 100 rows per second with random data and writes to the orders "
+"table in Holgores."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:83
+#: ../../source/quickstart/quickstart-flink.md:124
+msgid "Clean the Table"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:85
+#: ../../source/quickstart/quickstart-flink.md:126
+msgid ""
+"Before running this example, clean the table by running delete from "
+"orders; in psql to make sure any previous testing data is deleted, and "
+"not interfere with the upcoming test you are going to run."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:87
+#: ../../source/quickstart/quickstart-flink.md:128
+#: ../../source/quickstart/quickstart-flink.md:148
+msgid "Run the Job"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:89
+msgid ""
+"In IntelliJ, right-click SimpleStreamingJobTest and click \"Run "
+"'SimpleStreamingJobTest'\". The job starts running and writing data to "
+"Hologres. Data ingested into Hologres is immediately available!"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:91
+#: ../../source/quickstart/quickstart-flink.md:132
+msgid "Check the Data"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:93
+msgid ""
+"So why wait? Let us now switch back the psql terminal and query the "
+"latest data as it coming in with queries like select count(*) from orders"
+" which shows how many rows are in the table."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:114
+msgid ""
+"As the query is run multiple times, you can see that the number of rows "
+"keeps on growing as streaming data is written into Hologres."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:116
+msgid "Terminate the Job"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:118
+msgid ""
+"Remember to terminate the job after testing is done. This is a streaming "
+"job and otherwise will run forever and never terminate itself."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:120
+msgid "Bulk Load Batch Data into Hologres"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:122
+msgid ""
+"In this job, we will run a single-parallelism Flink batch job which read "
+"csv data in /test/resources/csv/orders.csv and bulk loads to the orders "
+"table in Holgores."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:130
+msgid ""
+"In IntelliJ, right-click SimpleBulkloadJobTest and click \"Run "
+"'SimpleBulkloadJobTest'\". The job starts running and writing data to "
+"Hologres. After a while, it should finish and terminate itself. The job "
+"should bulk load 2800 records from the csv file to Hologres."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:134
+msgid "Now switch back to the psql terminal, and check the data."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:144
+msgid "Read Batch Data from Hologres"
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:146
+msgid ""
+"In this job, we will run a single-parallelism Flink batch job which bulk "
+"read the orders table in Holgores and output the number of rows in the "
+"table."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:150
+msgid ""
+"In IntelliJ, right-click SimpleReadJobTest and click \"Run "
+"'SimpleReadJobTest'\". The job starts running and writing data to "
+"Hologres. After a while, it should finish and terminate itself."
+msgstr ""
+
+#: ../../source/quickstart/quickstart-flink.md:152
+msgid ""
+"Assuming that you run this job right after running the "
+"SimpleBulkloadJobTest. The job should will count the 2800 records in "
+"Hologres, and print the following message in your IntelliJ console:"
+msgstr ""
+
+#~ msgid "Write real-time streaming data into Hologres"
+#~ msgstr ""
 
