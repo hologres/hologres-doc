@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-29 12:46-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/partners.md:1
+msgid "Partners and Contact"
+msgstr ""
+
+#: ../../source/partners.md:3
+msgid "Partner with us and let us help your business thrive."
+msgstr ""
+
+#: ../../source/partners.md:5
+msgid ""
+"We believe when partnership is formed among like-minded people, "
+"organizations, and businesses, everyone benefits."
+msgstr ""
+
+#: ../../source/partners.md:7
+msgid "Partner with us to:"
+msgstr ""
+
+#: ../../source/partners.md:9
+msgid "Get early access to new releases of product"
+msgstr ""
+
+#: ../../source/partners.md:10
+msgid "Get our dedicated tech support"
+msgstr ""
+
+#: ../../source/partners.md:11
+msgid "Receive deep discount of our product"
+msgstr ""
+
+#: ../../source/partners.md:12
+msgid "Develop thought leadership together in big data and analytics industry"
+msgstr ""
+
+#: ../../source/partners.md:14
+msgid "Please contact us by email at info@hologres.io ."
+msgstr ""
+
