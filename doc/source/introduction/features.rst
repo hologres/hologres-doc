@@ -14,8 +14,8 @@ HSAP is short for Hybrid Serving/Analytics Processing.
 
 
 
-Key Features
-============
+Advantages and Key Features
+============================
 
 
 ******************

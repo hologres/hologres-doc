@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-27 13:20-0700\n"
+"POT-Creation-Date: 2020-04-29 14:32-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgid "<to be added>"
 msgstr ""
 
 #: ../../source/introduction/features.rst:14
-msgid "Key Features"
+msgid "Advantages and Key Features"
 msgstr ""
 
 #: ../../source/introduction/features.rst:18
@@ -301,5 +301,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Fault tolerent and highly available, data is replicated for redundancy"
+#~ msgstr ""
+
+#~ msgid "Key Features"
 #~ msgstr ""
 
