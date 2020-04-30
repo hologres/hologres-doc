@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 21:31-0700\n"
+"POT-Creation-Date: 2020-04-29 20:59-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,5 +23,65 @@ msgstr "Tableau"
 
 #: ../../source/bi_tools/tableau.md:3
 msgid "Tableau is a popular BI tool for interactive analysis."
-msgstr "Tableau 是一款流行的用于交互式分析的BI工具"
+msgstr "Tableau 是一款流行的用于交互式分析的BI工具。"
+
+#: ../../source/bi_tools/tableau.md:5
+msgid "Here're the steps to connect Tableau to Hologres."
+msgstr "使用Tableau连接Hologres的操作步骤如下。"
+
+#: ../../source/bi_tools/tableau.md:7
+msgid "1. Download Tableau Desktop"
+msgstr "1.下载安装Tableau Desktop"
+
+#: ../../source/bi_tools/tableau.md:9
+msgid "Download Tableau Desktop."
+msgstr ""
+"Tableau官网下载[Tableau Desktop](https://www.tableau.com/zh-"
+"cn/products/desktop)"
+
+#: ../../source/bi_tools/tableau.md:11
+msgid "2. Connect to Hologres"
+msgstr "2.连接Hologres"
+
+#: ../../source/bi_tools/tableau.md:13
+msgid ""
+"Open Tableau Desktop, select \"PostgreSQL\" connector and fill in "
+"credentials."
+msgstr "打开tableau客户端，选择PostgreSQL服务器，并填写连接信息。"
+
+#: ../../source/bi_tools/tableau.md:19
+msgid "Server: host address of Hologres instance"
+msgstr "服务器：Hologres的实例地址"
+
+#: ../../source/bi_tools/tableau.md:20
+msgid "Port: port of Hologres instance"
+msgstr "端口：Hologres的端口地址"
+
+#: ../../source/bi_tools/tableau.md:21
+msgid "Database: the Hologres database to connect to"
+msgstr "数据库：连接的Hologres数据库名"
+
+#: ../../source/bi_tools/tableau.md:22
+msgid "Authentication: select \"Username and Password\""
+msgstr "身份验证：选择用户名和密码"
+
+#: ../../source/bi_tools/tableau.md:23
+msgid "Username: access id of the Hologres account"
+msgstr "用户名：当前Hologres账号的Access ID"
+
+#: ../../source/bi_tools/tableau.md:24
+msgid "Password: access key of the Hologres account"
+msgstr "密码：当前Hologres账号的Access Key"
+
+#: ../../source/bi_tools/tableau.md:25
+msgid "Require SSL: no"
+msgstr "需要SSL：选择不需要"
+
+#: ../../source/bi_tools/tableau.md:27
+msgid "3. Use Tableau with Hologres"
+msgstr "3.使用Tableau和Hologres"
+
+#: ../../source/bi_tools/tableau.md:29
+msgid "Now you can use Tableau with Hologres for data analysis."
+msgstr "可以使用Tableau和Hologres进行数据分析。"
 
