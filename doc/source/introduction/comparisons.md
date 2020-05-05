@@ -1,4 +1,4 @@
-# Comparisons to Other Product
+# Comparisons to Other Products
 
 
 ## Hologres V.S. Traditional Data Warehouse
@@ -26,9 +26,10 @@
 
 ## Hologres V.S. Data Lake
 
-Data lake setups like Apache Iceberg, Hudi, Delta Lake are mostly libraries plus a cloud distributed file system. They are poor man, open-source version of commercial offline data warehosue.
+Data Lake setups like Apache Iceberg, Apache  Hudi, Delta Lake are mostly libraries plus a cloud distributed file system. They are poor man, open-source version of commercial data warehouses.
  
-Usually combined with Spark or Presto
+Given they are libraries maintaining data on top of commodity storage, Data Lakes have to be used with Spark or Presto.
+
 Fits better with mini-batch processing engine like Spark, but not Flink
 No native streaming support
 Data latency depends on how frequently files are commited

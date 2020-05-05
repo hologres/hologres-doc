@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-04 23:07-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/support.md:1
+msgid "Support"
+msgstr ""
+
+#: ../../source/support.md:3
+msgid ""
+"There are many ways to get in touch with and get help from the Hologres "
+"community."
+msgstr ""
+
+#: ../../source/support.md:5
+msgid "Support Resource"
+msgstr ""
+
+#: ../../source/support.md:7
+msgid "Slack Channel: https://hologres.slack.com/. To join, click here"
+msgstr ""
+
+#: ../../source/support.md:8
+msgid "Google Groups: https://groups.google.com/forum/#!forum/hologres"
+msgstr ""
+
+#: ../../source/support.md:9
+msgid "Twitter: https://twitter.com/HologreSQL"
+msgstr ""
+
+#: ../../source/support.md:10
+msgid "Github: https://github.com/hologres/hologres-issues"
+msgstr ""
+
+#: ../../source/support.md:11
+msgid "Stack Overflow: https://stackoverflow.com/questions/tagged/hologres"
+msgstr ""
+
+#: ../../source/support.md:13
+msgid ""
+"Please contact us at info@hologres.io on Enterprise supports and "
+"cooperations."
+msgstr ""
+
+#: ../../source/support.md:15
+msgid "Requests, Feedbacks, Issues, Bugs"
+msgstr ""
+
+#: ../../source/support.md:17
+msgid ""
+"For feature requests, feedbacks, issues, bugs, etc, please create a "
+"Github issue at https://github.com/hologres/hologres-issues/issues."
+msgstr ""
+
+#: ../../source/support.md:19
+msgid ""
+"You can also search whether other people have run into similar "
+"situations, and add your context to the existing tickets."
+msgstr ""
+

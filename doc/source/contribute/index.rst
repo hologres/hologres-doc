@@ -1,5 +1,5 @@
 ##################################
-Contribute to Hologres Community
+Contribute
 ##################################
 
 .. toctree::

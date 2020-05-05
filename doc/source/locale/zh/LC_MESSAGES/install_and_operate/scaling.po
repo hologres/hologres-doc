@@ -17,10 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../source/install_and_operate/installation.md:1
-msgid "Installation and Deployment"
+#: ../../source/install_and_operate/scaling.md:1
+msgid "Scale Up and Down"
 msgstr ""
-
-#~ msgid "Installation"
-#~ msgstr ""
 
