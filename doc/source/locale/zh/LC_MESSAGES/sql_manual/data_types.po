@@ -3,41 +3,118 @@
 # This file is distributed under the same license as the Hologres package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Hologres \n"
+"Project-Id-Version: Hologres\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-12 12:45-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 16:34+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
 
-#: ../../source/sql_manual/data_types.md:1
+#: ../../source/sql_manual/data_types.md:1 ../../source/sql_manual/data_types.md:5
 msgid "Data Types"
-msgstr ""
+msgstr "数据类型"
 
 #: ../../source/sql_manual/data_types.md:3
-msgid "Hologres supports a subset of data types in Postgres."
+msgid ""
+"Hologres is compatible with PostgresSQL in data types. Currently Hologres "
+"supports a subset of data types defined in PostgresSQL."
 msgstr ""
-
-#: ../../source/sql_manual/data_types.md:5
-msgid "Primitive Data Types"
-msgstr ""
+"目前，Hologres 数据类型与 PostgreSQL 数据类型兼容，但支持的数据类型是 "
+"PostgreSQL 的一个子集。"
 
 #: ../../source/sql_manual/data_types.md:7
-msgid "Hologres supports the following primitive data types."
-msgstr ""
+msgid "The following table lists all supported types:"
+msgstr "Hologres 目前支持的数据类型如下表："
 
-#: ../../source/sql_manual/data_types.md:9
-msgid "Array Data Types"
+#: ../../source/sql_manual/data_types.md:88
+msgid ""
+"For timestamp with time zone type, SQL standard using the number after symbol "
+"'+' or '-' as time zone shift. If no time zone is provided, a default one is "
+"used."
 msgstr ""
+"对于 timestamp with time zone 类型，SQL标准通过判断 timestamptz 类型数据的“+”或"
+"者“-”符号以及符号后面的时区偏移来识别时区，如果未表明时区偏移，将会有一个默认时"
+"区添加到数据上。"
 
-#: ../../source/sql_manual/data_types.md:11
-msgid "Hologres supports the following array data types."
-msgstr ""
+#: ../../source/sql_manual/data_types.md:90
+msgid "Note: Defference between Hologres and PostgresSQL for decimal type:"
+msgstr "说明：Hologres当前版本支持的decimal和PG的不同之处如下："
 
+#: ../../source/sql_manual/data_types.md:92
+msgid "Hologres supports precision from 0 to38, scale from 0 toprecision"
+msgstr "Hologres支持precision的范围从公0到38，scale范围支持从0到precision。"
+
+#: ../../source/sql_manual/data_types.md:93
+msgid "decimal type muse provide precision and scale, no default value"
+msgstr "Hologres的decimal需要明确指定precision和scale信息，不能使用省略的方式。"
+
+#: ../../source/sql_manual/data_types.md:95
+msgid "Below is an example for timestamptz, date and decimal:"
+msgstr "关于timestamptz、date、decimal的用法示例SQL如下："
+
+#: ../../source/sql_manual/data_types.md:110
+msgid "Array Types"
+msgstr "数组类型"
+
+#: ../../source/sql_manual/data_types.md:112
+msgid "Hologres currently only support one dimensional array types  listed below:"
+msgstr "Hologres当前支持的数组如下："
+
+#: ../../source/sql_manual/data_types.md:114
+msgid "int4[]"
+msgstr "int4[]"
+
+#: ../../source/sql_manual/data_types.md:115
+msgid "int8[]"
+msgstr "int8[]"
+
+#: ../../source/sql_manual/data_types.md:116
+msgid "float4[]"
+msgstr "float4[]"
+
+#: ../../source/sql_manual/data_types.md:117
+msgid "float8[]"
+msgstr "float8[]"
+
+#: ../../source/sql_manual/data_types.md:118
+msgid "boolean[]"
+msgstr "boolean[]"
+
+#: ../../source/sql_manual/data_types.md:119
+msgid "text[]"
+msgstr "text[]"
+
+#: ../../source/sql_manual/data_types.md:121
+msgid "Declaration of array types"
+msgstr "数组的声明"
+
+#: ../../source/sql_manual/data_types.md:133
+msgid "Array value input"
+msgstr "数组的插入"
+
+#: ../../source/sql_manual/data_types.md:135
+msgid "using ARRAY keyword"
+msgstr "使用ARRAY关键字"
+
+#: ../../source/sql_manual/data_types.md:153
+msgid "using {} expression"
+msgstr "使用{}表达式"
+
+#: ../../source/sql_manual/data_types.md:171
+msgid "Accessing Arrays"
+msgstr "数组的查询"
+
+#: ../../source/sql_manual/data_types.md:173
+msgid "access single element of an array"
+msgstr "查询数组中单个元素"
+
+#: ../../source/sql_manual/data_types.md:179
+msgid "access a slice of an array"
+msgstr "查询数组中部分元素"

@@ -1,0 +1,8 @@
+####################
+Schema
+####################
+
+.. toctree::
+   
+	createschema
+	alterschema

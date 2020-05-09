@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 16:48+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:1
+msgid "ALTER DATABASE"
+msgstr "ALTER DATABASE"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:3
+msgid "Introduction"
+msgstr "命令介绍"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:5
+msgid "ALTER DATABASE -- change an existing database"
+msgstr "alter database：修改数据库配置"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:7
+msgid "Synopsis"
+msgstr "命令格式"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:16
+msgid "Parameters"
+msgstr "参数说明"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:18
+msgid "configuration_parameter: The configuration parameter of hologres."
+msgstr "configuration_parameter：交互式分析  的配置参数"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:20
+msgid "_value：_The value of the specified configuration parameter."
+msgstr "value：指定配置参数值。"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:22
+msgid ""
+"_DEFAULT：_The default value of the specified configuration parameter "
+"which is the system-wide default setting."
+msgstr "DEFAULT：指定配置参数为缺省值。"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:24
+msgid ""
+"_RESET：_It is equivalent to set configuration parameter to DEFAULT "
+"which is the system-wide default setting."
+msgstr "RESET：重置单个配置参数。"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:26
+msgid "_RESET ALL：_Reset all configuration parameters to DEFAULT."
+msgstr "RESET ALL：重置数据库的所有配置参数。"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:28
+msgid ""
+"SET FROM CURRENT：Save the session's current value of the parameter as "
+"the database-specific value."
+msgstr "SET FROM CURRENT：设置配置参数为当前session的配置值。"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:30
+msgid "Example"
+msgstr "使用示例"
+
+#: ../../source/sql_manual/ddl/database/alterdatabse.md:32
+msgid ""
+"set time zone to GMT+8 (Beijing standard time) which is 8 hours earlier "
+"than GMT."
+msgstr "设置时区为比格林威治标准时间早8个小时的时区（北京时区）。"

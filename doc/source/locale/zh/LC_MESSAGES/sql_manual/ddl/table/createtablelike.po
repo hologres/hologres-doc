@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 17:56+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:1
+msgid "CREATE TABLE LIKE"
+msgstr "CREATE TABLE LIKE"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:3
+msgid ""
+"create table like：creates a new table represents the result table of "
+"the SELECT query. It does not load any data with the command itself. i."
+"e. it wont load the result table of the SELECT query into the newly-"
+"created  table."
+msgstr ""
+"create table like：创建一个同select query结果相同的新表，但不会自动同步源"
+"表数据。"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:5
+msgid "Regular Table"
+msgstr "普通表"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:7
+#: ../../source/sql_manual/ddl/table/createtablelike.md:41
+msgid "Introduction"
+msgstr "命令介绍"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:9
+msgid ""
+"To create a regular table with CREATE TABLE LIKE in Hologres, the "
+"following example illustrates the usage:"
+msgstr "在Hologres中，普通表create table like的命令格式如下："
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:13
+msgid ""
+"Note: Within the call to hg_create_table_like, the system will generate "
+"a schema represents the result table of the select_query, and use that "
+"schema to create a new table with the name \"table_name\". It will not "
+"insert any data into the new table."
+msgstr ""
+"说明：通过调用hg_create_table_like，系统会根据selec_query的结果的schema创"
+"建一个表名为table_name的表，但不会插入任何数据。"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:15
+#: ../../source/sql_manual/ddl/table/createtablelike.md:48
+msgid "Parameters"
+msgstr "参数说明"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:17
+msgid ""
+"**table_name：**The new table's name.  It must not be for a Foreign "
+"Table; It must be string literal, which means it can not be strings "
+"returned from a function call or composed of other other string or name "
+"variables."
+msgstr ""
+"table_name：要创建表的表名（不能创建外表）,只支持固定字符串,不支持字符拼"
+"接或函数生成等。"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:19
+#: ../../source/sql_manual/ddl/table/createtablelike.md:52
+msgid ""
+"_select_query：_A select query which could be against all tables "
+"(including Foreign Table). It also must be string literals, which means "
+"it can not be strings returned from a function call or composed of other "
+"other string or name variables."
+msgstr ""
+"select_query：select格式的查询语句（可以查询外表）。只支持固定字符串,不支"
+"持字符拼接或函数生成等。"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:21
+msgid "Examples"
+msgstr "使用示例"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:23
+msgid "There are some examples of using \"create table like\" in Hologres:"
+msgstr "在Hologres中create table like的示例用法如下："
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:25
+msgid "Create a new table with the same schema as source table."
+msgstr "创建一个同源表结构相同的表"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:32
+msgid ""
+"2）Create a new table according to a source table but add with extra "
+"columns."
+msgstr "创建一个在源表的基础上再增加字段的表"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:39
+msgid "Partition Table"
+msgstr "分区表"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:43
+msgid "The command of \"create table like\" for partition tables:"
+msgstr "在Hologres中，分区表的create table like的命令格式如下："
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:50
+msgid ""
+"_table_name：_The new table's name.  It must not be for an Foreign "
+"Table; It must be string literal, which means it can not be strings "
+"returned from a function call or composed of other other string or name "
+"variables."
+msgstr ""
+"table_name：要创建表的表名（但不能创建外部表）,只支持固定字符串，不支持字"
+"符拼接或函数生成等。"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:54
+msgid ""
+"_partition_clause：_A partition clause following the the same grammar of "
+"creating a partition table."
+msgstr "• partition_clause：分区相关的语法定义"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:56
+msgid "Example"
+msgstr "使用示例"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:68
+msgid "Set Table Property"
+msgstr "设置表属性"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:70
+msgid ""
+"In Hologres, a **set_table_property **call can be used after the "
+"\"create table like\" command, to set more customized table properties "
+"for the newly-created table."
+msgstr ""
+"在Hologres中，使用create table like创建新表之后，可以结合"
+"set_table_property使用为新表设置更多的表属性。"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:85
+msgid "see more details in set_table_property's documentation."
+msgstr "更多关于表属性的设置可以参见set_table_property。"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:86
+msgid "Limitation"
+msgstr "使用限制"
+
+#: ../../source/sql_manual/ddl/table/createtablelike.md:88
+msgid ""
+"There must be unique column names for the select query, otherwise an "
+"error about conflicting column names will be raised. e.g."
+msgstr ""
+"查询语句中的每一个目标列都要有一个不重复的别名，否则建表语句就会生成同列"
+"名的语句导致执行报错。示例如下："

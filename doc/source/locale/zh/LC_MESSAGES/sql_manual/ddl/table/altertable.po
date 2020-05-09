@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 17:12+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:1
+msgid "ALETER TABLE"
+msgstr "ALETER TABLE"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:3
+msgid ""
+"Current Hologres version only supports 1. changing name , 2.add new "
+"columns and 3.alter table property by \"ALTER TABLE\". There is no such "
+"limitation against Foreign Tables."
+msgstr ""
+"Hologres当前版本对表的修改支持重名命表和增加列。对于外部表(foreign "
+"table)没有限制。"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:5
+msgid ""
+"For Hologres Partition Table ATTACH PARTITION and DETACH PARTITION are "
+"also supported. See more details below."
+msgstr ""
+"针对Hologres的分区表，还支持 ATTACH PARTITION 和 DETACH PARTITION 两种修"
+"改。详见分区表一节。"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:7
+msgid "Rename Table"
+msgstr "重命名表"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:9
+#: ../../source/sql_manual/ddl/table/altertable.md:26
+msgid "Synopsis"
+msgstr "命令格式"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:15
+msgid ""
+"Notes: An error would return if trying to change a name for a table not "
+"exist, or change an exist table to a name conflicting table name."
+msgstr ""
+"如果 RENAME 不存在的表，或者将表重命名为已存在的表名，都会返回异常。"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:17
+#: ../../source/sql_manual/ddl/table/altertable.md:32
+#: ../../source/sql_manual/ddl/table/altertable.md:47
+msgid "Example"
+msgstr "使用示例"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:24
+msgid "Add Column"
+msgstr "增加列"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:38
+msgid "Alter Table Property"
+msgstr "修改表属性"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:40
+msgid ""
+"In general, setting table property must be in the same transaction as "
+"\"CREATE TABLE\", however, the following properties can be changed "
+"independently:"
+msgstr ""
+"通常来讲，设置表属性必须与create table在同一个事务中执行，但以下几个表属"
+"性可以单独执行，表示修改对应的属性。"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:49
+msgid "Change bitmap indexing properties for columns."
+msgstr "修改bitmap_columns比特编码列"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:55
+msgid "Change dictionary encoding properties for columns."
+msgstr ""
+"修改dictionary_encoding_columns字典编码列\n"
+"call set_table_property(‘tbl’, ‘dictionary_encoding_columns’, ‘a,b’);"
+
+#: ../../source/sql_manual/ddl/table/altertable.md:61
+msgid "Change table's TTL (time-to-live), unit is in seconds."
+msgstr "修改表数据生存时间"

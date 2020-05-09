@@ -1,0 +1,297 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 15:28+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+"Language: zh\n"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:1
+msgid "Use Simple Permission Model"
+msgstr "简单权限模型的使用"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:3
+msgid "Overview"
+msgstr "背景"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:5
+msgid ""
+"In Hologres, user could use Simple Permission Model to manage user role and "
+"privileges, besides the traditional Postgre SQL user role model."
+msgstr "在Hologres中，您可以使用简单权限模型来管理用户和授权。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:7
+msgid "Examples"
+msgstr "简单权限模型的使用步骤"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:9
+msgid "1.Enable SPM extension"
+msgstr "1.开启函数调用"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:11
+msgid "Use CREATE EXTENSION to enable SPM extension."
+msgstr "在开启SPM前，需要执行将函数调用的开关开启。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:17
+msgid "2. Enable SPM"
+msgstr "2.开启简单权限模型"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:19
+msgid ""
+"By default, SPM is disabled. The super could execute following statement to "
+"enable it in the specific database."
+msgstr "简单权限模型默认不开启，需要Superuser在需要开启的DB下执行语句进行开启."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:24
+msgid ""
+"Note: After SPM is enabled, the developer user group owns all the entities of "
+"all the schema in the current database, regardless when or by whom the entity "
+"was created."
+msgstr ""
+"说明：开启简单权限模型之后，developer用户组拥有DB中所有schema的所有表、类表的权"
+"限，不论这个表、类表是何人在何时创建。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:26
+msgid "3. Create User"
+msgstr "3.创建用户"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:28
+msgid "The user should be created before granting the privilege."
+msgstr ""
+"在为新用户授权之前，首先需要将新用户创建进当前实例中，若是新用户已经被创建进实"
+"例，可忽略此步骤."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:37
+msgid "4. Add User To User Group"
+msgstr "4.授权新用户"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:39
+msgid "The privilege is granted by adding the user into the specific user group."
+msgstr ""
+"成功将新用户创建进实例中后，可以在对应的DB内将新用户加入相应的用户组，以完成授"
+"权操作。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:55
+msgid "5. Remove User From User Group"
+msgstr "5.移除用户组"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:57
+msgid ""
+"The privilege is revoked by removing the user from the specific user group."
+msgstr ""
+"同时，你也可以将用户某个DB的某个用户组中移除，移除之后，该用户将不具备该用户组"
+"具有的权限。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:73
+msgid "6. Remove user"
+msgstr "删除用户"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:75
+msgid "The user can be removed from the current database. Proceed with cautions."
+msgstr ""
+"同时，您也可以根据需要对某个用户进行删除，删除用户成功之后，该用户将会从当前实"
+"例删除，请谨慎执行该操作。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:81
+msgid "Migrate the Postgre SQL user role model to SPM"
+msgstr "Postgres授权迁移至简单权限模型"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:83
+msgid ""
+"If you are using Postgre SQL user role module and would like to migrate to "
+"SPM, in order to better and/or simple user permission management on the "
+"database entities, the spm_migrate function can be executed to migrate the "
+"existing user role to SPM."
+msgstr ""
+"若在此之前您的DB使用的标准的Postgres授权，DB中有一定数量的对象（表、视图、外表"
+"等等），为更好的管理权限需要开启简单权限模型，可以通过调用spm_migrate函数将已有"
+"对象迁移至简单权限模型，在该DB执行以下语句."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:89
+msgid ""
+"Notes: User need ensure no active SQL statement is running when enabling the "
+"SPM, otherwise the enable statement may fail and have side effects on the "
+"serviceability."
+msgstr ""
+"说明：在开启简单权限模型是，需要确保当前DB没有任何SQL正在运行，否则可能会开启失"
+"败，并可能对服务产生影响。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:91
+msgid ""
+"There would be numerous Alter Owner operation triggered by migration and "
+"PostgreSQL has throttling on such operation. Each smp_migrate may only Alter "
+"Owner on no more than max_locks_per_transaction number of entities. Therefore, "
+"you my need execute spm_migration multiple times, until all the entities are "
+"migrated."
+msgstr ""
+"由于migrate可能涉及到将大量表进行Alter Owner操作，触发PostgreSQL对此操作的限"
+"制，spm_migrate每次仅对不超过max_locks_per_transaction的对象进行Change Owner操"
+"作。因此，您可能需要执行spm_migrate多次，直到全部对象迁移过来为止。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:93
+msgid "Disable SPM"
+msgstr "简单权限模型的关闭"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:95
+msgid "1. Disable SPM"
+msgstr "1. 关闭简单权限模型"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:97
+msgid ""
+"After enable SPM, the super user may disable the spm later on, based on "
+"business requirement changes."
+msgstr ""
+"开启简单权限模型后，Superuser也可以根据业务需要执行spm_disable关闭简单权限模"
+"型，在该DB执行语句."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:101
+msgid ""
+"After SPM is disabled, the corresponding user groups won't be deleted. The "
+"detailed privileges that the users in the user group have, may reference to "
+"the description of SPM function."
+msgstr ""
+"关闭简单权限模型之后，对应用户组将不会被删除，对应用户组内用户拥有的权限可以参"
+"见简单权限模型函数说明。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:102
+msgid "2. Remove User Group"
+msgstr "2. 清除保留用户组"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:104
+msgid ""
+"After SPM is disabled, the user group may be removed by call function "
+"spm_cleanup."
+msgstr ""
+"关闭简单权限模型后，如果您需要将用户组清除，可以通过调用spm_cleanup函数来实现。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:106
+msgid ""
+"Notes: Normally, user groups as a convenient way to manage user,  removing are "
+"not recommended."
+msgstr "说明：通常情况下，为了方便管理不建议删除用户组。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:108
+msgid "There are two scenarios."
+msgstr "分以下两种场景来删除用户组."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:110
+msgid "Scenario 1, Delete user group while keep the DB"
+msgstr "场景1：删除用户组保留DB"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:112
+msgid ""
+"The super user can execute the following state to remove user group while keep "
+"the DB serving."
+msgstr ""
+"若由于某种原因，需要删除DB内的用户组，但同时又希望当前DB可以继续使用，superuser"
+"可以按照以下语句操作."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:116
+msgid ""
+"Notes：Ensure there is no active statement running on the database before "
+"execute the spm_cleanup, otherwise the execution may fail and service may be "
+"affected."
+msgstr ""
+"说明：在调用spm_cleanup时，请确保该DB上没有SQL正在运行，否则可能会失败，并可能"
+"对服务产生影响。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:118
+msgid ""
+"There would be numerous Alter Owner operation triggered by removing user "
+"group, while PostgreSQL has throttling on such operation. Each spm_cleanup may "
+"only Alter Owner on no more than max_locks_per_transaction number of entities. "
+"Therefore, you my need execute spm_cleanup multiple times, until all the 4 SPM "
+"user group are removed."
+msgstr ""
+"由于可能涉及到将大量业务表进行Alter Owner操作，而PostgreSQL对此操作有限制，"
+"spm_cleanup每次仅对不超过max_locks_per_transaction的对象进行Alter Owner。\n"
+"因此，您可能需要执行spm_cleanup多次，直到全部对象迁移过来，以及删除四个用户组为"
+"止。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:119
+msgid "Scenario 2, Delete user group after DB is dropped"
+msgstr "场景2：先删除DB再删除用户组"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:121
+msgid ""
+"Given the circumstances that the original database is delete while the user "
+"group is not. The super user could execute spm_cleanup from another database."
+msgstr ""
+"若由于某种原因，已经将原有DB删除，但用户组并未删除，现需要删除对应用户组，"
+"superuser可以在另外的DB执行以下命令."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:126
+msgid "Remarks"
+msgstr "关闭简单权限模型注意事项."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:128
+msgid "Only super user may disable the SPM"
+msgstr "只能由superuser执行关闭操作"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:129
+msgid "The USAGE and CREATE privilege of PUBLIC schema are granted to PUBLIC."
+msgstr "public schema的USAGE，CREATE权限将对PUBLIC开放."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:130
+msgid "The CONECT and TEMPORARY privilege of DB are granted to PUBLIC."
+msgstr "DB的CONNECT，TEMPORARY权限将对PUBLIC开放。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:131
+msgid "The EXECUTE privilege of functions, procedures is granted to PUBLIC."
+msgstr "functions, procedures的EXECUTE权限将对PUBLIC开放."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:132
+msgid ""
+"The USAGE privilege of language, data types (include domains) is granted to "
+"PUBLIC."
+msgstr "language, data types (include domains)的USAGE权限将对PUBLIC开放."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:133
+msgid ""
+"The privileges of other entities including table, view, materialized view, "
+"table column, sequence, foreign data wrapper, foreign server and "
+"schema（except public schema）are not granted to PUBLIC."
+msgstr ""
+"对于其他对象如table、view、materialized view、table column、sequence、foreign "
+"data wrapper、foreign server、schema（除public schema）等不会有权限开放给"
+"PUBLIC。"
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:134
+msgid "After SPM is disabled:"
+msgstr "关闭之后，用户组的权限如下："
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:135
+msgid ""
+"admin: The granted privileges on the existing entities are kept, but won't be "
+"applied to new entities in the database, going forward."
+msgstr "admin：保留对当前已有对象的权限，但对新建数据库对象不生效."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:137
+msgid ""
+"developer: The granted privileges on the existing entities are kept, but won't "
+"be applied to new entities in the database, going forward."
+msgstr "developer用户组：保留对当前已有对象的权限，但对新建数据库对象不生效."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:139
+msgid ""
+"writer: The granted privileges on the existing entities are kept, but won't be "
+"applied to new entities in the database, going forward."
+msgstr "writer用户组：保留对当前已有对象的权限，但对新建数据库对象不生效."
+
+#: ../../source/security_and_user_management/SPM/use_spm.md:141
+msgid ""
+"viewer: The granted privileges on the existing entities are kept, but won't be "
+"applied to new entities in the database, going forward."
+msgstr "viewer用户组：保留对当前已有对象的权限，但对新建数据库对象不生效."

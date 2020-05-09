@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 17:01+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:1
+msgid "CREATE/DROP PARTITION TABLE"
+msgstr "CREATE/DROP PARTITION TABLE"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:3
+msgid "create partition table"
+msgstr "create partition table"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:5
+msgid "Introduction"
+msgstr "命令介绍"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:7
+msgid "create partition table：create Hologres partition tables."
+msgstr "create partition table：创建分区表"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:9
+msgid "Synopsis"
+msgstr "命令格式"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:25
+msgid "Limitation"
+msgstr "使用限制"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:27
+msgid "Can not insert any data into parent table."
+msgstr "不能向父表插入任何数据。"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:28
+msgid ""
+"Drop the parent table will cascade to also drop the child table (the "
+"partition table)"
+msgstr "DROP父表将默认同时DROP子表。"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:29
+msgid "Partition key column must be of text/varchar/int type."
+msgstr "只有 text/varchar/int 类型才能作为分区键（partition key）。"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:30
+msgid "One partition rule for one partition table."
+msgstr "一个分区规则只能创建一个分区表。"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:31
+msgid ""
+"partition by also supports list, only one value can be used to split the "
+"partition list."
+msgstr "partition by类型仅支持list，切分partition list只能有一个值。"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:32
+msgid "Example"
+msgstr "使用示例"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:48
+msgid "drop partition table"
+msgstr "drop partition table"
+
+#: ../../source/sql_manual/ddl/partitiontable/createpartable.md:50
+msgid "DROP PARTITION TABLE is similar to DROP TABLE."
+msgstr ""
+"删除分区表（DROP PARTITION TABLE）的操作与删除常规表的操作一致，可见drop "
+"table一节。"

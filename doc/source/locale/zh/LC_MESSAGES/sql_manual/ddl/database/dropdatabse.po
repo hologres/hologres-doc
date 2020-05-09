@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 16:53+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+
+#: ../../source/sql_manual/ddl/database/dropdatabse.md:1
+msgid "DROP DATABASE"
+msgstr "DROP DATABASE"
+
+#: ../../source/sql_manual/ddl/database/dropdatabse.md:3
+msgid "Introduction"
+msgstr "命令介绍"
+
+#: ../../source/sql_manual/ddl/database/dropdatabse.md:5
+msgid "DROP DATABASE -- Drop an existing database."
+msgstr "drop database ：删除数据库"
+
+#: ../../source/sql_manual/ddl/database/dropdatabse.md:7
+msgid "Synopsis"
+msgstr "命令格式"
+
+#: ../../source/sql_manual/ddl/database/dropdatabse.md:12
+msgid "Limitation"
+msgstr "使用限制"
+
+#: ../../source/sql_manual/ddl/database/dropdatabse.md:14
+msgid ""
+"It can only be executed by the super user of the database owner which is "
+"assigned by the super user."
+msgstr ""
+"只有该数据库的superuser，或者被superuser设置成该数据库的owner，才能删除该"
+"数据库。"
+
+#: ../../source/sql_manual/ddl/database/dropdatabse.md:15
+msgid "Drop database will remove all the entities of the database."
+msgstr "删除数据库会移除其中包括的所有对象。"
+
+#: ../../source/sql_manual/ddl/database/dropdatabse.md:16
+msgid "The database will be inaccessible after it is dropped."
+msgstr "数据库被删除后将不能再被连接使用。"
+
+#: ../../source/sql_manual/ddl/database/dropdatabse.md:17
+msgid "Example"
+msgstr "使用示例"
+
+#: ../../source/sql_manual/ddl/database/dropdatabse.md:19
+msgid "Drop an existing database."
+msgstr "示例删除一个数据库，执行命令如下："

@@ -4,6 +4,8 @@ DDL
 
 .. toctree::
    
-	database
-	schema
-	table
+	database/index
+	schema/index
+	table/index
+        partitiontable/index
+        cast/index

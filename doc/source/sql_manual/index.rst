@@ -10,3 +10,4 @@
    extension_functions/index
    ddl/index
    dml_and_dql/index
+   other/index

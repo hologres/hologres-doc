@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 16:56+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:1
+msgid "ALTER PARTITON TABLE"
+msgstr "ALTER PARTITON TABLE"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:3
+msgid "Introduction"
+msgstr "命令介绍"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:5
+msgid "alter partition table：alter partition tables."
+msgstr "alter partition table：修改分区表"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:7
+msgid "Synopsis"
+msgstr "命令格式"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:9
+msgid ""
+"Hologres support the following 3 types of command for \"ALTER PARTITION "
+"TABLE\":"
+msgstr "Hologres当前支持以下3种修改分区表："
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:15
+msgid "Parameters"
+msgstr "参数说明"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:17
+msgid ""
+"ATTACH PARTITION new_partition_name FOR VALUES in (<string_literal>)："
+"The shares the same partition_bound_spec as \"CREATE TABLE\". Which use "
+"the existing table (which itself could be a partition table) as a "
+"partition table of the target table."
+msgstr ""
+"ATTACH PARTITION new_partition_name FOR VALUES in (<string_literal>)：这"
+"种形式使用与 CREATE TABLE 相同的partition_bound_spec语法， 将现有的表（可"
+"能本身是分区）作为目标表的分区。说明如下："
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:19
+msgid "Notes:"
+msgstr "说明"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:21
+msgid ""
+"The partition rule should follow the target table's partition rule and "
+"partition key."
+msgstr "分区绑定规范必须对应于目标表的分区策略和分区键。"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:22
+msgid ""
+"The columns of the partition table and target table must be identical: "
+"the same number of columns and the same type."
+msgstr "要绑定的表必须与目标表具有相同的列，而不能多或少；"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:23
+msgid ""
+"Columns also must have the same NOT NULL constraint as the target table. "
+"If adding a column that will not accept NULL values, also add NOT NULL "
+"constraint to the partition key column, unless it's an expression."
+msgstr ""
+"列类型也必须匹配。它必须具有目标表的所有 NOT NULL约束。如果附加一个不接"
+"受 NULL值的列表分区，除非它是一个表达式， 否则向分区键列添加NOT NULL约"
+"束。"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:25
+msgid ""
+"DETACH PARTITION partition_name：  would detach target table's specified "
+"partition. The detached partition will exist as an independent table."
+msgstr ""
+"DETACH PARTITION partition_name：分离目标表的指定分区。分离的分区作为独立"
+"表继续存在，但不再与分离的表相关联。"
+
+#: ../../source/sql_manual/ddl/partitiontable/alterpartable.md:27
+msgid "Example"
+msgstr "使用示例"
