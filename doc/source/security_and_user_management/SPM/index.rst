@@ -3,9 +3,7 @@ Security and User Management
 ##################################
 
 .. toctree::
-   roles_and_privileges
-   postgres_permission_model
-   spm/index.rst
+   introduction
 
    
    

@@ -1,10 +1,10 @@
-# Simple Permission Model Overview
+# Introduction of Simple Permission Model
 
 This section will introduce the simple permission model of Hologres.
 
 # Background
 
-Hologres is compatible with Postgres and uses the same permission system of Postgres . The typical Postgres permission system is very strict. For example, in business scenarios, when business personnel try to authorize a user, he/she need to execute a lot of permission statements. And Different roles have different permissions, which is tedious. And a missing permission statement could cause authorization failure.
+Hologres is compatible with Postgres and uses the same permission system of Postgres. The typical Postgres permission system is very strict. For example, in business scenarios, when business person tries to authorize a user, he/she need to execute a lot of permission statements. And different roles have different permissions, which is tedious. And a missing permission statement could cause authorization failure.
 
 It's hard to ask every user be an expert of the permission system of Postgres. Besides, the misuse of permission management, will not only bring security risk to the business, but also increase the user's management cost.
 

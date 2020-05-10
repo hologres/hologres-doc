@@ -1,13 +1,12 @@
 # COPY From Stdin
 
-Hologres current version supports using copy command to upload data. Users can upload data from stdin  to specific tables.
-<a name="i3cp7"></a>
+Hologres current version supports using copy command to upload data. Users can upload data from stdin to specific tables via psql or JDBC.
 
-# Introduction
-COPY: upload client data from stdin  to a table<br />COPY FROM: copy data from stdin to a table (append data to the table)
-<a name="nNwJr"></a>
-# Synopsis
+
+## Synopsis
+
 Hologres current version supports the following copy command:
+
 ```sql
 COPY table_name [ ( column_name [, ...] ) ]
     FROM STDIN
@@ -24,20 +23,22 @@ COPY table_name [ ( column_name [, ...] ) ]
     FORCE_QUOTE { ( column_name [, ...] ) | * }
     FORCE_NOT_NULL ( column_name [, ...] )
 ```
-<a name="8DSXL"></a>
-# Parameter
-Parameter Descriptions
+
+
+## Parameters
 
 - table_name：table name
 - STDIN ：standard input
 - FORMAT：support text and csv. Default is text.
 - DELIMITER：delimiter between columns. Defalt is tab. For CSV，specify DELIMITER as ','
-<a name="fbYIb"></a>
-# Example
-1.Upload data from stdin
+
+## Example
+
+### 1.Upload data from stdin
+
 ```sql
--- 1.create table
-CREATE  TABLE copy_test (
+-- 1. create table
+CREATE TABLE copy_test (
   id    int,
   age   int,
   name  text
@@ -51,12 +52,12 @@ COPY copy_test from stdin WITH DELIMITER AS ',' NULL AS '';
 55444,38,luyong
 \.
 
---query data
-select * from  copy_test;
+--3. query data
+select * from copy_test;
 ```
-<br />
 
-2. Upload data from stdin to CSV
+### 2. Upload data from stdin to CSV
+
 ```sql
 -- 1. create table
 create table partsupp ( ps_partkey          integer not null,
@@ -71,10 +72,13 @@ copy partsupp from stdin with delimiter '|' csv;
 1|25002|8076|993.49|ven ideas
 \.
 
---3.query data
+--3. query data
+
 select * from  partsupp;
 ```
-3.Update client file using CopyManager
+
+### 3. Update client file using CopyManager
+
 ```sql
 package com.aliyun.hologram.test.jdbc;
 
@@ -97,22 +101,15 @@ public class jdbcCopyFile {
 		Class.forName("org.postgresql.Driver");
 		String url = "jdbc:postgresql://11.163.188.167:12692/postgres";
 		Properties props = new Properties();
-    //set db user
+		//set db user
 		props.setProperty("user", "AAA");
-    //set db password
+		//set db password
 		props.setProperty("password", "BBB");
 		return DriverManager.getConnection(url, props);
 	}
 
 	/**
-	 * 导入文件到数据库
-	 * 
-	 * @param connection
-	 * @param filePath
-	 * @param tableName
-	 * @return
-	 * @throws SQLException
-	 * @throws IOException
+	 * Copy data to file.
 	 */
 	public static long copyFromFile(Connection connection, String filePath, String tableName)
 			throws SQLException, IOException {
