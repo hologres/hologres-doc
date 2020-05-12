@@ -4,7 +4,9 @@ Contribute
 
 .. toctree::
 	code
-	doc  
+	doc
+	formatting
+	commit
 
    
    

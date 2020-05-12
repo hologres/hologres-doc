@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 11:48-0700\n"
+"POT-Creation-Date: 2020-05-11 20:50-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../source/contribute/doc.md:1
-msgid "Contribute to Documentation"
+msgid "Contribute to and Deploy Documentation"
 msgstr ""
 
 #: ../../source/contribute/doc.md:3
@@ -40,15 +40,22 @@ msgstr ""
 
 #: ../../source/contribute/doc.md:9
 msgid "fork a repo"
-msgstr "[fork a repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)"
+msgstr ""
+"[fork a repo](https://help.github.com/en/github/getting-started-with-"
+"github/fork-a-repo)"
 
 #: ../../source/contribute/doc.md:10
 msgid "configure a remote for a fork"
-msgstr "[configure a remote for a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork)"
+msgstr ""
+"[configure a remote for a fork](https://help.github.com/en/github"
+"/collaborating-with-issues-and-pull-requests/configuring-a-remote-"
+"for-a-fork)"
 
 #: ../../source/contribute/doc.md:11
 msgid "sync a fort"
-msgstr "[sync a fort](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)"
+msgstr ""
+"[sync a fort](https://help.github.com/en/github/collaborating-with-"
+"issues-and-pull-requests/syncing-a-fork)"
 
 #: ../../source/contribute/doc.md:13
 msgid "Build Documentation Locally"
@@ -173,7 +180,7 @@ msgstr ""
 
 #: ../../source/contribute/doc.md:84
 msgid ""
-"AS noted above, these are located in the ./locale/<lang>/LC_MESSAGES "
+"As noted above, these are located in the ./locale/<lang>/LC_MESSAGES "
 "directory."
 msgstr ""
 
@@ -228,143 +235,14 @@ msgid "The build page can be found here."
 msgstr ""
 
 #: ../../source/contribute/doc.md:123
-msgid "Formatting Rules"
-msgstr ""
-
-#: ../../source/contribute/doc.md:125
-msgid "Hologres documentation are written in markdown format."
-msgstr ""
-
-#: ../../source/contribute/doc.md:127
-msgid "Page and Section Tiles"
-msgstr ""
-
-#: ../../source/contribute/doc.md:129
-msgid "Title of each markdown file or page should use '#' as heading."
-msgstr ""
-
-#: ../../source/contribute/doc.md:131
-msgid "Subtitles of sections inside should then use '##', '###', etc."
-msgstr ""
-
-#: ../../source/contribute/doc.md:133
-msgid "Images"
-msgstr ""
-
-#: ../../source/contribute/doc.md:135
-msgid ""
-"Images in markdown files should be placed in the directory of /image, and"
-" the directory should reflect the same document structure of the markdown"
-" files."
-msgstr ""
-
-#: ../../source/contribute/doc.md:137
-msgid ""
-"E.g. images of page /doc/source/introduction/concepts.md should be placed"
-" in directory /doc/source/images/introduction/."
-msgstr ""
-
-#: ../../source/contribute/doc.md:139
-msgid "Tables"
-msgstr ""
-
-#: ../../source/contribute/doc.md:141
-msgid "Markdown doesn't support tables natively. To author tables like:"
-msgstr ""
-
-#: ../../source/contribute/doc.md:162
-msgid ""
-"you have to install the sphinx-makrdown-tables as mentioned in pre-"
-"requisites above, and author in the following format:"
-msgstr ""
-
-#: ../../source/contribute/doc.md:171
-msgid "Cross-Reference Another File"
-msgstr ""
-
-#: ../../source/contribute/doc.md:173
-msgid ""
-"You can cross reference another markdown file in the same repository by "
-"using the absolute path in the root directory of /source."
-msgstr ""
-
-#: ../../source/contribute/doc.md:175
-msgid ""
-"E.g. say we have two files in /doc/source/dir1/doc1.md and "
-"/doc/source/dir2/doc2.md. To reference doc1.md in doc2.md, author:"
-msgstr ""
-
-#: ../../source/contribute/doc.md:182
-msgid "Hyperlinks"
-msgstr ""
-
-#: ../../source/contribute/doc.md:184
-msgid "Special Attention here!"
-msgstr ""
-
-#: ../../source/contribute/doc.md:186
-msgid ""
-"Hyperlinks will not be generated automatically in your translation. To "
-"keep the hyperlink in translated sentences, you have to put the hyperlink"
-" again in the translation."
-msgstr ""
-
-#: ../../source/contribute/doc.md:188
-msgid "Here's an example. Say you have hyperlink in the English page, like"
-msgstr ""
-
-#: ../../source/contribute/doc.md:194
-msgid "Then in your translation's .po file, you have to do:"
-msgstr ""
-
-#: ../../source/contribute/doc.md:203
-msgid "Punctuations"
-msgstr ""
-
-#: ../../source/contribute/doc.md:205
-msgid "DO NOT forget to put the correct punctuations in your translations!"
-msgstr ""
-
-#: ../../source/contribute/doc.md:207
-msgid ""
-"If the original sentense ends with a English period ., translators should"
-" end their translated sentense with a Chinese period 。. E.g."
-msgstr ""
-
-#: ../../source/contribute/doc.md:216
-msgid "Committing Rules"
-msgstr ""
-
-#: ../../source/contribute/doc.md:218
-msgid "Each commit"
-msgstr ""
-
-#: ../../source/contribute/doc.md:220
-msgid ""
-"must be submitted in a Pull Request (PR) first, reviewed by a community "
-"trusted member, then merge via the PR. No commit can be pushed to "
-"repository directly by the ones who have commit priviledge."
-msgstr ""
-
-#: ../../source/contribute/doc.md:222
-msgid ""
-"must have both the English and Chinese changes to keep our multi-language"
-" documentations in sync."
-msgstr ""
-
-#: ../../source/contribute/doc.md:224
-msgid "The only exception is for initial documentation migration commits."
-msgstr ""
-
-#: ../../source/contribute/doc.md:226
 msgid "Theme"
 msgstr ""
 
-#: ../../source/contribute/doc.md:228
+#: ../../source/contribute/doc.md:125
 msgid "We use ReadTheDoc's native theme, sphinx_rtd_theme."
 msgstr ""
 
-#: ../../source/contribute/doc.md:230
+#: ../../source/contribute/doc.md:127
 msgid "Installation and configuration of the theme can be found here."
 msgstr ""
 
@@ -438,5 +316,132 @@ msgstr ""
 #~ "/doc/source/introduction/concepts.md should be "
 #~ "placed in directory "
 #~ "/doc/source/images/introduction/."
+#~ msgstr ""
+
+#~ msgid "Contribute to Documentation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "AS noted above, these are located "
+#~ "in the ./locale/<lang>/LC_MESSAGES directory."
+#~ msgstr ""
+
+#~ msgid "Formatting Rules"
+#~ msgstr ""
+
+#~ msgid "Hologres documentation are written in markdown format."
+#~ msgstr ""
+
+#~ msgid "Page and Section Tiles"
+#~ msgstr ""
+
+#~ msgid "Title of each markdown file or page should use '#' as heading."
+#~ msgstr ""
+
+#~ msgid "Subtitles of sections inside should then use '##', '###', etc."
+#~ msgstr ""
+
+#~ msgid "Images"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Images in markdown files should be "
+#~ "placed in the directory of /image, "
+#~ "and the directory should reflect the "
+#~ "same document structure of the markdown"
+#~ " files."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "E.g. images of page "
+#~ "/doc/source/introduction/concepts.md should be "
+#~ "placed in directory "
+#~ "/doc/source/images/introduction/."
+#~ msgstr ""
+
+#~ msgid "Tables"
+#~ msgstr ""
+
+#~ msgid "Markdown doesn't support tables natively. To author tables like:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "you have to install the sphinx-"
+#~ "makrdown-tables as mentioned in pre-"
+#~ "requisites above, and author in the "
+#~ "following format:"
+#~ msgstr ""
+
+#~ msgid "Cross-Reference Another File"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can cross reference another markdown"
+#~ " file in the same repository by "
+#~ "using the absolute path in the "
+#~ "root directory of /source."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "E.g. say we have two files in "
+#~ "/doc/source/dir1/doc1.md and /doc/source/dir2/doc2.md. "
+#~ "To reference doc1.md in doc2.md, author:"
+#~ msgstr ""
+
+#~ msgid "Hyperlinks"
+#~ msgstr ""
+
+#~ msgid "Special Attention here!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Hyperlinks will not be generated "
+#~ "automatically in your translation. To "
+#~ "keep the hyperlink in translated "
+#~ "sentences, you have to put the "
+#~ "hyperlink again in the translation."
+#~ msgstr ""
+
+#~ msgid "Here's an example. Say you have hyperlink in the English page, like"
+#~ msgstr ""
+
+#~ msgid "Then in your translation's .po file, you have to do:"
+#~ msgstr ""
+
+#~ msgid "Punctuations"
+#~ msgstr ""
+
+#~ msgid "DO NOT forget to put the correct punctuations in your translations!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If the original sentense ends with "
+#~ "a English period ., translators should"
+#~ " end their translated sentense with a"
+#~ " Chinese period 。. E.g."
+#~ msgstr ""
+
+#~ msgid "Committing Rules"
+#~ msgstr ""
+
+#~ msgid "Each commit"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "must be submitted in a Pull "
+#~ "Request (PR) first, reviewed by a "
+#~ "community trusted member, then merge via"
+#~ " the PR. No commit can be "
+#~ "pushed to repository directly by the "
+#~ "ones who have commit priviledge."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "must have both the English and "
+#~ "Chinese changes to keep our multi-"
+#~ "language documentations in sync."
+#~ msgstr ""
+
+#~ msgid "The only exception is for initial documentation migration commits."
 #~ msgstr ""
 

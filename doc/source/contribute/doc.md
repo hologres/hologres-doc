@@ -1,4 +1,4 @@
-# Contribute to Documentation 
+# Contribute to and Deploy Documentation 
 
 ## Pre-requisite: Fork the repository and downdload
 
@@ -82,7 +82,7 @@ Note! For deleted or renamed Markdown files, their corresponding original .po fi
 
 ### Step 3: Translate .po Files
 
-AS noted above, these are located in the ./locale/<lang>/LC_MESSAGES directory.
+As noted above, these are located in the `./locale/<lang>/LC_MESSAGES` directory.
 
 An example of one such file, from Sphinx, builders.po, is given below.
 
@@ -120,102 +120,6 @@ Submit Pull Requests to the original repository (from which you forked) by follo
 Once any changes are committed in Github, Github will notify readthedoc via webhook, and trigger build process. If it builds successfully, documentations will automatically be deployed; otherwise, it fails and waits to be fixed.
 
 The build page can be found [here](https://readthedocs.org/projects/hologres/).
-
-
-## Formatting Rules
-
-Hologres documentation are written in markdown format.
-
-### Page and Section Tiles
-
-Title of each markdown file or page should use '#' as heading. 
-
-Subtitles of sections inside should then use '##', '###', etc.
-
-### Images
-
-Images in markdown files should be placed in the directory of `/image`, and the directory should reflect the same document structure of the markdown files. 
-
-E.g. images of page `/doc/source/introduction/concepts.md` should be placed in directory `/doc/source/images/introduction/`.
-
-### Tables
-
-Markdown doesn't support tables natively. To author tables like:
-
-| A | B |
-|---|---|
-| 1 | 3 |
-| 2 | 4 |
-
-you have to install the `sphinx-makrdown-tables` as mentioned in pre-requisites above, and author in the following format:
-
-```
-| A | B |
-|---|---|
-| 1 | 3 |
-| 2 | 4 |
-```
-
-
-
-### Cross-Reference Another File
-
-You can cross reference another markdown file in the same repository by using the absolute path in the root directory of `/source`.
-
-E.g. say we have two files in `/doc/source/dir1/doc1.md` and `/doc/source/dir2/doc2.md`. To reference `doc1.md` in `doc2.md`, author:
-
-```
-// doc2.md
-Please reference more info [here](/dir1/doc1.md).
-```
-
-### Hyperlinks
-
-Special Attention here!
-
-Hyperlinks will not be generated automatically in your translation. To keep the hyperlink in translated sentences, you have to put the hyperlink again in the translation.
-
-Here's an example. Say you have hyperlink in the English page, like 
-
-```
-Click [here](http://....) to see more.
-```
-
-Then in your translation's .po file, you have to do:
-
-```
-#: ../../source/xxx/mytranslation.md:
-msgid "Click here to see more."
-msgstr "请到[这里](http://....)查看更多信息。"
-
-```
-
-### Punctuations
-
-DO NOT forget to put the correct punctuations in your translations!
-
-If the original sentense ends with a English period `.`, translators should end their translated sentense with a Chinese period `。`. E.g.
-
-
-```
-#: ../../source/xxx/mytranslation.md:
-msgid "Thanks."
-msgstr "谢谢。"  <- note the '。' here
-
-```
-
-
-
-## Committing Rules
-
-Each commit 
-
-- must be submitted in a Pull Request (PR) first, reviewed by a community trusted member, then merge via the PR. No commit can be pushed to repository directly by the ones who have commit priviledge.
-
-- must have both the English and Chinese changes to keep our multi-language documentations in sync.
-
-The only exception is for initial documentation migration commits.
-
 
 ## Theme
 

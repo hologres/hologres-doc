@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-11 20:50-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/contribute/commit.md:1
+msgid "Commit Rules"
+msgstr ""
+
+#: ../../source/contribute/commit.md:3
+msgid "Commit Rules apply to both code and documentation."
+msgstr ""
+
+#: ../../source/contribute/commit.md:5
+msgid ""
+"Each commit must be submitted in a Pull Request (PR) first, reviewed by a"
+" community trusted member, then merge via the PR. No commit can be pushed"
+" to repository directly by the ones who have commit priviledge."
+msgstr ""
+
+#: ../../source/contribute/commit.md:7
+msgid "The only exception is for initial documentation migration commits."
+msgstr ""
+
