@@ -1,15 +1,15 @@
 # Connect to Hologres
 
-
 ## psql
 
 ## JDBC
 
-<br />Hologres offer JDBC/ODBC Driver,that means you can use  JDBC to connect Hologres,steps are as floowing:
-<a name="ZN0It"></a>
+Hologres offer JDBC/ODBC Driver,that means you can use  JDBC to connect Hologres,steps are as floowing:
 
-### Step 1:mvn
-Download PostgreSQL JDBC Driver 42.xxx, and configurate mvn.
+### Step 1: **Add dependency via MVN** 
+
+Download PostgreSQL JDBC Driver 42.xxx, and configurate dependency in MVN.
+
 ```
 <dependencies>
         <dependency>
@@ -18,12 +18,11 @@ Download PostgreSQL JDBC Driver 42.xxx, and configurate mvn.
             <version>42.2.8.jre6</version> 
                                              
         </dependency>
-    </dependencies>
+ </dependencies>
 ```
 
+### step2: Connect Hologres
 
-<a name="U3ms8"></a>
-### step2:Connect Hologres
 ```java
 public class HologresTest {
 
@@ -37,3 +36,4 @@ public class HologresTest {
     }
 }
 ```
+

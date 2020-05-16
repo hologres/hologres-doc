@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 14:43+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+"Language: zh\n"
+
+#: ../../source/data_read_and_unload/oss.md:1
+msgid "Dump Euery Results to OSS"
+msgstr "使用SQL命令导出至OSS"
+
+#: ../../source/data_read_and_unload/oss.md:3
+msgid ""
+"Object Storage Service (OSS) is massive, safe, low-cost, and reliable "
+"cloud storage service. Hologres supports dumping query results to OSS "
+"via interactive commands."
+msgstr ""
+"对象存储服务（Object Storage Service，简称 OSS），是一款提供的海量、安"
+"全、低成本、高可靠的云存储服务。交互式分析（Hologres）支持通过以命令语句"
+"的方式将查询的数据导出到指定的OSS。"
+
+#: ../../source/data_read_and_unload/oss.md:5
+msgid "Introduction"
+msgstr "命令介绍"
+
+#: ../../source/data_read_and_unload/oss.md:7
+msgid "Dump to OSS - dump Hologres query result to specific OSS."
+msgstr "dump to oss：把在Hologres中查询的结果dump到指定的oss。"
+
+#: ../../source/data_read_and_unload/oss.md:8
+msgid "Synopsis"
+msgstr "命令格式"
+
+#: ../../source/data_read_and_unload/oss.md:10
+msgid "dump to OSS command follows  the following format:"
+msgstr "在交互式分析中dump to oss的命令格式如下："
+
+#: ../../source/data_read_and_unload/oss.md:14
+msgid "Parameters"
+msgstr "参数说明"
+
+#: ../../source/data_read_and_unload/oss.md:68
+msgid "Limitation"
+msgstr "使用限制"
+
+#: ../../source/data_read_and_unload/oss.md:70
+msgid ""
+"Only Hologres superuser or users having pg_execute_server_program "
+"privilege can execute dump to OSS command. A superuser may grant "
+"pg_execute_server_program privilege to other users, as follows:"
+msgstr ""
+"只有是当前Hologres实例的superuser或者具备pg_execute_server_program权限的"
+"用户，才能使用dump to oss功能。superuser可以为其他账号授权，使其成为"
+"pg_execute_server_program，授权如下："
+
+#: ../../source/data_read_and_unload/oss.md:75
+msgid "Examples"
+msgstr "使用示例"
+
+#: ../../source/data_read_and_unload/oss.md:77
+msgid "The following are some examples of the usage of dump to OSS:"
+msgstr "在Hologres中dump to oss的使用示例如下："
+
+#: ../../source/data_read_and_unload/oss.md:85
+msgid "Common errors and solutions"
+msgstr "常见问题"
+
+#: ../../source/data_read_and_unload/oss.md:87
+msgid ""
+"ERROR:  syntax error at or near \")\" LINE 1: COPY (select 1,2,3 from ) "
+"TO PROGRAM 'hg_dump_to_oss2 --Acce..."
+msgstr ""
+"报错:  syntax error at or near “)” LINE 1: COPY (select 1,2,3 from ) TO "
+"PROGRAM ‘hg_dump_to_oss2 —Acce。"
+
+#: ../../source/data_read_and_unload/oss.md:89
+msgid "Query syntax problem. Check input query."
+msgstr "输入的query有问题，请检查query。"
+
+#: ../../source/data_read_and_unload/oss.md:91
+msgid "DETAIL:  child process exited with exit code 255"
+msgstr "报错:  child process exited with exit code 255"
+
+#: ../../source/data_read_and_unload/oss.md:93
+msgid "wrong OSS network type"
+msgstr "oss的网络类型选择错误"
+
+#: ../../source/data_read_and_unload/oss.md:95
+msgid "DETAIL:  command not found"
+msgstr "报错:  command not found"
+
+#: ../../source/data_read_and_unload/oss.md:101
+msgid ""
+"ERROR:  program \"hg_dump_to_oss ...” failed，DETAIL:  child process "
+"exited with exit code 101"
+msgstr ""
+"报错:  program “hg_dump_to_oss …” failed，DETAIL:  child process exited "
+"with exit code 101"
+
+#: ../../source/data_read_and_unload/oss.md:103
+msgid "Input AccessKeyId is invalid. Check OSS account."
+msgstr "输入的AccessKeyId不合法。"
+
+#: ../../source/data_read_and_unload/oss.md:105
+msgid ""
+"ERROR:  program \"hg_dump_to_oss ...” failed，DETAIL:  child process "
+"exited with exit code 102"
+msgstr ""
+"报错  program “hg_dump_to_oss …” failed，DETAIL:  child process exited "
+"with exit code 102"
+
+#: ../../source/data_read_and_unload/oss.md:107
+msgid "input AccessKeySecret is invalid. Check OSS account."
+msgstr "输入的AccessKeySecret不合法。"
+
+#: ../../source/data_read_and_unload/oss.md:109
+msgid ""
+"ERROR:  program \"hg_dump_to_oss ...” failed，DETAIL:  child process "
+"exited with exit code 103"
+msgstr ""
+"报错:  program “hg_dump_to_oss …” failed，DETAIL:  child process exited "
+"with exit code 103"
+
+#: ../../source/data_read_and_unload/oss.md:111
+msgid "Input Endpoint is invalid. Verify corresponding OSS host."
+msgstr "输入的BucketName不合法，请确认bucket name。"
+
+#: ../../source/data_read_and_unload/oss.md:113
+msgid ""
+"ERROR:  program \"hg_dump_to_oss ...” failed，DETAIL:  child process "
+"exited with exit code 104"
+msgstr ""
+"报错:  program “hg_dump_to_oss …” failed，DETAIL:  child process exited "
+"with exit code 104"
+
+#: ../../source/data_read_and_unload/oss.md:115
+msgid "Input BucketName is invalid. Verify bucket name."
+msgstr "输入的BucketName不合法，请确认bucket name。"
+
+#: ../../source/data_read_and_unload/oss.md:117
+msgid ""
+"ERROR:  program \"hg_dump_to_oss ...\" failed，DETAIL:  child process "
+"exited with exit code 105"
+msgstr ""
+"报错:  program “hg_dump_to_oss …” failed，DETAIL:  child process exited "
+"with exit code 105"
+
+#: ../../source/data_read_and_unload/oss.md:121
+msgid "Data to dump cannot pass 5G in size."
+msgstr "单次上传不能超过5G。"
+
+#: ../../source/data_read_and_unload/oss.md:123
+msgid ""
+"ERROR:  program \"hg_dump_to_oss ...” failed，DETAIL:  child process "
+"exited with exit code 255"
+msgstr ""
+"报错:  program “hg_dump_to_oss …” failed，DETAIL:  child process exited "
+"with exit code 255"
+
+#: ../../source/data_read_and_unload/oss.md:125
+msgid ""
+"Usually the connection between Holo Server and the specified OSS cannot "
+"be established. Try switch OSS domain name (as in classic network)."
+msgstr ""
+"一般是holo server和指定的oss网络不通，可以更换oss域名(比如经典网络)"

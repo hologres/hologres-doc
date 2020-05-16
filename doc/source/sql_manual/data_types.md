@@ -1,9 +1,9 @@
 # Data Types
 
-<br />Hologres is compatible with PostgresSQL in data types. Currently Hologres supports a subset of data types defined in PostgresSQL. <br />
+Hologres is compatible with PostgresSQL in data types. Currently Hologres supports a subset of data types defined in PostgresSQL. 
 
-<a name="cgDvm"></a>
-# Data Types
+## Data Types
+
 The following table lists all supported types:
 
 | Name                     | Alias       | Supported | Length in bytes | Value range                                                  | Description                                                  |
@@ -13,19 +13,20 @@ The following table lists all supported types:
 | boolean                  | bool        | Yes       | 1               | True / False                                                 | logical boolean                                              |
 | real                     | float4      | Yes       | 4               | 6 decimal digits precision                                   | single precision floating-point number                       |
 | double precision         | float8      | Yes       | 8               | 15 decimal digits precision                                  | double precision floating-point number                       |
-| text                     | varchar     | Yes       | variable        |                                                              | variable length character string                             |
+| text                     | varchar     | Yes       | variable        | -                                                            | variable length character string                             |
 | timestamp with time zone | timestamptz | Yes       | 8               | 4713 BC to 294276 AD                                         | date and time, including timezone, e.g '2004-10-19 10:23:54+02' |
 | decimal                  | numeric     | Yes       | variable        | up to 38 digits before decimal point; up to 38 digits after the decimal point | exact numeric with selected precision                        |
 
 
-<br />For timestamp with time zone type, SQL standard using the number after symbol '+' or '-' as time zone shift. If no time zone is provided, a default one is used.
-> Note: Defference between Hologres and PostgresSQL for decimal type:
+For timestamp with time zone type, SQL standard using the number after symbol '+' or '-' as time zone shift. If no time zone is provided, a default one is used.
+
+_**Note**_: Defference between Hologres and PostgresSQL for decimal type:
 
 - Hologres supports precision from 0 to38, scale from 0 toprecision
 - decimal type muse provide precision and scale, no default value
 
 
-<br />Below is an example for timestamptz, date and decimal:<br />
+Below is an example for timestamptz, date and decimal:
 
 ```sql
 CREATE TABLE test_data_type (
@@ -40,9 +41,8 @@ VALUES ('2004-10-19 08:08:08', '2004-10-19', 123.456);
 SELECT * FROM test_data_type;
 ```
 
+## Array Types
 
-<a name="m9YwN"></a>
-# Array Types
 Hologres currently only support one dimensional array types  listed below: 
 
 - int4[]
@@ -52,10 +52,7 @@ Hologres currently only support one dimensional array types  listed below:
 - boolean[]
 - text[]
 
-
-
-<a name="wHHUV"></a>
-#### Declaration of array types
+### Declaration of array types
 
 
 ```sql
@@ -68,10 +65,9 @@ boolean_array boolean[],
 text_array text[]);
 ```
 
+### Array value input
 
-<a name="4PCCK"></a>
-#### Array value input
-using ARRAY keyword<br />
+using ARRAY keyword
 
 ```sql
 insert into array_example(
@@ -89,7 +85,8 @@ ARRAY[true, true, false],
 ARRAY['foo1', 'foo2', 'foo3']);
 ```
 
-<br />using {} expression
+using {} expression
+
 ```sql
 insert into array_example(
 int4_array,
@@ -106,16 +103,15 @@ values ('{1, 2, 3, 4}',
 '{"foo1", "foo2", "foo3"}');
 ```
 
+### Accessing Arrays
 
-<a name="ZcbSL"></a>
-#### Accessing Arrays
-access single element of an array<br />
+access single element of an array
 
 ```sql
 SELECT int4_array[3] FROM array_example;
 ```
 
-<br />access a slice of an array
+access a slice of an array
 ```sql
 SELECT int4_array[1:2] FROM array_example;
 ```

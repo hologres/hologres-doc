@@ -1,9 +1,10 @@
 # SET_TABLE_PROPERTY
 
-# Introduction
+## Introduction
+
 set_table_property: Set the table properties includes index, distribution keys, columnar/row store, TTL ...
-<a name="GfrrN"></a>
-# Synopsis
+## Synopsis
+
 ```sql
 CALL SET_TABLE_PROPERTY ( table_name, property, value )
 
@@ -16,12 +17,30 @@ where property in
   time_to_live_in_seconds
   distribution_key
 ```
-<a name="LhwbM"></a>
-# Parameters
-_**table_name:**_ The name of the new table which could belongs to some schema. The names can contain only alphanumeric characters or an underscore(_). The first character must be an alphabetic character. All alphabetic characters are treated as lower case because the table name is case insensitive.<br />**<br />**_property：_**property name<br />**orientation**，Indicates columnar or row store. Should be specified in the same transaction of creating table. <br />_**clustering_key：**_Creating clustering index on specified columns. Should be specified in the same transaction of creating table. <br />_**segment_key: **_Segment key is used to split the data into files. Specifying a column(Ex: event_time) as segment key could benefit the queries which has a where clause on the segment key. Should be specified in the same transaction of creating table. <br />_**bitmap_columns：**_Create bitmap index on specified columns. It benefits the filtering on the columns on which have it. Can be a stand alone command.<br />_**dictionary_encoding_columns:**_** **Create a mapping dictionary for specified columns. It benefits filtering comparison, aggregation, joins. Can be a stand alone command.<br />_**distribution_key：**_Declares the distribution policy. Should be specified in the same transaction of creating table. <br />_**time_to_live_in_seconds：**_Indicates the data expiration period. The precision is one second. It must be a non-negative integer or float number. Can be a stand alone command.<br />_**value：**_Property value. Use double quotes(") to enclose it if it contains column names in which has upper case alphabetic characters.<br />
+## Parameters
 
-<a name="7i66b"></a>
-# Example
+_**table_name:**_ The name of the new table which could belongs to some schema. The names can contain only alphanumeric characters or an underscore(_). The first character must be an alphabetic character. All alphabetic characters are treated as lower case because the table name is case insensitive._
+
+_**property**_ : property name.
+
+_**orientation**_:Indicates columnar or row store. Should be specified in the same transaction of creating table. 
+
+_**clustering_key**_ :Creating clustering index on specified columns. Should be specified in the same transaction of creating table. 
+
+_**segment_key**_ :Segment key is used to split the data into files. Specifying a column(Ex: event_time) as segment key could benefit the queries which has a where clause on the segment key. Should be specified in the same transaction of creating table. 
+
+_**bitmap_columns**_ : Create bitmap index on specified columns. It benefits the filtering on the columns on which have it. Can be a stand alone command.
+
+_**dictionary_encoding_columns:**_Create a mapping dictionary for specified columns. It benefits filtering comparison, aggregation, joins. Can be a stand alone command.
+
+_**distribution_key**_ :Declares the distribution policy. Should be specified in the same transaction of creating table. 
+
+_**time_to_live_in_seconds**_ : Indicates the data expiration period. The precision is one second. It must be a non-negative integer or float number. Can be a stand alone command.
+
+_**value**_ : Property value. Use double quotes(") to enclose it if it contains column names in which has upper case alphabetic characters.
+
+## Example
+
 ```sql
 BEGIN;
 CREATE TABLE ORDERS ( 

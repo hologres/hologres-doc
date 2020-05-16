@@ -3,21 +3,955 @@
 # This file is distributed under the same license as the Hologres package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Hologres \n"
+"Project-Id-Version: Hologres\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-12 12:45-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 18:16+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../source/sql_manual/dml_and_dql/select.md:1
 msgid "Select"
-msgstr ""
+msgstr "Select"
 
+#: ../../source/sql_manual/dml_and_dql/select.md:3
+msgid "Introduction"
+msgstr "命令介绍"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:5
+msgid "SELECT: Retrieve data from zero or more tables."
+msgstr "SELECT：从零或更多表中查询数据。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:7
+msgid "Synopsis"
+msgstr "命令格式"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:22
+msgid "grouping_element can be:"
+msgstr "grouping_element包含"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:28
+msgid "from_item can be:"
+msgstr "from_item包含"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:37
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:39
+msgid ""
+"SELECT retrieves rows from zero or more tables. The general processing of "
+"SELECT is as follows:"
+msgstr "SELECT从零或更多表中检索行。 SELECT的通常处理如下："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:41
+msgid ""
+"All elements in the FROM list are computed. (Each element in the FROM list is a "
+"real or virtual table.) If more than one element is specified in the FROM list, "
+"they are cross-joined together."
+msgstr ""
+"FROM列表中的所有元素都会被计算（ FROM中的每一个元素都是一个真实表或者虚拟表）。"
+"如果在FROM列表中指定了多于一个元素，它们会被交叉连接在一起。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:42
+msgid ""
+"If the WHERE clause is specified, all rows that do not satisfy the condition "
+"are eliminated from the output."
+msgstr "如果指定了WHERE子句，所有不满足该条件的行都会被从输出中消除。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:43
+msgid ""
+"If the GROUP BY clause is specified, or if there are aggregate function calls, "
+"the output is combined into groups of rows that match on one or more values, "
+"and the results of aggregate functions are computed. If the HAVING clause is "
+"present, it eliminates groups that do not satisfy the given condition."
+msgstr ""
+"如果指定了GROUP BY子句或者如果有聚集函数，输出会被组合成由在一个或者多个值上匹配"
+"的行构成的分组，并且在其上计算聚 集函数的结果。如果出现了HAVING子句，它会消除不"
+"满足给定条件的分组。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:44
+msgid ""
+"The actual output rows are computed using the SELECT output expressions for "
+"each selected row or row group."
+msgstr "对于每一个被选中的行或者行组，会使用SELECT 输出表达式计算实际的输出行。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:45
+msgid ""
+"SELECT DISTINCT eliminates duplicate rows from the result. SELECT DISTINCT ON "
+"eliminates rows that match on all the specified expressions. SELECT ALL (the "
+"default) will return all candidate rows, including duplicates."
+msgstr ""
+"SELECT DISTINCT从结果中消除重复的行。 SELECT DISTINCT ON消除在所有指定表达式上"
+"匹 配的行。SELECT ALL（默认）将返回所有候选行， 包括重复的行。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:46
+msgid ""
+"Using the operators UNION, INTERSECT, and EXCEPT, the output of more than one "
+"SELECT statement can be combined to form a single result set. The UNION "
+"operator returns all rows that are in one or both of the result sets. The "
+"INTERSECT operator returns all rows that are strictly in both result sets. The "
+"EXCEPT operator returns the rows that are in the first result set but not in "
+"the second. In all three cases, duplicate rows are eliminated unless ALL is "
+"specified. The noise word DISTINCT can be added to explicitly specify "
+"eliminating duplicate rows. Notice that DISTINCT is the default behavior here, "
+"even though ALL is the default for SELECT itself."
+msgstr ""
+"通过使用操作符UNION、 INTERSECT和EXCEPT，多于一个SELECT语句的输出可以被整合形成 "
+"一个结果集。UNION操作符返回位于一个或者两个结果集中的全部行。INTERSECT操作符返回"
+"同时位于两个结果集中的所有行。EXCEPT操作符返回位于第一个结果集但不在第二个结果集"
+"中的行。在所有三种情况下， 重复行都会被消除（除非指定ALL）。可以增加DISTINCT来显"
+"式地消除重复行。注意虽然 ALL是SELECT自身的默认行为,但这里DISTINCT是默认行为。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:47
+msgid ""
+"If the ORDER BY clause is specified, the returned rows are sorted in the "
+"specified order. If ORDER BY is not given, the rows are returned in whatever "
+"order the system finds fastest to produce."
+msgstr ""
+"如果指定了ORDER BY子句，被返回的行会以指定的 顺序排序。如果没有给定ORDER BY，系"
+"统会以能最快产生行的顺序返回它们。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:48
+msgid ""
+"If the LIMIT (or FETCH FIRST) or OFFSET clause is specified, the SELECT "
+"statement only returns a subset of the result rows."
+msgstr ""
+"如果指定了LIMIT（或FETCH FIRST） 或者OFFSET子句，SELECT 语句只返回结果行的一个子"
+"集。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:49
+msgid "Parameters"
+msgstr "参数说明"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:51
+msgid "WITH List"
+msgstr "WITH列表"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:53
+msgid ""
+"The WITH list is placed before SELECT or acting as subquery of SELECT "
+"statement. Usually placed before SELECT, it defines subqueries, gives "
+"subqueries names and columns needed, and defines every WITH statement as a CTE "
+"(Common Table Expression):"
+msgstr ""
+"with列表是位于SELECT之前或者作为SELECT子句的subquery存在，通常位于SELECT之前，用"
+"于定义子查询，并给这些子查询声明一个名字和返回的列名，定义每一个with子句为一个"
+"CTE（Common Table Expression），定义语法如下："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:59
+msgid ""
+"with_query_name specifies the name of current CTE. The name can be any valid "
+"identifier."
+msgstr "with_query_name指定当前CTE的名字，可以是任意有效的标识符。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:61
+msgid ""
+"column_name list specifies the return columns of subquery, just like the AS "
+"clause in SELECT statement. Subquery can be a normal SELECT query."
+msgstr ""
+"column_name列表对应着子查询返回值的列名，类似于SELECT子句中的AS的语义，子查询可"
+"以是一个常规的SELECT查询。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:63
+msgid ""
+"CTEs are separated by comma. CTEs can reference CTEs defined before them, but "
+"recursive self-references are currently not supported."
+msgstr ""
+"CTE之间通过逗号分隔，后面出现的CTE定义可以引用前面定义的CTE，但是目前暂时不支持"
+"递归的CTE调用。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:65
+msgid ""
+"Once defined, in queries thereafter, with_query_name can be directly treated as "
+"a view in queries. If column_name list is not specified, column_name list is "
+"set to the returning columns from subquery; If column_name list is specified, "
+"column_name list will be used and the column count must match the returning "
+"column count from select statement."
+msgstr ""
+"在之后的查询中，可以直接将with_query_name作为一个视图（view）出现在查询中，如果"
+"没有指定column_name列表，该view的column_name为对应子查询返回列的列名，如果指定"
+"column_name列表，则需要使用定义column_name，并且column_name列表需要和select返回"
+"值列表个数相同。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:67
+msgid "SELECT List"
+msgstr "SELECT列表"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:69
+msgid ""
+"The SELECT list (between the key words SELECT and FROM) specifies expressions "
+"that form the output rows of the SELECT statement. The expressions can (and "
+"usually do) refer to columns computed in the FROM clause."
+msgstr ""
+"SELECT列表（位于关键词 SELECT和FROM之间）指定构成 SELECT语句输出行的表达式。这些"
+"表达式 可以（并且通常确实会）引用FROM子句中计算得到的列。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:71
+msgid ""
+"Just as in a table, every output column of a SELECT has a name. In a simple "
+"SELECT this name is just used to label the column for display, but when the "
+"SELECT is a sub-query of a larger query, the name is seen by the larger query "
+"as the column name of the virtual table produced by the sub-query. To specify "
+"the name to use for an output column, write AS output_name after the column's "
+"expression. (You can omit AS, but only if the desired output name does not "
+"match any PostgreSQL keyword (see Appendix C). For protection against possible "
+"future keyword additions, it is recommended that you always either write AS or "
+"double-quote the output name.) If you do not specify a column name, a name is "
+"chosen automatically by PostgreSQL. If the column's expression is a simple "
+"column reference then the chosen name is the same as that column's name. In "
+"more complex cases a function or type name may be used, or the system may fall "
+"back on a generated name such as ?column?."
+msgstr ""
+"正如在表中一样，SELECT的每一个输出列都有一个名称。 在一个简单的SELECT中，这个名"
+"称只是被用来标记要显 示的列，但是当SELECT是一个大型查询的一个子查询时，大型查询"
+"会把该名称看做子查询产生的虚表的列名。要指定用于输出列的名称，在该列的表达式 后"
+"面写上 AS output_name（ 你可以省略AS，但只能在期望的输出名称不匹配任何 "
+"PostgreSQL关键词时省略。为了避免和未来增加的关键词冲突， 推荐总是写上AS或者用双"
+"引号引用输出名称）。如果你不指定列名， PostgreSQL会自动选择一个名称。如果列的表"
+"达式是一个简单的列引用，那么被选择的名称就和该列的名称相同。在使用函数或者类型名"
+"称的更复杂的情况中，系统可能会生成诸如 ?column?之类的名称。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:73
+msgid ""
+"An output column's name can be used to refer to the column's value in ORDER BY "
+"and GROUP BY clauses, but not in the WHERE or HAVING clauses (there you must "
+"write out the expression instead)."
+msgstr ""
+"一个输出列的名称可以被用来在ORDER BY以及 GROUP BY子句中引用该列的值，但是不能用"
+"于 WHERE和HAVING子句（在其中必须写出表达式）。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:75
+msgid ""
+"Instead of an expression, * can be written in the output list as a shorthand "
+"for all the columns of the selected rows. Also, you can write table_name.* as a "
+"shorthand for the columns coming from just that table. In these cases it is not "
+"possible to specify new names with AS; the output column names will be the same "
+"as the table columns' names."
+msgstr ""
+"可以在输出列表中写*来取代表达式，它是被选中行的所有列的一种简写方式。还可以写 "
+"table_name.*，它是只来自那个表的所有列的简写形式。在这些情况中无法用 AS指定新的"
+"名称，输出行的名称将和表列的名称相同。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:77
+msgid "FROM Clause"
+msgstr "FROM子句"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:79
+msgid ""
+"The FROM clause specifies one or more source tables for the SELECT. If multiple "
+"sources are specified, the result is the Cartesian product (cross join) of all "
+"the sources. But usually qualification conditions are added (via WHERE) to "
+"restrict the returned rows to a small subset of the Cartesian product."
+msgstr ""
+"FROM子句为SELECT 指定一个或者更多源表。如果指定了多个源表，结果将是所有源表的笛"
+"卡尔积（交叉连接）。但是通常会增加限定条件（通过 WHERE）来把返回的行限制为该笛卡"
+"尔积的一个小子集。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:81
+msgid "The FROM clause can contain the following elements:"
+msgstr "FROM子句可以包含下列元素："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:83
+msgid ""
+"table_name: The name (optionally schema-qualified) of an existing table or view."
+msgstr "table_name：一个现有表或视图的名称（可以是模式限定的）。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:85
+msgid ""
+"alias: A substitute name for the FROM item containing the alias. An alias is "
+"used for brevity or to eliminate ambiguity for self-joins (where the same table "
+"is scanned multiple times). When an alias is provided, it completely hides the "
+"actual name of the table or function; for example given FROM foo AS f, the "
+"remainder of the SELECT must refer to this FROM item as f not foo."
+msgstr ""
+"alias：一个包含别名的FROM项的替代名称。别名被用于让书写简洁或者消除自连接中的混"
+"淆（其中同一个表会被扫描多 次）。当提供一个别名时，表或者函数的实际名称会被隐"
+"藏。例如，给定FROM foo AS f，SELECT的剩余部分就必须以 f而不是foo来引用这个 FROM"
+"项。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:87
+msgid ""
+"select: A sub-SELECT can appear in the FROM clause. This acts as though its "
+"output were created as a temporary table for the duration of this single SELECT "
+"command. Note that the sub-SELECT must be surrounded by parentheses, and an "
+"alias must be provided for it."
+msgstr ""
+"select：一个子-SELECT可以出现在 FROM子句中。这就好像把它的输出创建为一个 存在于"
+"该SELECT命令期间的临时表。注意 子-SELECT必须用圆括号包围，并且必须为它提供一个别"
+"名。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:89
+msgid ""
+"function_name: Function calls can appear in the FROM clause. (This is "
+"especially useful for functions that return result sets, but any function can "
+"be used.) This acts as though the function's output were created as a temporary "
+"table for the duration of this single SELECT command."
+msgstr ""
+"function_name：函数调用可以出现在FROM子句中（对于返回结果 集合的函数特别有用，但"
+"是可以使用任何函数）。这就好像把该函数的输出创建为一个存在于该SELECT命令期间的临"
+"时表。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:91
+msgid ""
+"An alias can be provided in the same way as for a table. If an alias is "
+"written, a column alias list can also be written to provide substitute names "
+"for one or more attributes of the function's composite return type, including "
+"the column added by ORDINALITY if present."
+msgstr ""
+"可以用和表一样的方式提供一个别名。如果写了一个别名，还可以写一个列别名列表来为该"
+"函数的组合返回类型的一个或者多个属性提供替代名称， 包括由ORDINALITY（如果有）增"
+"加的新列。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:93
+msgid ""
+"Multiple function calls can be combined into a single FROM-clause item by "
+"surrounding them with ROWS FROM( ... ). The output of such an item is the "
+"concatenation of the first row from each function, then the second row from "
+"each function, etc. If some of the functions produce fewer rows than others, "
+"null values are substituted for the missing data, so that the total number of "
+"rows returned is always the same as for the function that produced the most "
+"rows."
+msgstr ""
+"通过把多个函数调用包围在ROWS FROM( … )中可以把它们 整合在单个FROM-子句项中。这样"
+"一个项的输出是把每一个 函数的第一行串接起来，然后是每个函数的第二行，以此类推。"
+"如果有些函数产生的行比其他函数少，则在缺失数据的地方放上 NULL，这样被返回的总行"
+"数总是和产生最多行的函数一样。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:95
+msgid "join_type: One of"
+msgstr "join_type"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:97
+msgid "[ INNER ] JOIN"
+msgstr "[ INNER ] JOIN"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:98
+msgid "LEFT [ OUTER ] JOIN"
+msgstr "LEFT [ OUTER ] JOIN"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:99
+msgid "RIGHT [ OUTER ] JOIN"
+msgstr "RIGHT [ OUTER ] JOIN"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:100
+msgid "FULL [ OUTER ] JOIN"
+msgstr "FULL [ OUTER ] JOIN"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:101
+msgid "CROSS JOIN"
+msgstr "CROSS JOIN"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:103
+msgid ""
+"For the INNER and OUTER join types, a join condition must be specified, namely "
+"exactly one of NATURAL, ON join_condition, or USING (join_column [, ...]). See "
+"below for the meaning. For CROSS JOIN, none of these clauses can appear. A JOIN "
+"clause combines two FROM items, which for convenience we will refer to as "
+"“tables”, though in reality they can be any type of FROM item. Use parentheses "
+"if necessary to determine the order of nesting. In the absence of parentheses, "
+"JOINs nest left-to-right. In any case JOIN binds more tightly than the commas "
+"separating FROM-list items."
+msgstr ""
+"对于INNER和OUTER连接类型，必须指定 一个连接条件，即 NATURAL、ON join_condition或"
+"者 USING (join_column [, …]) 之一（只能有一种）。其含义见下文。对于CROSS JOIN，"
+"上述子句不能出现。一个JOIN子句联合两个FROM项（ 为了方便我们称之为”表”，尽管实际"
+"上它们可以是任何类型的FROM项）。如有必要可以使用圆括号确定嵌套的顺序。 在没有圆"
+"括号时，JOIN会从左至右嵌套。在任何情况下，JOIN的联合比分隔FROM-列表项的逗号更"
+"强。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:105
+msgid ""
+"CROSS JOIN and INNER JOIN produce a simple Cartesian product, the same result "
+"as you get from listing the two tables at the top level of FROM, but restricted "
+"by the join condition (if any). CROSS JOIN is equivalent to INNER JOIN ON "
+"(TRUE), that is, no rows are removed by qualification. These join types are "
+"just a notational convenience, since they do nothing you couldn't do with plain "
+"FROM and WHERE."
+msgstr ""
+"CROSS JOIN和INNER JOIN 会产生简单的笛卡尔积，也就是与在FROM的顶层列出两个表得到"
+"的结果相同，但是要用连接条件（如果有）约束该结果。 CROSS JOIN与INNER JOIN ON "
+"(TRUE)等效，也就是说条件不会移除任何行。这些连接类型只是一种记号上的方便，因为没"
+"有什么是你用纯粹的FROM和 WHERE能做而它们不能做的。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:107
+msgid ""
+"LEFT OUTER JOIN returns all rows in the qualified Cartesian product (i.e., all "
+"combined rows that pass its join condition), plus one copy of each row in the "
+"left-hand table for which there was no right-hand row that passed the join "
+"condition. This left-hand row is extended to the full width of the joined table "
+"by inserting null values for the right-hand columns. Note that only the JOIN "
+"clause's own condition is considered while deciding which rows have matches. "
+"Outer conditions are applied afterwards."
+msgstr ""
+"LEFT OUTER JOIN返回被限制过的笛卡尔积中的所有行（即所有通过了其连接条件的组合"
+"行），外加左手表中没有相应的通过了连接条件的右手行的每一行的拷贝。通过在右手列中"
+"插入空值，这种左手行会被扩展为连接表的完整行。注意在决定哪些行匹配时，只考虑JOIN"
+"子句自身的条件。之后才应用外条件。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:109
+msgid ""
+"Conversely, RIGHT OUTER JOIN returns all the joined rows, plus one row for each "
+"unmatched right-hand row (extended with nulls on the left). This is just a "
+"notational convenience, since you could convert it to a LEFT OUTER JOIN by "
+"switching the left and right tables."
+msgstr ""
+"相反，RIGHT OUTER JOIN返回所有连接行，外加每一个没有匹配上的右手行（在左端用空值"
+"扩展）。这只是为了记号上的方便，因为你可以通过交换左右表把它转换成一个LEFT "
+"OUTER JOIN。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:111
+msgid ""
+"FULL OUTER JOIN returns all the joined rows, plus one row for each unmatched "
+"left-hand row (extended with nulls on the right), plus one row for each "
+"unmatched right-hand row (extended with nulls on the left)."
+msgstr ""
+"FULL OUTER JOIN返回所有连接行，外加每 一个没有匹配上的左手行（在右端用空值扩"
+"展），再外加每一个没有 匹配上的右手行（在左端用空值扩展）"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:113
+msgid ""
+"join_condition: join_condition is an expression resulting in a value of type "
+"boolean (similar to a WHERE clause) that specifies which rows in a join are "
+"considered to match."
+msgstr ""
+"join_condition：是一个会得到boolean类型值的表达式（类似于一个WHERE子句），它说明"
+"一次连接中哪些行被认为相匹配。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:115
+msgid ""
+"A clause of the form USING ( a, b, ... ) is shorthand for ON left_table.a = "
+"right_table.a AND left_table.b = right_table.b .... Also, USING implies that "
+"only one of each pair of equivalent columns will be included in the join "
+"output, not both."
+msgstr ""
+"形式USING ( a, b, … )的子句是 ON left_table.a = right_table.a AND left_table.b "
+"= right_table.b …的简写。还有， USING表示每一对相等列中只有一个会被包括在连接输"
+"出中。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:117
+msgid ""
+"NATURAL: NATURAL is shorthand for a USING list that mentions all columns in the "
+"two tables that have matching names.<br />"
+msgstr "NATURAL：是列出在两个表中所有具有 相同名称的列的USING的简写。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:119
+msgid "WHERE Clause"
+msgstr "WHERE子句"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:121
+msgid "The optional WHERE clause has the general form"
+msgstr "可选的WHERE子句的形式"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:127
+msgid ""
+"where condition is any expression that evaluates to a result of type boolean. "
+"Any row that does not satisfy this condition will be eliminated from the "
+"output. A row satisfies the condition if it returns true when the actual row "
+"values are substituted for any variable references."
+msgstr ""
+"其中condition 是任一计算得到布尔类型结果的表达式。任何不满足 这个条件的行都会从"
+"输出中被消除。如果用一行的实际值替换其中的 变量引用后，该表达式返回真，则该行符"
+"合条件。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:129
+msgid "GROUP BY Clause"
+msgstr "GROUP BY子句"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:131
+msgid "The optional GROUP BY clause has the general form"
+msgstr "可选的GROUP BY子句的形式"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:137
+msgid ""
+"GROUP BY will condense into a single row all selected rows that share the same "
+"values for the grouped expressions. An expression used inside a "
+"grouping_element can be an input column name, or the name or ordinal number of "
+"an output column (SELECT list item), or an arbitrary expression formed from "
+"input-column values. In case of ambiguity, a GROUP BY name will be interpreted "
+"as an input-column name rather than an output column name."
+msgstr ""
+"GROUP BY 将会把所有被选择的行中共享相同分组表达式值的那些行压缩成一个行。 "
+"grouping_element中使用的 expression 可以是输入列名、输出列（SELECT列表项） 的名"
+"称或序号或者由输入列值构成的任意表达式。在出现歧义时， GROUP BY名称将被解释为输"
+"入列名而不是输出列名。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:139
+msgid ""
+"If any of GROUPING SETS, ROLLUP or CUBE are present as grouping elements, then "
+"the GROUP BY clause as a whole defines some number of independent grouping "
+"sets. The effect of this is equivalent to constructing a UNION ALL between "
+"subqueries with the individual grouping sets as their GROUP BY clauses."
+msgstr ""
+"如果任何GROUPING SETS、ROLLUP或者CUBE 作为分组元素存在，则GROUP BY子句整体上定义"
+"了数个独立的 分组集。其效果等效于在具有独立分组集作为它们的 GROUP BY子句的子查询"
+"间构建一个UNION ALL。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:141
+msgid ""
+"Aggregate functions, if any are used, are computed across all rows making up "
+"each group, producing a separate value for each group. (If there are aggregate "
+"functions but no GROUP BY clause, the query is treated as having a single group "
+"comprising all the selected rows.) The set of rows fed to each aggregate "
+"function can be further filtered by attaching a FILTER clause to the aggregate "
+"function call; When a FILTER clause is present, only those rows matching it are "
+"included in the input to that aggregate function."
+msgstr ""
+"聚集函数（如果使用）会在组成每一个分组的所有行上进行计算，从而为每一个分组产生一"
+"个单独的值（如果有聚集函数但是没有 GROUP BY子句，则查询会被当成是由所有选中行构"
+"成的一个单一分组）。传递给每一个聚集函数的行集合可以通过在聚集函数调用附加一个"
+"FILTER子句来进一步过滤。当存在一个FILTER子句时，只有那些匹配它的行才会被包括在该"
+"聚集函数的输入中。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:143
+msgid ""
+"When GROUP BY is present, or any aggregate functions are present, it is not "
+"valid for the SELECT list expressions to refer to ungrouped columns except "
+"within aggregate functions or when the ungrouped column is functionally "
+"dependent on the grouped columns, since there would otherwise be more than one "
+"possible value to return for an ungrouped column. A functional dependency "
+"exists if the grouped columns (or a subset thereof) are the primary key of the "
+"table containing the ungrouped column."
+msgstr ""
+"当存在GROUP BY子句或者任何聚集函数时， SELECT列表表达式不能引用非分组列（除非它"
+"出现在聚集函数中或者它函数依赖于分组列），因为这样做会导致返回非分组列的值时会有"
+"多种可能的值。如果分组列是包含非分组列的表的主键（ 或者主键的子集），则存在函数"
+"依赖。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:145
+msgid ""
+"Keep in mind that all aggregate functions are evaluated before evaluating any "
+"“scalar” expressions in the HAVING clause or SELECT list. This means that, for "
+"example, a CASE expression cannot be used to skip evaluation of an aggregate "
+"function."
+msgstr ""
+"记住所有的聚集函数都是在HAVING子句或者 SELECT列表中的任何”标量”表达式之前被计"
+"算。 这意味着一个CASE表达式不能被用来跳过一个聚集表达式的计算"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:147
+msgid "DISTINCT Clause"
+msgstr "DISTINCT 子句"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:149
+msgid ""
+"If SELECT DISTINCT is specified, the result table is subject to the elimination "
+"of duplicate rows (keep one row for each group of duplicate rows). SELECT ALL, "
+"on the contrary, specifies the opposite behavior: all rows will be kept, this "
+"is also the default behavior."
+msgstr ""
+"如果指定了SELECT DISTINCT，所有重复的行会被从结果集中移除（为每一组重复的行保留"
+"一行）。SELECT ALL则指定相反的行为：所有行都会被保留，这也是默认情况。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:151
+msgid ""
+"SELECT DISTINCT on ( expression [, ...]) only keeps only the first row of the "
+"set of rows for which all the expressions are equal. DISTINCT ON expression "
+"uses same rules as ORDER BY (See above). Note that the “first row” of a set is "
+"unpredictable unless the query is sorted to guarantee a unique ordering of the "
+"rows arriving at the DISTINCT filter. For example,"
+msgstr ""
+"SELECT DISTINCT ON ( expression [, …] ) 只保留在给定表达式上计算相等的行集合中的"
+"第一行。 DISTINCT ON表达式使用和ORDER BY相同的规则（见上文）解释。注意，除非用 "
+"ORDER BY来确保所期望的行出现在第一位，每一个集 合的”第一行”是不可预测的。例如："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:159
+msgid ""
+"The above query retrieves weather report for every location. However, if we do "
+"not use ORDER BY to force time in descending order, we may get an unpredictable "
+"time for each location."
+msgstr ""
+"为每个地点检索最近的天气报告。但是如果我们不使用ORDER BY来强制对每个地点的时间值"
+"进行降序排序， 我们为每个地点得到的报告的时间可能是无法预测的。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:161
+msgid ""
+"DISTINCT ON expression must match the left most ORDER BY expression. ORDER BY "
+"clause usually includes extra expressions, and these extra expressions "
+"determine row priority for rows inside each DISTINCT ON group."
+msgstr ""
+"DISTINCT ON表达式必须匹配最左边的ORDER BY表达式。ORDER BY子句通常将包含额外的表"
+"达式，这些额外的表达式用于决定在每一个 DISTINCT ON分组内行的优先级。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:163
+msgid "COUNT DISTINCT Clause"
+msgstr "COUNT DISTINCT子句"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:165
+msgid ""
+"COUNT DISTINCT calculate count of a column after elimination of duplicate rows. "
+"Each value in the column is counted only once, even though the value may have "
+"occurred multiple times. Similar to the calculation for COUNT, NULL value is "
+"excluded for the column count calculation."
+msgstr ""
+"COUNT DISTINCT支持计算去重之后的某一个column的个数，对于该列中出现多次的值只会被"
+"计算一次，和COUNT的计算类似，如果该列包含NULL值，它将不会计算在内。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:167
+msgid "An example for calculating count precisely:"
+msgstr "精确计算的语法示例如下："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:173
+msgid ""
+"Calculating COUNT DISTINCT precisely may consume lots of resource. For this "
+"reason, Hologres also provides approximate COUNT DISTINCT, as shown below:"
+msgstr ""
+"由于精确计算的COUNT DISTINCT需要消耗较大的资源，因此Hologres还支持非精确的COUNT "
+"DISTINCT计算，语法示例如下："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:179
+msgid "UNION Clause"
+msgstr "UNION 子句"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:181
+msgid "The UNION clause has this general form:"
+msgstr "UNION子句具有下面的形式："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:186
+msgid ""
+"select_statement is any SELECT statement without an ORDER BY, LIMIT, FOR NO KEY "
+"UPDATE, FOR UPDATE, FOR SHARE, or FOR KEY SHARE clause. (ORDER BY and LIMIT can "
+"be attached to a subexpression if it is enclosed in parentheses. Without "
+"parentheses, these clauses will be taken to apply to the result of the UNION, "
+"not to its right-hand input expression.)"
+msgstr ""
+"select_statement 是任何没有ORDER BY、LIMIT、 FOR NO KEY UPDATE、FOR UPDATE、 "
+"FOR SHARE和FOR KEY SHARE子句的 SELECT语句（如果子表达式被包围在圆括号内， ORDER "
+"BY和LIMIT可以被附着到其上。如果没有圆括号，这些子句将被应用到UNION的结果而不是右"
+"手边的表达式上）。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:188
+msgid ""
+"The UNION operator computes the set union of the rows returned by the involved "
+"SELECT statements. A row is in the set union of two result sets if it appears "
+"in at least one of the result sets. The two SELECT statements that represent "
+"the direct operands of the UNION must produce the same number of columns, and "
+"corresponding columns must be of compatible data types."
+msgstr ""
+"UNION操作符计算所涉及的 SELECT语句所返回的行的并集。如果一至少出现在两个结果集中"
+"的一个内，它就会在并集中。作为 UNION两个操作数的 SELECT语句必须产生相同数量的列"
+"并且对应位置上的列必须具有兼容的数据类型。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:190
+msgid ""
+"The result of UNION does not contain any duplicate rows unless the ALL option "
+"is specified. ALL prevents elimination of duplicates. (Therefore, UNION ALL is "
+"usually significantly quicker than UNION; use ALL when you can.) DISTINCT can "
+"be written to explicitly specify the default behavior of eliminating duplicate "
+"rows."
+msgstr ""
+"UNION的结果不会包含重复行，除非指定了ALL选项。ALL会阻止消除重复（因此，UNION ALL"
+"通常显著地快于UNION，尽量使用ALL）。可以写DISTINCT来显式地指定消除重复行的行为。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:192
+msgid ""
+"Multiple UNION operators in the same SELECT statement are evaluated left to "
+"right, unless otherwise indicated by parentheses."
+msgstr ""
+"除非用圆括号指定计算顺序，同一个SELECT语句中的多个UNION操作符会从左至右计算。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:194
+msgid "INTERSECT Clause"
+msgstr "INTERSECT 子句"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:196
+msgid "The INTERSECT clause has this general form:"
+msgstr "INTERSECT子句具有下面的形式："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:202
+#: ../../source/sql_manual/dml_and_dql/select.md:218
+msgid "select_statement is any SELECT statement without ORDER BY or LIMIT clause."
+msgstr "select_statement 是任何没有ORDER BY, LIMIT子句的 SELECT语句。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:204
+msgid ""
+"The INTERSECT operator computes the set intersection of the rows returned by "
+"the involved SELECT statements. A row is in the intersection of two result sets "
+"if it appears in both result sets."
+msgstr ""
+"INTERSECT操作符计算所涉及的 SELECT语句返回的行的交集。如果 一行同时出现在两个结"
+"果集中，它就在交集中。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:206
+msgid ""
+"The result of INTERSECT does not contain any duplicate rows unless the ALL "
+"option is specified. With ALL, a row that has m duplicates in the left table "
+"and n duplicates in the right table will appear min(m,n) times in the result "
+"set. DISTINCT can be written to explicitly specify the default behavior of "
+"eliminating duplicate rows."
+msgstr ""
+"INTERSECT的结果不会包含重复行，除非指定了 ALL选项。如果有ALL，一个在左表中有 m次"
+"重复并且在右表中有n 次重复的行将会在结果中出现 min(m,n) 次。 DISTINCT可以写"
+"DISTINCT来 显式地指定消除重复行的行为。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:208
+msgid ""
+"Multiple INTERSECT operators in the same SELECT statement are evaluated left to "
+"right, unless parentheses dictate otherwise. INTERSECT binds more tightly than "
+"UNION. That is, A UNION B INTERSECT C will be read as A UNION (B INTERSECT C)."
+msgstr ""
+"除非用圆括号指定计算顺序， 同一个SELECT语句中的多个 INTERSECT操作符会从左至右计"
+"算。 INTERSECT的优先级比UNION更高。也就是说， A UNION B INTERSECT C将被读成A "
+"UNION (B INTERSECT C)。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:210
+msgid "EXCEPT Clause"
+msgstr "EXCEPT 子句"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:212
+msgid "The EXCEPT clause has this general form:"
+msgstr "EXCEPT子句具有下面的形式："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:220
+msgid ""
+"The EXCEPT operator computes the set of rows that are in the result of the left "
+"SELECT statement but not in the result of the right one."
+msgstr "select_statement 是任何没有ORDER BY、LIMIT子句的 SELECT语句。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:222
+msgid ""
+"The result of EXCEPT does not contain any duplicate rows unless the ALL option "
+"is specified. With ALL, a row that has m duplicates in the left table and n "
+"duplicates in the right table will appear max(m-n,0) times in the result set. "
+"DISTINCT can be written to explicitly specify the default behavior of "
+"eliminating duplicate rows."
+msgstr ""
+"EXCEPT操作符计算位于左 SELECT语句的结果中但不在右 SELECT语句结果中的行集合。"
+"EXCEPT的结果不会包含重复行，除非指定了 ALL选项。如果有ALL，一个在左表中有 m次重"
+"复并且在右表中有 n次重复的行将会在结果集中出现 max(m-n,0) 次。 DISTINCT可以写"
+"DISTINCT来 显式地指定消除重复行的行为。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:224
+msgid ""
+"Multiple EXCEPT operators in the same SELECT statement are evaluated left to "
+"right, unless parentheses dictate otherwise. EXCEPT binds at the same level as "
+"UNION."
+msgstr ""
+"除非用圆括号指定计算顺序， 同一个SELECT语句中的多个 EXCEPT操作符会从左至右计"
+"算。 EXCEPT的优先级与 UNION相同。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:226
+msgid ""
+"Currently, FOR NO KEY UPDATE, FOR UPDATE, FOR SHARE and FOR KEY SHARE cannot be "
+"specified either for an EXCEPT result or for any input of an EXCEPT."
+msgstr ""
+"当前，FOR NO KEY UPDATE、FOR UPDATE、 FOR SHARE和 FOR KEY SHARE不能用于EXCEPT结"
+"果或者 EXCEPT的任何输入。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:228
+msgid "ORDER BY Clause"
+msgstr "ORDER BY 子句"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:230
+msgid "The optional ORDER BY clause has this general form:"
+msgstr "可选的ORDER BY子句的形式如下："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:236
+msgid ""
+"The ORDER BY clause causes the result rows to be sorted according to the "
+"specified expression(s). If two rows are equal according to the leftmost "
+"expression, they are compared according to the next expression and so on. If "
+"they are equal according to all specified expressions, they are returned in an "
+"implementation-dependent order."
+msgstr ""
+"ORDER BY子句导致结果行被按照指定的表达式排序。 如果两行按照最左边的表达式是相等"
+"的，则会根据下一个表达式比较它们， 依次类推。如果按照所有指定的表达式它们都是相"
+"等的，则它们被返回的 顺序取决于实现。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:238
+msgid ""
+"Each expression can be the name or ordinal number of an output column (SELECT "
+"list item), or it can be an arbitrary expression formed from input-column "
+"values."
+msgstr ""
+"每一个expression 可以是输出列（SELECT列表项）的名称或 者序号，它也可以是由输入列"
+"值构成的任意表达式。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:240
+msgid ""
+"The ordinal number refers to the ordinal (left-to-right) position of the output "
+"column. This feature makes it possible to define an ordering on the basis of a "
+"column that does not have a unique name. This is never absolutely necessary "
+"because it is always possible to assign a name to an output column using the AS "
+"clause."
+msgstr ""
+"序号指的是输出列的顺序（从左至右）位置。这种特性可以为不具有唯一 名称的列定义一"
+"个顺序。这不是绝对必要的，因为总是可以使用 AS子句为输出列赋予一个名称。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:242
+msgid ""
+"It is also possible to use arbitrary expressions in the ORDER BY clause, "
+"including columns that do not appear in the SELECT output list. Thus the "
+"following statement is valid:"
+msgstr ""
+"也可以在ORDER BY子句中使用任意表达式，包括没 有出现在SELECT输出列表中的列。因"
+"此， 下面的语句是合法的："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:244
+msgid "SELECT name FROM distributors ORDER BY code;"
+msgstr "SELECT name FROM distributors ORDER BY code;"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:246
+msgid ""
+"A limitation of this feature is that an ORDER BY clause applying to the result "
+"of a UNION, INTERSECT, or EXCEPT clause can only specify an output column name "
+"or number, not an expression."
+msgstr ""
+"这种特性的一个限制是一个应用在UNION、 INTERSECT或EXCEPT子句结果上的 ORDER BY只能"
+"指定输出列名称或序号，但不能指定表达式。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:248
+msgid ""
+"If an ORDER BY expression is a simple name that matches both an output column "
+"name and an input column name, ORDER BY will interpret it as the output column "
+"name. This is the opposite of the choice that GROUP BY will make in the same "
+"situation. This inconsistency is made to be compatible with the SQL standard."
+msgstr ""
+"如果一个ORDER BY表达式是一个既匹配输出列名称又匹配 输入列名称的简单名称，ORDER "
+"BY将把它解读成输出列名 称。这与在同样情况下GROUP BY会做出的选择相反。这种 不一致"
+"是为了与 SQL 标准兼容。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:250
+msgid ""
+"Optionally one can add the key word ASC (ascending) or DESC (descending) after "
+"any expression in the ORDER BY clause. If not specified, ASC is assumed by "
+"default. Alternatively, a specific ordering operator name can be specified in "
+"the USING clause. An ordering operator must be a less-than or greater-than "
+"member of some B-tree operator family. ASC is usually equivalent to USING < and "
+"DESC is usually equivalent to USING >. (But the creator of a user-defined data "
+"type can define exactly what the default sort ordering is, and it might "
+"correspond to operators with other names.)"
+msgstr ""
+"可以为ORDER BY子句中的任何表达式之后增加关键词 ASC（上升）DESC（下降）。如果没有"
+"指定， ASC被假定为默认值。或者，可以在USING 子句中指定一个特定的排序操作符名称。"
+"一个排序操作符必须是某个 B-树操作符族的小于或者大于成员。ASC通常等价于 USING <而"
+"DESC通常等价于 USING >（但是一种用户定义数据类型的创建者可以 准确地定义默认排序"
+"顺序是什么，并且它可能会对应于其他名称的操作符）。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:252
+msgid ""
+"If NULLS LAST is specified, null values sort after all non-null values; if "
+"NULLS FIRST is specified, null values sort before all non-null values. If "
+"neither is specified, the default behavior is NULLS LAST when ASC is specified "
+"or implied, and NULLS FIRST when DESC is specified (thus, the default is to act "
+"as though nulls are larger than non-nulls). When USING is specified, the "
+"default nulls ordering depends on whether the operator is a less-than or "
+"greater-than operator."
+msgstr ""
+"如果指定NULLS LAST，空值会排在非空值之后；如果指定 NULLS FIRST，空值会排在非空值"
+"之前。如果都没有指定， 在指定或者隐含ASC时的默认行为是NULLS LAST， 而指定或者隐"
+"含DESC时的默认行为是 NULLS FIRST（因此，默认行为是空值大于非空值）。 当指定USING"
+"时，默认的空值顺序取决于该操作符是否为 小于或者大于操作符。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:254
+msgid ""
+"Note that ordering options apply only to the expression they follow; for "
+"example ORDER BY x, y DESC does not mean the same thing as ORDER BY x DESC, y "
+"DESC."
+msgstr ""
+"注意顺序选项只应用到它们所跟随的表达式上。例如 ORDER BY x, y DESC和 ORDER BY x "
+"DESC, y DESC是不同的。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:256
+msgid ""
+"Character-string data is sorted according to the collation that applies to the "
+"column being sorted. That can be overridden at need by including a COLLATE "
+"clause in the expression, for example ORDER BY mycolumn COLLATE \"en_US\"."
+msgstr ""
+"字符串数据会被根据引用到被排序列上的排序规则排序。根据需要可以通过在 expression"
+"中包括一个 COLLATE子句来覆盖，例如 ORDER BY mycolumn COLLATE “en_US”。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:258
+msgid "LIMIT Clause"
+msgstr "LIMIT 子句"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:260
+msgid "The LIMIT clause consists of two independent sub-clauses:"
+msgstr "LIMIT子句由两个独立的子句构成："
+
+#: ../../source/sql_manual/dml_and_dql/select.md:267
+msgid ""
+"count specifies the maximum number of rows to return, while start specifies the "
+"number of rows to skip before starting to return rows. When both are specified, "
+"start rows are skipped before starting to count the count rows to be returned."
+msgstr ""
+"count指定要返回 的最大行数，而start 指定在返回行之前要跳过的行数。在两者都被指定"
+"时，在开始计算要返回的 count行之前会跳过 start行。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:269
+msgid ""
+"If the count expression evaluates to NULL, it is treated as LIMIT ALL, i.e., no "
+"limit. If start evaluates to NULL, it is treated the same as OFFSET 0."
+msgstr ""
+"如果count表达式计算 为 NULL，它会被当成LIMIT ALL，即没有限制。如果 start计算为 "
+"NULL，它会被当作OFFSET 0。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:271
+msgid ""
+"When using LIMIT, it is a good idea to use an ORDER BY clause that constrains "
+"the result rows into a unique order. Otherwise you will get an unpredictable "
+"subset of the query's rows — you might be asking for the tenth through "
+"twentieth rows, but tenth through twentieth in what ordering? You don't know "
+"what ordering unless you specify ORDER BY."
+msgstr ""
+"在使用LIMIT时，用一个ORDER BY子句把 结果行约束到一个唯一顺序是个好办法。否则你讲"
+"得到该查询结果行的 一个不可预测的子集 — 你可能要求从第 10 到第 20 行，但是在 什"
+"么顺序下的第 10 到第 20 呢？除非指定ORDER BY，你 是不知道顺序的。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:273
+msgid ""
+"The query planner takes LIMIT into account when generating a query plan, so you "
+"are very likely to get different plans (yielding different row orders) "
+"depending on what you use for LIMIT and OFFSET. Thus, using different LIMIT/"
+"OFFSET values to select different subsets of a query result will give "
+"inconsistent results unless you enforce a predictable result ordering with "
+"ORDER BY. This is not a bug; it is an inherent consequence of the fact that SQL "
+"does not promise to deliver the results of a query in any particular order "
+"unless ORDER BY is used to constrain the order.<br/>"
+msgstr ""
+"查询规划器在生成一个查询计划时会考虑LIMIT，因此 根据你使用的LIMIT和OFFSET，你很"
+"可能 得到不同的计划（得到不同的行序）。所以，使用不同的 LIMIT/OFFSET值来选择一个"
+"查询结果的 不同子集将会给出不一致的结果，除非你 用ORDER BY强制一种可预测的结果顺"
+"序。这不是一个 缺陷，它是 SQL 不承诺以任何特定顺序（除非使用 ORDER BY来约束顺"
+"序）给出一个查询结果这一事实造 成的必然后果。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:275
+msgid ""
+"It is even possible for repeated executions of the same LIMIT query to return "
+"different subsets of the rows of a table, if there is not an ORDER BY to "
+"enforce selection of a deterministic subset. Again, this is not a bug; "
+"determinism of the results is simply not guaranteed in such a case."
+msgstr ""
+"如果没有一个ORDER BY来强制选择一个确定的子集， 重复执行同样的LIMIT查询甚至可能会"
+"返回一个表中行 的不同子集。同样，这也不是一种缺陷，再这样一种情况下也无法 保证结"
+"果的确定性。"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:277
+msgid "Examples"
+msgstr "使用示例"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:279
+msgid "To join two tables:"
+msgstr "两表JOIN"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:286
+msgid "To group through GROUP BY:"
+msgstr "GROUP BY分组"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:292
+msgid "To filter with HAVING:"
+msgstr "HAVING过滤"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:299
+msgid "ORDER BY:"
+msgstr "ORDER BY"
+
+#: ../../source/sql_manual/dml_and_dql/select.md:305
+msgid "WITH:"
+msgstr "WITH"

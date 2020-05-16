@@ -3,21 +3,111 @@
 # This file is distributed under the same license as the Hologres package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Hologres \n"
+"Project-Id-Version: Hologres\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-12 12:45-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 16:37+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+"Language: zh\n"
 
 #: ../../source/sql_manual/functions.md:1
-msgid "Functions"
-msgstr ""
+msgid "Function"
+msgstr "函数列表"
 
+#: ../../source/sql_manual/functions.md:3
+msgid ""
+"Hologres use PostgreSQL 11 semantics but only support a subset of all "
+"the functions supported by PostgreSQL. Below tables list  all functions "
+"Hologres supported currently. For detailed information please refer to "
+"PostgreSQL document."
+msgstr ""
+"Hologres兼容PostgreSQL，使用标准的PostgreSQL 11语法开发，但当前版本支持"
+"的函数是PostgreSQL的一个子集，以下为Hologres已支持的函数列表，关于函数的"
+"详细使用可以参见PostgreSQL文档。"
+
+#: ../../source/sql_manual/functions.md:4
+msgid "Mathematcial Functions"
+msgstr "数学函数"
+
+#: ../../source/sql_manual/functions.md:208
+msgid "Trigonometric Functions"
+msgstr "三角函数"
+
+#: ../../source/sql_manual/functions.md:422
+msgid "String Functions and Operators"
+msgstr "字符串函数"
+
+#: ../../source/sql_manual/functions.md:496
+msgid "Other Postgres String Functions"
+msgstr "其他字符串函数"
+
+#: ../../source/sql_manual/functions.md:635
+msgid "Pattern Matching"
+msgstr "模式匹配函数"
+
+#: ../../source/sql_manual/functions.md:709
+msgid "Date/Time Formating Functions"
+msgstr "时间/日期函数"
+
+#: ../../source/sql_manual/functions.md:838
+msgid "Conditional Expressions"
+msgstr "条件表达函数"
+
+#: ../../source/sql_manual/functions.md:877
+msgid "Array Functions"
+msgstr "数组函数"
+
+#: ../../source/sql_manual/functions.md:921
+msgid "General-Purpose Aggregate Functions"
+msgstr "通用集合函数"
+
+#: ../../source/sql_manual/functions.md:1260
+msgid "Ordered-Set Aggregate Functions"
+msgstr "有序集合函数"
+
+#: ../../source/sql_manual/functions.md:1284
+msgid "Window Functions"
+msgstr "窗口函数"
+
+#: ../../source/sql_manual/functions.md:1338
+msgid "Subquery Expressions"
+msgstr "子查询函数"
+
+#: ../../source/sql_manual/functions.md:1377
+msgid "Row and Array Comparisons"
+msgstr "比较函数"
+
+#: ../../source/sql_manual/functions.md:1401
+msgid "Set Returning functions"
+msgstr "设置返回函数"
+
+#: ../../source/sql_manual/functions.md:1435
+msgid "Session Information Functions"
+msgstr "连接信息函数"
+
+#: ../../source/sql_manual/functions.md:1534
+msgid "Access Privilege Inquiry Functions"
+msgstr "权限查询函数"
+
+#: ../../source/sql_manual/functions.md:1668
+msgid "Public API Functions"
+msgstr "Public API函数"
+
+#: ../../source/sql_manual/functions.md:1670
+msgid ""
+"Standard PostgreSQL functions cannot meet all business requirements, so "
+"Hologres added some new functions as public API which can be used to "
+"simplify development process. Next chapter will describe public API "
+"functions in detail."
+msgstr ""
+"在实际业务场景中，标准PostgreSQL支持的函数并不能完全满足业务需求，在此基"
+"础上，Hologres对函数的支持进行了丰富，您可以根据业务需求通过调用函数来简"
+"化开发流程，详细的Public API函数可以见下一章节。"

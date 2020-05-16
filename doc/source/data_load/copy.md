@@ -1,13 +1,17 @@
 # COPY From Stdin
 
 Hologres current version supports using copy command to upload data. Users can upload data from stdin  to specific tables.
-<a name="i3cp7"></a>
 
-# Introduction
-COPY: upload client data from stdin  to a table<br />COPY FROM: copy data from stdin to a table (append data to the table)
-<a name="nNwJr"></a>
-# Synopsis
+## Introduction
+
+COPY: upload client data from stdin  to a table.
+
+COPY FROM: copy data from stdin to a table (append data to the table).
+
+## Synopsis
+
 Hologres current version supports the following copy command:
+
 ```sql
 COPY table_name [ ( column_name [, ...] ) ]
     FROM STDIN
@@ -24,17 +28,21 @@ COPY table_name [ ( column_name [, ...] ) ]
     FORCE_QUOTE { ( column_name [, ...] ) | * }
     FORCE_NOT_NULL ( column_name [, ...] )
 ```
-<a name="8DSXL"></a>
-# Parameter
-Parameter Descriptions
 
-- table_name：table name
-- STDIN ：standard input
-- FORMAT：support text and csv. Default is text.
-- DELIMITER：delimiter between columns. Defalt is tab. For CSV，specify DELIMITER as ','
-<a name="fbYIb"></a>
-# Example
+## Parameter
+
+_**table_name**_：table name
+
+_**STDIN**_ ：standard input
+
+_**FORMAT**_：support text and csv. Default is text.
+
+_**DELIMITER**_：delimiter between columns. Defalt is tab. For CSV，specify DELIMITER as ','
+
+## Example
+
 1.Upload data from stdin
+
 ```sql
 -- 1.create table
 CREATE  TABLE copy_test (
@@ -51,12 +59,12 @@ COPY copy_test from stdin WITH DELIMITER AS ',' NULL AS '';
 55444,38,luyong
 \.
 
---query data
+--3. query data
 select * from  copy_test;
 ```
-<br />
 
-2. Upload data from stdin to CSV
+2.Upload data from stdin to CSV
+
 ```sql
 -- 1. create table
 create table partsupp ( ps_partkey          integer not null,
@@ -74,7 +82,9 @@ copy partsupp from stdin with delimiter '|' csv;
 --3.query data
 select * from  partsupp;
 ```
+
 3.Update client file using CopyManager
+
 ```sql
 package com.aliyun.hologram.test.jdbc;
 
@@ -104,8 +114,7 @@ public class jdbcCopyFile {
 		return DriverManager.getConnection(url, props);
 	}
 
-	/**
-	 * 导入文件到数据库
+	/*
 	 * 
 	 * @param connection
 	 * @param filePath
@@ -137,3 +146,4 @@ public class jdbcCopyFile {
 
 }
 ```
+

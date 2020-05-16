@@ -1,42 +1,47 @@
 # Postgres permission Model
 
 Hologres is compatible with Postgres and uses the same permission system of Postgres .
-<a name="HHQI5"></a>
-# GRANT
+
+## GRANT
+
 The standard Postgresql authorization steps are as follows
-<a name="wWZxN"></a>
-### step1:Create user
+
+### step1: Create user
+
 ```sql
 CREATE USER "username"; 
 CREATE USER "username"superuser; //to be a superuser
 ```
 more information，see [PostgreSQL createrole](https://www.postgresql.org/docs/11/sql-createrole.html).
-<a name="xqlBY"></a>
-### step2:Grant user
+
+### step2: Grant user
+
 After the user is created in the role of Hologres, the user needs to be granted certain permissions ,and then the user can use Hologres within the scope of permissions.Common GRANT are as follows:
 
 | Authority                                                    | Example                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| create user within login                                     | CREATE USER "username";<br />                                |
+| create user within login                                     | CREATE USER "username";                                      |
 | create superuser                                             | CREATE USER  "username" SUPERUSER ;                          |
 | Give all users the view, write, and update permissions in the public schema to all users | GRANT SELECT,INSERT,UPDATE ON ALL TABLES IN SCHEMA public to PUBLIC; |
 | Grant a user SELECT permission on Table1                     | GRANT SELECT ON TABLE Table1 TO "username";                  |
-| <br />Grant a user SELECT permission on Table1 and allow the user to grant this permission to others | GRANT SELECT ON TABLE Table1 TO "username" WITH GRANT OPTION; |
+| Grant a user SELECT permission on Table1 and allow the user to grant this permission to others | GRANT SELECT ON TABLE Table1 TO "username" WITH GRANT OPTION; |
 | Grant SELECT permissions on all tables under public schema to a user | GRANT SELECT ON ALL TABLES IN SCHEMA public TO "username";   |
 | By default, all tables in the public schema can be read by everyone (including future tables) | ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO PUBLIC; |
 
 More information about GRANT，please see [PostgeSQL GRANT](https://www.postgresql.org/docs/11/sql-grant.html).
-<a name="Z3WUg"></a>
-# REVOKE
+## REVOKE
+
 Use REVOKE to revoke permissions:
 ```sql
 REVOKE SELECT ON TABLE tablename from "username" ;
 ```
 More information about REVOKE，please see [PostgreSQL REVOKE](https://www.postgresql.org/docs/11/sql-revoke.html).
-<a name="9XIDG"></a>
-# DROP user
+
+## DROP user
+
 To drop a user, use the following command:
 ```sql
 DROP user "username";
 ```
-Once the user is drooped, he will not be able to connect to the Hologres instance and access any objects in the instance.<br />
+Once the user is drooped, he will not be able to connect to the Hologres instance and access any objects in the instance.
+

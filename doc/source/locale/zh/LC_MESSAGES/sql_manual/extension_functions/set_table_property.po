@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:1
+msgid "SET_TABLE_PROPERTY"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:5
+msgid ""
+"set_table_property: Set the table properties includes index, distribution"
+" keys, columnar/row store, TTL ..."
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:6
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:20
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:22
+msgid ""
+"table_name: The name of the new table which could belongs to some schema."
+" The names can contain only alphanumeric characters or an underscore(). "
+"The first character must be an alphabetic character. All alphabetic "
+"characters are treated as lower case because the table name is case "
+"insensitive.<br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:24
+msgid "property : property name<br /"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:26
+msgid ""
+"orientation:Indicates columnar or row store. Should be specified in the "
+"same transaction of creating table. <br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:28
+msgid ""
+"clustering_key :Creating clustering index on specified columns. Should be"
+" specified in the same transaction of creating table. <br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:30
+msgid ""
+"segment_key :Segment key is used to split the data into files. Specifying"
+" a column(Ex: event_time) as segment key could benefit the queries which "
+"has a where clause on the segment key. Should be specified in the same "
+"transaction of creating table. <br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:32
+msgid ""
+"bitmap_columns : Create bitmap index on specified columns. It benefits "
+"the filtering on the columns on which have it. Can be a stand alone "
+"command.<br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:34
+msgid ""
+"_dictionary_encoding_columns:_Create a mapping dictionary for specified "
+"columns. It benefits filtering comparison, aggregation, joins. Can be a "
+"stand alone command.<br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:36
+msgid ""
+"distribution_key :Declares the distribution policy. Should be specified "
+"in the same transaction of creating table. <br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:38
+msgid ""
+"time_to_live_in_seconds : Indicates the data expiration period. The "
+"precision is one second. It must be a non-negative integer or float "
+"number. Can be a stand alone command.<br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:40
+msgid ""
+"value : Property value. Use double quotes(\") to enclose it if it "
+"contains column names in which has upper case alphabetic characters.<br "
+"/>"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/set_table_property.md:42
+msgid "Example"
+msgstr ""
+

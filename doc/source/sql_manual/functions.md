@@ -1,10 +1,7 @@
 # Function
 
 Hologres use PostgreSQL 11 semantics but only support a subset of all the functions supported by PostgreSQL. Below tables list  all functions Hologres supported currently. For detailed information please refer to [PostgreSQL](https://www.postgresql.org/docs/11/functions.html) document.
-<a name="tTsFk"></a>
-# Mathematcial Functions
-
-
+## Mathematcial Functions
 
 | Function                                       | Supported | Added by Hologres |
 | ---------------------------------------------- | --------- | ----------------- |
@@ -47,12 +44,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | width_bucket(operand numeric, b1 numeric, ...) | Yes       | No                |
 | random()                                       | Yes       | No                |
 
-
-
-<a name="yXu8S"></a>
-# Trigonometric Functions
-
-
+## Trigonometric Functions
 
 | Function       | Supported | Added by Hologress |
 | -------------- | --------- | ------------------ |
@@ -97,10 +89,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | tan(float4)    | Yes       | No                 |
 | tan(numeric)   | Yes       | No                 |
 
-<a name="Wc2eU"></a>
-# String Functions and Operators
-
-
+## String Functions and Operators
 
 | Function                                  | Supported | Added by Hologress              |
 | ----------------------------------------- | --------- | ------------------------------- |
@@ -117,12 +106,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | trim([lea                                 | tra       | both] [from] string [, char] )  |
 | upper(string)                             | Yes       | No                              |
 
-
-
-<a name="iECnU"></a>
-# Other Postgres String Functions
-
-
+## Other Postgres String Functions
 
 | Function                                          | Supported | Added by Hologress |
 | ------------------------------------------------- | --------- | ------------------ |
@@ -152,10 +136,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | to_hex(number int or bigint)                      | Yes       | No                 |
 | translate(string text, from text, to text)        | Yes       | No                 |
 
-<a name="zsGQj"></a>
-# Pattern Matching
-
-
+## Pattern Matching
 
 | Function              | Supported | Added by Hologress |
 | --------------------- | --------- | ------------------ |
@@ -172,10 +153,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | regexp_split_to_table | Yes       | No                 |
 | regexp_split_to_array | Yes       | No                 |
 
-<a name="mKJxP"></a>
-# Date/Time Formating Functions
-
-
+## Date/Time Formating Functions
 
 | Function                                | Supported | Added by Hologress |
 | --------------------------------------- | --------- | ------------------ |
@@ -203,10 +181,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | transaction_timestamp()                 | Yes       | No                 |
 | to_timestamp(double precision)          | Yes       | No                 |
 
-<a name="6sUcN"></a>
-# Conditional Expressions
-
-
+## Conditional Expressions
 
 | Function | Supported | Added by Hologress |
 | -------- | --------- | ------------------ |
@@ -216,10 +191,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | greatest | Yes       | No                 |
 | least    | Yes       | No                 |
 
-<a name="6vrHd"></a>
-# Array Functions
-
-
+## Array Functions
 
 | Function                            | Supported | Added by Hologress |
 | ----------------------------------- | --------- | ------------------ |
@@ -230,8 +202,8 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | array_upper(anyarray, int)          | Yes       | No                 |
 | unnest(anyarray)                    | Yes       | No                 |
 
-<a name="khlDJ"></a>
-# General-Purpose Aggregate Functions
+## General-Purpose Aggregate Functions
+
 | Function                          | Supported | Added by Hologress |
 | --------------------------------- | --------- | ------------------ |
 | array_agg(bigint)                 | Yes       | No                 |
@@ -300,20 +272,14 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | var_samp(int)                     | Yes       | No                 |
 | var_samp(numeric)                 | Yes       | No                 |
 
-<a name="QGmZK"></a>
-# Ordered-Set Aggregate Functions
-
-
+## Ordered-Set Aggregate Functions
 
 | Function          | Supported | Added by Hologress |
 | ----------------- | --------- | ------------------ |
 | GROUPING(args...) | Yes       | Yes                |
 |                   |           |                    |
 
-<a name="pIWld"></a>
-# Window Functions
-
-
+## Window Functions
 
 | Function       | Supported | Added by Hologress |
 | -------------- | --------- | ------------------ |
@@ -326,10 +292,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | first_value()  | Yes       | No                 |
 | last_value()   | Yes       | No                 |
 
-<a name="PwpNd"></a>
-# Subquery Expressions
-
-
+## Subquery Expressions
 
 | Function          | Supported | Added by Hologress |
 | ----------------- | --------- | ------------------ |
@@ -339,20 +302,14 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | ANY (subquery)    | Yes       | No                 |
 | SOME (subquery)   | Yes       | No                 |
 
-<a name="CWXaW"></a>
-# Row and Array Comparisons
-
-
+## Row and Array Comparisons
 
 | Function            | Supported | Added by Hologress |
 | ------------------- | --------- | ------------------ |
 | NOT IN (values,...) | Yes       | No                 |
 | IN (values,...)     | Yes       | No                 |
 
-<a name="PtNk5"></a>
-# Set Returning functions
-
-
+## Set Returning functions
 
 | Function                                     | Supported | Added by Hologress |
 | -------------------------------------------- | --------- | ------------------ |
@@ -361,10 +318,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | generate_series(start, stop, step interval)  | Yes       | No                 |
 | generate_subscripts(array anyarray, dim int) | Yes       | No                 |
 
-<a name="WYapf"></a>
-# Session Information Functions
-
-
+## Session Information Functions
 
 | Function                      | Supported | Added by Hologress |
 | ----------------------------- | --------- | ------------------ |
@@ -386,10 +340,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | version()                     | Yes       | No                 |
 | current_setting(setting_name) | Yes       | No                 |
 
-<a name="Pk3J5"></a>
-# Access Privilege Inquiry Functions
-
-
+## Access Privilege Inquiry Functions
 
 | Function                                                 | Supported | Added by Hologress |
 | -------------------------------------------------------- | --------- | ------------------ |
@@ -418,9 +369,7 @@ Hologres use PostgreSQL 11 semantics but only support a subset of all the functi
 | pg_has_role(user, role, privilege)                       | Yes       | No                 |
 | pg_has_role(role, privilege)                             | Yes       | No                 |
 
-<a name="2TI70"></a>
-# 
-<a name="4rKyn"></a>
-# Public API Functions
+## Public API Functions
+
 Standard PostgreSQL functions cannot meet all business requirements, so Hologres added some new functions as public API which can be used to simplify development process. Next chapter will describe public API functions in detail.
 
