@@ -85,6 +85,7 @@ insert into table_one values (12);
 ### Example
 
 create table example:
+
 ```sql
 CREATE TABLE test (
  "id" bigint NOT NULL,
@@ -103,9 +104,11 @@ In Hologres, set_table_property helps to organize and query data efficiently.
 ```sql
 call set_table_property('<table_name>', property, value);
 ```
+
 _**Note**_: It should be noted that the call to set_table_property needs to be executed in the same transaction as create table.
 
 the following syntax are supported:
+
 ```sql
 call set_table_property('table_name', 'orientation', '[column | row]'); 
 call set_table_property('table_name', 'clustering_key', '[columnName{:[desc|asc]} [,...]]'); 
@@ -129,17 +132,20 @@ Explanation:
 - Column store is the default setting of orientation. Column store is more friendly to OLAP scenes, suitable for various complex queries, while row store is more friendly to kv scenes, suitable for primary key-based query and scan.
 
 Example：
+
 ```sql
 begin;
 create table tbl (a int not null, b text not null);
 call set_table_property('tbl', 'orientation', 'row');
 commit;
 ```
+
 #### clustering_key
 
 ```sql
 call set_table_property('tbl', 'clustering_key', '[columnName{:[desc|asc]} [,...]]');
 ```
+
 Explanation:
 
 - clustering_key： Create a clustered index on the specified columns. Hologres will sort the data on the clustered index, and clustered index can speed up  range and filter queries on the index column.
@@ -148,6 +154,7 @@ Explanation:
 - clustering_key cant not contains float/double column.
 
 Example：
+
 ```sql
 begin;
 create table tbl (a int not null, b text not null);
@@ -159,6 +166,7 @@ create table tbl (a int not null, b text not null);
 call set_table_property('tbl', 'clustering_key', 'a:desc,b:asc');
 commit;
 ```
+
 #### segment_key
 
 ```sql
@@ -171,6 +179,7 @@ call set_table_property('tbl', 'segment_key', '[columnName{:[desc|asc]} [,...]]'
 - segment_key cant not contains float/double column.
 
 Example：
+
 ```sql
 begin;
 create table tbl (a int not null, b text not null);
@@ -182,11 +191,13 @@ create table tbl (a int not null, b time not null);
 call set_table_property('tbl', 'segment_key', 'b:asc');
 commit;
 ```
+
 #### bitmap_columns
 
 ```sql
 call set_table_property('tbl', 'bitmap_columns', '[columnName [,...]]');
 ```
+
 Explanation:
 
 - bitmap_columns：create a bit code(Bitmap) for the columns. Bitmap can quickly filter the data in a segment, the columns, used to filter data is suggested to use bitmap.
@@ -197,17 +208,20 @@ Explanation:
 - Can be used in the transaction of table creation or separately
 
 Example：
+
 ```sql
 begin;
 create table tbl (a int not null, b text not null);
 call set_table_property('tbl', 'bitmap_columns', 'a,b');
 commit;
 ```
+
 #### dictionary_encoding_columns
 
 ```sql
 call set_table_property('tbl', 'dictionary_encoding_columns', '[columnName [,...]]');
 ```
+
 Explanation:
 
 - Hologres builds a dictionary map for the value of the columns of dictionary_encoding_columns. Dictionary encoding can convert string comparisons to numeric comparisons to speed up queries such as group by and filter
@@ -218,23 +232,27 @@ Explanation:
 - Can be used in the transaction of table creation or separately
 
 Example：
+
 ```sql
 begin;
 create table tbl (a int not null, b text not null);
 call set_table_property('tbl', 'dictionary_encoding_columns', 'a,b');
 commit;
 ```
+
 #### time_to_live_in_seconds
 
 ```sql
 call set_table_property('tbl', 'time_to_live_in_seconds', '<non_negative_literal>');
 ```
+
 Explanation:
 
 - time_to_live_in_seconds：The life time of the table, in seconds, it must be a non-negative numeric type, either integer or floating point.
 - Can be used outside the transaction of table creation, to modify the life time of table 
 
 Example:
+
 ```sql
 begin;
 create table tbl (a int not null, b text not null);
@@ -246,11 +264,13 @@ create table tbl (a int not null, b time not null);
 call set_table_property('tbl', 'time_to_live_in_seconds', '86400');
 commit;
 ```
+
 #### distribution_key
 
 ```sql
 call set_table_property('table_name', 'distribution_key', '[columnName[,...]]');
 ```
+
 Explanation:
 
 - distribution_key specifies distribution strategy of a table.
@@ -259,6 +279,7 @@ Explanation:
 - tables are randomly distributed by default. The data will be randomly distributed to each shard. If using distribution_key, the data will be shuffled to each shard according to the specified columns, the rows with same distribution_key will be shuffle to the same shard.  Hologres can filter out shards for scanning if query having filter condition of distribution_key. Hologres can use local join optimization, if join query joined by distribution_key.
 
 Example：
+
 ```sql
 begin;
 create table tbl (a int not null, b text not null);
@@ -270,6 +291,7 @@ create table tbl (a int not null, b text not null);
 call set_table_property('tbl', 'distribution_key', 'a,b');
 commit;
 ```
+
 ## Add comments
 
 Hologres supports adding comments to tables, external tables, columns, etc. Please refer to [PostgreSQL](https://www.postgresql.org/docs/11/sql-comment.html)。

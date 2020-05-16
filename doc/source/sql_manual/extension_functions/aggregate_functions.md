@@ -9,6 +9,7 @@ APPROX_COUNT_DISTINCT：count approximate distinct values
 ```sql
 APPROX_COUNT_DISTINCT ( column )
 ```
+
 ## Parameters
 
 **_column_**: the column needed to be counted against

@@ -42,6 +42,7 @@ INSERT INTO rh_holo2mysqltest (cate_id, cate_name) VALUES
     (3, 'x'),
     (4, 'The Dinner Game');
 ```
+
 2.insert into select:
 
 ```sql

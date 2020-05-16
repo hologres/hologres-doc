@@ -17,7 +17,7 @@ select get_json_object ( json_string, path )
 
 _**json_string**_：An valid JSON text.
 
-_**path**_：A JSON path that specified the object to extract. The dollar sign($) represents a JSON variable. The dot operator(.) and the square brackets are used to access a member or an array element. NULL is returned if the json_string is invalid.
+_**path**_：A JSON path that specified the object to extract. The dollar sign `($)` represents a JSON variable. The dot operator(.) and the square brackets are used to access a member or an array element. NULL is returned if the json_string is invalid.
 
 ## Example
 

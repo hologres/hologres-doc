@@ -29,6 +29,7 @@ _**AS IMPLICIT**_: Indicates that the cast can be invoked implicitly in any cont
 ## Example
 
 When comparing text and numeric value types in a filter, usually there is no type casts by default. However, with CREATE CAST, text and numeric value types can be compared against each other after creating a CAST. For example,
+
 ```sql
 create table test_cast(id text);
 insert into test_cast values(888);

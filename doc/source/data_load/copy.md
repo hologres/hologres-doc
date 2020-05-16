@@ -4,7 +4,7 @@ Hologres current version supports using copy command to upload data. Users can u
 
 ## Introduction
 
-COPY: upload client data from stdin  to a table.
+COPY: upload client data from stdin to a table.
 
 COPY FROM: copy data from stdin to a table (append data to the table).
 
@@ -31,17 +31,17 @@ COPY table_name [ ( column_name [, ...] ) ]
 
 ## Parameter
 
-_**table_name**_：table name
+table_name：table name
 
-_**STDIN**_ ：standard input
+STDIN：standard input
 
-_**FORMAT**_：support text and csv. Default is text.
+FORMAT：support text and csv. Default is text.
 
-_**DELIMITER**_：delimiter between columns. Defalt is tab. For CSV，specify DELIMITER as ','
+DELIMITER：delimiter between columns. Defalt is tab. For CSV，specify DELIMITER as ','
 
 ## Example
 
-1.Upload data from stdin
+### 1. Upload data from stdin
 
 ```sql
 -- 1.create table
@@ -63,7 +63,7 @@ COPY copy_test from stdin WITH DELIMITER AS ',' NULL AS '';
 select * from  copy_test;
 ```
 
-2.Upload data from stdin to CSV
+### 2. Upload data from stdin to CSV
 
 ```sql
 -- 1. create table
@@ -83,7 +83,7 @@ copy partsupp from stdin with delimiter '|' csv;
 select * from  partsupp;
 ```
 
-3.Update client file using CopyManager
+### 3. Update client file using CopyManager
 
 ```sql
 package com.aliyun.hologram.test.jdbc;

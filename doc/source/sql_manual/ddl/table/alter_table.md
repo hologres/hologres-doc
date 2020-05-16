@@ -44,6 +44,7 @@ call set_table_property('tbl', 'bitmap_columns', '[columnName [,...]]');
 call set_table_property('tbl', 'dictionary_encoding_columns', '[columnName [,...]]');
 call set_table_property('tbl', 'time_to_live_in_seconds', '<non_negative_literal>');
 ```
+
 ### Example
 
 1. Change bitmap indexing properties for columns.

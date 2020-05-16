@@ -9,6 +9,7 @@ drop table：drop a table.
 ```sql
 DROP TABLE [ IF EXISTS ] table_name [, ...];
 ```
+
 ## Parameters
 
 DROP TABLE supports DROP multiple tables in one command. 

@@ -27,10 +27,11 @@ create table [if not exists] [schema_name.]table_name partition of parent_table
 ### Limitation
 
 1. Can not insert any data into parent table.
-1. Drop the parent table will cascade to also drop the child table (the partition table)
-1. Partition key column must be of text/varchar/int type.
-1. One partition rule for one partition table.
-1. partition by also supports list, only one value can be used to split the partition list.
+2. Drop the parent table will cascade to also drop the child table (the partition table)
+3. Partition key column must be of text/varchar/int type.
+4. One partition rule for one partition table.
+5. partition by also supports list, only one value can be used to split the partition list.
+
 ### Example
 
 ```sql
@@ -47,6 +48,7 @@ create table hologres_child2 partition of hologres_parent for values in('b');
 create table hologres_child3 partition of hologres_parent for values in('c');
 commit;
 ```
+
 ## drop partition table
 
 DROP PARTITION TABLE is similar to DROP TABLE. 

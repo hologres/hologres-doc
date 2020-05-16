@@ -21,6 +21,7 @@ _**value**_ : The property value.
 ## Limitation
 
 Only default shard_count of Table Group is supported.
+
 ## Example
 
 Change default shard count of Table Group to 120.

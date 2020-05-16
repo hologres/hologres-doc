@@ -7,7 +7,7 @@ Load Data Into Hologres
 	spark
 	file_system
 	psql_client   
-        copy
+    copy
 
    
    

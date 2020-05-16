@@ -3,6 +3,7 @@
 ## Introduction
 
 set_table_property: Set the table properties includes index, distribution keys, columnar/row store, TTL ...
+
 ## Synopsis
 
 ```sql
@@ -17,6 +18,7 @@ where property in
   time_to_live_in_seconds
   distribution_key
 ```
+
 ## Parameters
 
 _**table_name:**_ The name of the new table which could belongs to some schema. The names can contain only alphanumeric characters or an underscore(_). The first character must be an alphabetic character. All alphabetic characters are treated as lower case because the table name is case insensitive._

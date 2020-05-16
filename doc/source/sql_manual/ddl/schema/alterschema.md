@@ -9,6 +9,7 @@ alter schema rename：rename schema
 ```sql
 alter schema oldschema rename to newschema; 
 ```
+
 ## Limitation
 
 After the rename statement is executed successfully, all the tables under the original schema will be transferred to the new schema, but the original schema will be kept.

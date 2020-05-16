@@ -4,7 +4,7 @@ This section will introduce the simple permission model of Hologres.
 
 ## Background
 
-Hologres is compatible with Postgres and uses the same permission system of Postgres . The typical Postgres permission system is very strict. For example, in business scenarios, when business personnel try to authorize a user, he/she need to execute a lot of permission statements. And Different roles have different permissions, which is tedious. And a missing permission statement could cause authorization failure.
+Hologres is compatible with Postgres and uses the same permission system of Postgres. The typical Postgres permission system is very strict. For example, in business scenarios, when business personnel try to authorize a user, he/she need to execute a lot of permission statements. And Different roles have different permissions, which is tedious. And a missing permission statement could cause authorization failure.
 
 It's hard to ask every user be an expert of the permission system of Postgres. Besides, the misuse of permission management, will not only bring security risk to the business, but also increase the user's management cost.
 
@@ -21,20 +21,6 @@ Simple permission model has six permission groups for each DB:
 | **db_developer** | - Developer of DB.<br />- The developer group is also a writer group, and has the superset of the permissions of the writer group and viewer group.<br />- Except the permission of manage DB and Users, The developer group have full permission of tables, external tables, table-like objects (such as views, etc.), Function, Procedure, Foreign Server, FDW, Type, and Language. can add, delete, modify and check all tables of all schemas;<br />- Except of the system schema, has The USAGE and CREATE permissions of all other schemas, can create tables, create views, create external tables and other DDL operations. |
 | **db_writer**    | - Writer of DB.<br />- The writer group is also a viewer group, and has superset of the permissions of the viewer group;<br />- have permissions of SELECT, INSERT, UPDATE, and DELETE of tables. can add, delete, check, and modify the data of all tables, foreign tables, and table-like objects (such as views) under all schemas.<br />- Can access or use the Function, Procedure, Foreign Server, FDW, Type, and Language objects owned by the developer;<br />- Only have USAGE permissions of All schema, DDL operations are not allowed; |
 | **db_viewer**    | - Analyst of DB  (readonly).<br />- have SELECT permission: can read the data of all tables, foreign tables and table-like objects (such as views, etc.) of all schemas, that is.<br />- Can access or use the Function, Procedure, Foreign Server, FDW, Type, and Language objects owned by the developer.<br />- USAGE permissions for all schemas; |
-| **Others**       | - Users not belong to any of the above user groups.<br />- Cannot connect to the DB.<br />- To connect a certain DB, the user must be add to one of the; above user groups by Superuser or db_admin. |
-
-​                                           
-
-​                                           
-
-​                                           
-
-​                                           
-
-​                                           
-
-​                                           
-
-​                                           
+| **Others**       | - Users not belong to any of the above user groups.<br />- Cannot connect to the DB.<br />- To connect a certain DB, the user must be add to one of the; above user groups by Superuser or db_admin. |                               
 
 To authorize new users, please refer to the usage of the simple permission model section

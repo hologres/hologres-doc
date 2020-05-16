@@ -112,6 +112,7 @@ SELECT int4_array[3] FROM array_example;
 ```
 
 access a slice of an array
+
 ```sql
 SELECT int4_array[1:2] FROM array_example;
 ```

@@ -9,6 +9,7 @@ Create a table based on a query result, including all columns returned by the qu
 ```sql
 CALL HG_CREATE_TABLE_LIKE ( table_name, query_sql [, partition_clause] )
 ```
+
 ## Parameters
 
 _**table_name**_: The name of the new table which could belongs to some schema. The names can contain only alphanumeric characters or an underscore(_). The first character must be an alphabetic character. All alphabetic characters are treated as lower case because the table name is case insensitive.

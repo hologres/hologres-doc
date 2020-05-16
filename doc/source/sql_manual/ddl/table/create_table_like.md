@@ -7,9 +7,11 @@ create table like：creates a new table represents the result table of the SELEC
 ### Introduction
 
 To create a regular table with CREATE TABLE LIKE in Hologres, the following example illustrates the usage:
+
 ```sql
 CALL hg_create_table_like('table_name', 'select_query');
 ```
+
 _**Note**_: Within the call to hg_create_table_like, the system will generate a schema represents the result table of the select_query, and use that schema to create a new table with the name "table_name". It will not insert any data into the new table. 
 
 ### Parameters
@@ -36,6 +38,7 @@ CREATE TABLE test_table(a int, b text);
 
 CALL hg_create_table_like('holo_table', 'select *, 1 as c, ''a'' as d from test_table');
 ```
+
 ## Partition Table
 
 ### Introduction
@@ -45,6 +48,7 @@ The command of "create table like" for partition tables:
 ```sql
 CALL hg_create_table_like('table_name', 'select_query', 'partition_clause');
 ```
+
 ### Parameters
 
 _**table_name：**_The new table's name.  It must not be for an Foreign Table; It must be string literal, which means it can not be strings returned from a function call or composed of other other string or name variables.
@@ -88,6 +92,7 @@ see more details in **set_table_property**'s documentation.
 ### Limitation
 
 There must be unique column names for the select query, otherwise an error about conflicting column names will be raised. e.g.
+
 ```sql
 CALL hg_create_table_like('new_table', 'select *, 1 as c, ''a'' as c from src_table');
 ERROR:  column "c" specified more than once

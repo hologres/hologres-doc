@@ -7,11 +7,13 @@ alter partition table：alter partition tables.
 ## Synopsis
 
 Hologres support the following 3 types of command for "ALTER PARTITION TABLE":
+
 ```sql
 ALTER TABLE [IF EXISTS] table_name RENAME to new_table_name;
 ALTER TABLE [IF EXISTS] table_name ATTACH PARTITION new_partition_name FOR VALUES in (<string_literal>);
 ALTER TABLE [IF EXISTS] table_name DETACH PARTITION paritition_name;
 ```
+
 ## Parameters
 
 ATTACH PARTITION new_partition_name FOR VALUES in (<string_literal>)：The shares the same _`partition_bound_spec`_ as "CREATE TABLE". Which use the existing table (which itself could be a partition table) as a partition table of the target table.
