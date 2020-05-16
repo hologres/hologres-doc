@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:1
+msgid "GET_JSON_OBJECT"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:5
+msgid ""
+"GET_JSON_OBJECT：Extracts an JSON object from a JSON string. <br "
+"/>GET_JSON_OBJECT is provided by hive_compatible extension. To use it, it"
+" required to create the hive_compatible extension.<br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:7
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:14
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:16
+msgid "json_string：An valid JSON text<br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:18
+msgid ""
+"path：A JSON path that specified the object to extract. The dollar sign($)"
+" represents a JSON variable. The dot operator(.) and the square brackets "
+"are used to access a member or an array element. NULL is returned if the "
+"json_string is invalid.<br />"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:20
+msgid "Example"
+msgstr ""
+

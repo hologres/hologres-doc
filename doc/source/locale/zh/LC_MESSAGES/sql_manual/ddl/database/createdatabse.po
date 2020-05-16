@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 16:52+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:1
+msgid "CREATE DATABASE"
+msgstr "CREATE DATABASE"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:3
+msgid "Introduction"
+msgstr "命令介绍"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:5
+msgid "CREATE DATABASE -- create a new database."
+msgstr "create database：创建数据库"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:7
+msgid ""
+"To create a database, you must be a superuser or have the special "
+"CREATEDB privilege."
+msgstr "必须是实例的superuser或者有创建数据库权限的角色才能创建数据库。"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:9
+msgid ""
+"Note:  A default database named postgres is created automatically by the "
+"service when the instance is created successfully. However, the "
+"allocated resource quota is limited on this database, creating new "
+"databases are recommended."
+msgstr ""
+"说明：实例创建成功后系统会生成一个名叫postgres的数据库，但该数据库分配资"
+"源少，实际业务开发建议新建数据库。"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:11
+msgid "Synopsis"
+msgstr "命令格式"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:19
+msgid "Parameters"
+msgstr "参数说明"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:21
+msgid ""
+"db_name:The name of a database to create. The name must be unique within "
+"the instance and comply with the rules for SQL identifiers."
+msgstr "db_name：为创建的数据库名，遵循SQL标识符的一般规则。"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:22
+msgid ""
+"user_name: The role name of the user who will own the new database. By "
+"default, the current user (namely, the user executing the command) will "
+"be the owner of the database. The owner has the permission to delete the "
+"database, which operation will remove the entities of the database, "
+"including table and data, etc."
+msgstr ""
+"user_name：授予成DB管理员的账号名，当前账号自动成为该新数据库的owner，也"
+"可以把owner的权限授予给其他user，以后删除这个数据库也是该owner的特权，同"
+"时也会删除数据库内对应的对象，包括表、数据等。"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:23
+msgid ""
+"The super user can create database for other users and make them as "
+"owner. And then database owner can manage and configure the database."
+msgstr ""
+"作为superuser可为其他人创建数据库，并使其成为新的数据库owner，这样他们就"
+"能自行管理和配置该数据库。"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:24
+msgid "Example"
+msgstr "使用示例"
+
+#: ../../source/sql_manual/ddl/database/createdatabse.md:26
+msgid "To create a new database:"
+msgstr "示例在Hologres中新建一个数据库，执行以下命令："

@@ -1,0 +1,377 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"PO-Revision-Date: 2020-05-15 17:39+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:1
+msgid "CREATE TABLE"
+msgstr "CREATE TABLE"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:3
+msgid "Create Table"
+msgstr "建表"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:5
+msgid "Synopsis"
+msgstr "命令格式"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:20
+#: ../../source/sql_manual/ddl/table/createtable.md:135
+msgid "Parameters"
+msgstr "参数说明"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:22
+msgid ""
+"column_type is the data type of the field. please refer to data type for all "
+"supported data types."
+msgstr "column_type 为字段的数据类型，已支持的数据类型可以参见数据类型一节。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:23
+msgid ""
+"Column constraints 'column_constraints' and table constraints "
+"'table_constraints' are as follows: | Parameter   | column_constraints | "
+"table_constraints | | ----------- | ------------------ | ----------------- | "
+"| primary key | supported          | supported         | | not null    | "
+"supported          | -                 | | null        | supported          | "
+"-                 | | unique      | not supported      | not supported     | "
+"| check       | not supported      | not supported     | | default     | not "
+"supported      | not supported     |"
+msgstr "列约束 column_constraints 和 表约束 table_constraints 的支持情况如下："
+
+#: ../../source/sql_manual/ddl/table/createtable.md:33
+msgid ""
+"3.set_table_property is used to set properties of the table, see below for "
+"details."
+msgstr "3.set_table_property为表设置属性，详见下文。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:35
+msgid "Limitation"
+msgstr "使用限制"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:37
+msgid ""
+"1.column_constraints can only use one column as primary key，while "
+"table_constraints can use multiple columns as primary key."
+msgstr ""
+"1.column_onstraints不能有多列为primary key，但tableConstraints允许设置多列为表"
+"primary key。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:39
+msgid ""
+"2.Table names and column names are not case sensitive. If you need to define "
+"uppercase or special character for table names, or column names, you can use "
+"double quotes \"\". For example:"
+msgstr ""
+"2.表名和列名均对大小写不敏感，如需定义大写表名、大写列名、特殊字符表名或列名，"
+"可使用双引号””进行转义。例如"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:64
+msgid ""
+"3.When creating a table, if there is no table with the same name and the "
+"semantics are correct, the table creation will return success. If there is a "
+"table with the same name without specifying the IF NOT EXISTS option, an "
+"exception is returned. If sql has 'IF NOT EXISTS', Hologres will print a "
+"notice, skip the table creation, and return success. The rules are as follows:"
+msgstr ""
+"3.在创建表时，如果不存在同名表且语义正确，表创建都会返回成功。如果不指定 IF "
+"NOT EXISTS 选项而存在同名表，则返回异常。如果指定 IF NOT EXISTS 选项，"
+"Hologres 会打印提示信息，跳过表创建步骤，返回成功。直观的规则如下："
+
+#: ../../source/sql_manual/ddl/table/createtable.md:88
+msgid ""
+"4.If not using double quotes \"\", table names and column names can not have "
+"special characters. Table names and column names can only have characters a-"
+"z, A-Z, numbers and underscores (_), and  must start with a letter. Since "
+"table names and column names are not sensitive, A-Z will be regarded as lower "
+"case. Examples are as follows:"
+msgstr ""
+"4.如未做双引号””转义，则表名、列名中不能有特殊字符，只能用英文的 a-z、A-Z 及数"
+"字和下划线(_)，且必须以字母开头。由于大小写不敏感，A-Z 统一会被看成小写。示例"
+"如下："
+
+#: ../../source/sql_manual/ddl/table/createtable.md:97
+msgid ""
+"5.The length of the table name does not exceed 64 bytes, and the bytes "
+"exceeded 64 bytes will be truncated."
+msgstr "5.表名的长度不超过 64 字节，超过 64 字节将被截断。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:99
+msgid "Example"
+msgstr "使用示例"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:101
+msgid "create table example:"
+msgstr "示例创建一张普通表"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:112
+msgid "Set table properties"
+msgstr "设置表属性"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:114
+msgid ""
+"In Hologres, set_table_property helps to organize and query data efficiently."
+msgstr ""
+"在 Hologres 中，可以通过 set_table_property为表设置多种属性，合理的表属性设置"
+"可以有助于系统高效地组织和查询数据。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:115
+msgid "Introduction"
+msgstr "命令介绍"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:120
+#: ../../source/sql_manual/ddl/table/createtable.md:142
+#: ../../source/sql_manual/ddl/table/createtable.md:159
+#: ../../source/sql_manual/ddl/table/createtable.md:206
+#: ../../source/sql_manual/ddl/table/createtable.md:227
+#: ../../source/sql_manual/ddl/table/createtable.md:248
+#: ../../source/sql_manual/ddl/table/createtable.md:270
+msgid "Explanation:"
+msgstr "命令格式"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:122
+msgid ""
+"Note: It should be noted that the call to set_table_property needs to be "
+"executed in the same transaction as create table."
+msgstr ""
+"说明：要注意的是，set_table_property的调用需要与create table在同一事务中执行。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:124
+msgid "the following syntax are supported:"
+msgstr "主要语法支持且仅支持以下几种："
+
+#: ../../source/sql_manual/ddl/table/createtable.md:137
+msgid "orientation"
+msgstr "orientation"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:144
+msgid "orientation：Specifies a table is row store or column store"
+msgstr "orientation：指定了数据库表在Hologres中是列存还是行存。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:145
+msgid ""
+"Column store is the default setting of orientation. Column store is more "
+"friendly to OLAP scenes, suitable for various complex queries, while row "
+"store is more friendly to kv scenes, suitable for primary key-based query and "
+"scan."
+msgstr ""
+" Hologres中，数据库表默认为列存（column store）形式。列存对于 OLAP 场景较为友"
+"好，适合各种复杂查询，行存对于 kv 场景比较友好，适合基于 primary key 的点查和"
+"scan。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:147
+#: ../../source/sql_manual/ddl/table/createtable.md:166
+#: ../../source/sql_manual/ddl/table/createtable.md:189
+#: ../../source/sql_manual/ddl/table/createtable.md:215
+#: ../../source/sql_manual/ddl/table/createtable.md:236
+#: ../../source/sql_manual/ddl/table/createtable.md:277
+#: ../../source/sql_manual/ddl/table/createtable.md:293
+msgid "Example："
+msgstr "使用示例"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:154
+msgid "clustering_key"
+msgstr "clustering_key"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:161
+msgid ""
+"clustering_key： Create a clustered index on the specified columns. Hologres "
+"will sort the data on the clustered index, and clustered index can speed up  "
+"range and filter queries on the index column."
+msgstr ""
+"clustering_key： 在指定的列上建立聚簇索引。hologres会在聚簇索引上对数据进行排"
+"序，建立聚簇索引能够加速用户在索引列上的range和filter查询。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:162
+msgid "all columns of clustering_key must be not null"
+msgstr "clustering_key 指定的列必须满足非空约束（not null）。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:163
+msgid ""
+"clustering_key can add :desc or :asc after the columnName , and default is "
+"asc."
+msgstr ""
+"clustering_key 指定列时，可在列名后添加 :desc 或者 :asc 来表明构建索引时的排序"
+"方式。排序方式默认为asc，即升序。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:164
+msgid "clustering_key cant not contains float/double column."
+msgstr "数据类型为float/double的列，不能设置为 clustering_key。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:178
+msgid "segment_key"
+msgstr "segment_key"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:184
+msgid ""
+"Specify some columns (eg: time columns) as the segment key. When the query "
+"filter condition contains segmented columns, the query can quickly find the "
+"storage locations in files by segment_key values."
+msgstr ""
+"segment_key：指定一些列（例如，时间列）作为分段键。当查询条件包含分段列时，查"
+"询可以通过segment_key快速找到相应数据对应的存储位置。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:185
+msgid "segment_key can only used by column store."
+msgstr "设置 segment_key 要求 orientation 为 column，即列存表。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:186
+msgid "All columns of segment_key must be not null."
+msgstr "segment_key 指定的列必须满足非空约束（not null）。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:187
+msgid "segment_key cant not contains float/double column."
+msgstr "float / double 等浮点类型列不能被设置为 segment_key。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:201
+msgid "bitmap_columns"
+msgstr "bitmap_columns"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:208
+msgid ""
+"bitmap_columns：create a bit code(Bitmap) for the columns. Bitmap can quickly "
+"filter the data in a segment, the columns, used to filter data is suggested "
+"to use bitmap."
+msgstr ""
+"bitmap_columns：在列上构建比特编码。bitmap可以对segment内部的数据进行快速过"
+"滤，所以建议把filter条件的数据建成比特编码。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:209
+msgid "bitmap_columns can only used by column store."
+msgstr "设置 bitmap_columns 要求orientation 为 column，即列存表。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:210
+msgid ""
+"Bitmap  is suitable for unordered columns with few values. And each value is "
+"mapped to  a binary value."
+msgstr ""
+"bitmap_columns 适合无序且取值不多的列，对于每个取值构造一个二进制串，表示取值"
+"所在位置的 bitmap。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:211
+msgid "bitmap_columns can contain null。"
+msgstr "bitmap_columns 指定的列可以为 null。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:212
+msgid "all text columns will be added to bitmap_columns by default"
+msgstr "默认所有 text 列都会被隐式地设置到 bitmap_columns 中。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:213
+#: ../../source/sql_manual/ddl/table/createtable.md:234
+msgid "Can be used in the transaction of table creation or separately"
+msgstr "可以再事务之外单独使用。表示修改bitmap_columns列。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:222
+msgid "dictionary_encoding_columns"
+msgstr "dictionary_encoding_columns"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:229
+msgid ""
+"Hologres builds a dictionary map for the value of the columns of "
+"dictionary_encoding_columns. Dictionary encoding can convert string "
+"comparisons to numeric comparisons to speed up queries such as group by and "
+"filter"
+msgstr ""
+"字典编码列属性（dictionary_encoding_columns）指定字典编码列，Hologres 为指定列"
+"的值构建字典映射。字典编码可以将字符串的比较转成数字的比较，加速group by、"
+"filter等查询。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:230
+msgid "dictionary_encoding_columns can only used by column store."
+msgstr "设置dictionary_encoding_columns 要求 orientation 为 column，即列存表。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:231
+msgid "columns of dictionary_encoding_columns can contain null"
+msgstr "dictionary_encoding_columns 指定的列可以为 null。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:232
+msgid ""
+"unordered columns with small cardinality are suitable for "
+"dictionary_encoding_columns, which can be compressed and save storage."
+msgstr "无序但取值较少的列适合设置 dictionary_encoding_columns，可以压缩存储。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:233
+msgid "all text columns will be added to dictionary_encoding_columns by default"
+msgstr "默认所有 text 列都会被隐式地设置到 dictionary_encoding_columns 中。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:243
+msgid "time_to_live_in_seconds"
+msgstr "time_to_live_in_seconds"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:250
+msgid ""
+"time_to_live_in_seconds：The life time of the table, in seconds, it must be a "
+"non-negative numeric type, either integer or floating point."
+msgstr ""
+"time_to_live_in_seconds：表数据的生存时间，单位为秒，必须是非负数字类型，整数"
+"或浮点数均可。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:251
+msgid ""
+"Can be used outside the transaction of table creation, to modify the life "
+"time of table"
+msgstr "可以在事务之外单独使用，表示修改表数据生存时间"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:253
+msgid "Example:"
+msgstr "使用示例"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:265
+msgid "distribution_key"
+msgstr "distribution_key"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:272
+msgid "distribution_key specifies distribution strategy of a table."
+msgstr "distribution_key 属性指定了数据库表分布策略。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:273
+msgid ""
+"columnName can not have any white space. and it use comma(,) to separate "
+"multiple columns."
+msgstr ""
+"columnName 部分如设置单值，不要有多余空格。如设置多值，则以逗号分隔，同样不要"
+"有多余的空格。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:274
+msgid "distribution_key can contain null"
+msgstr "distribution_key 指定的列可以为 null。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:275
+msgid ""
+"tables are randomly distributed by default. The data will be randomly "
+"distributed to each shard. If using distribution_key, the data will be "
+"shuffled to each shard according to the specified columns, the rows with same "
+"distribution_key will be shuffle to the same shard.  Hologres can filter out "
+"shards for scanning if query having filter condition of distribution_key. "
+"Hologres can use local join optimization, if join query joined by "
+"distribution_key."
+msgstr ""
+"Hologres 中，数据库表默认为随机分布形式。数据将被随机分配到各个shard上。如果用"
+"户制定了分布列，数据将按照指定列，将数据shuffle到各个shard，同样的数值肯定会在"
+"同样的shard中。当用户以分布列做过滤条件时，Hologres可以直接筛选出数据相关的"
+"shard进行扫描。当用户以分布列做join条件时，Hologres不需要再次将数据shuffle到其"
+"他计算节点，直接在本节点join本节点数据即可，可以大大提高执行效率。"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:289
+msgid "Add comments"
+msgstr "增加注释"
+
+#: ../../source/sql_manual/ddl/table/createtable.md:291
+msgid ""
+"Hologres supports adding comments to tables, external tables, columns, etc. "
+"Please refer to PostgreSQL。"
+msgstr ""
+"Hologres支持给表，外表，列等增加注释的功能， 使用方法可以参加PostgreSQL。"
