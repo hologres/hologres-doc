@@ -5,17 +5,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Hologres\n"
+"Project-Id-Version:  Hologres\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
 "PO-Revision-Date: 2020-05-15 14:36+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.3.1\n"
 
 #: ../../source/data_load/copy.md:1
 msgid "COPY From Stdin"
@@ -23,18 +22,17 @@ msgstr "使用COPY命令导入客户端数据"
 
 #: ../../source/data_load/copy.md:3
 msgid ""
-"Hologres current version supports using copy command to upload data. Users "
-"can upload data from stdin  to specific tables."
-msgstr ""
-"当前版本Hologres支持使用copy命令导入数据，您可以根据业务需求将标准输入的数据"
-"导入到指定的表中。"
+"Hologres current version supports using copy command to upload data. "
+"Users can upload data from stdin  to specific tables."
+msgstr "当前版本Hologres支持使用copy命令导入数据，您可以根据业务需求将标准输入的数据导入到指定的表中。"
 
 #: ../../source/data_load/copy.md:5
 msgid "Introduction"
 msgstr "命令介绍"
 
 #: ../../source/data_load/copy.md:7
-msgid "COPY: upload client data from stdin  to a table."
+#, fuzzy
+msgid "COPY: upload client data from stdin to a table."
 msgstr "COPY：从客户端标准输入导入数据到指定表中。"
 
 #: ../../source/data_load/copy.md:9
@@ -58,7 +56,8 @@ msgid "table_name：table name"
 msgstr "表：表名"
 
 #: ../../source/data_load/copy.md:36
-msgid "STDIN ：standard input"
+#, fuzzy
+msgid "STDIN：standard input"
 msgstr "STDIN ：指定从客户端输入"
 
 #: ../../source/data_load/copy.md:38
@@ -69,22 +68,32 @@ msgstr "FORMAT：支持text、csv格式, 默认是text"
 msgid ""
 "DELIMITER：delimiter between columns. Defalt is tab. For CSV，specify "
 "DELIMITER as ','"
-msgstr ""
-"DELIMITER：指定字段分隔符，默认为文本格式的制表符， CSV格式的逗号，如"
-"DELIMITER AS ‘,’"
+msgstr "DELIMITER：指定字段分隔符，默认为文本格式的制表符， CSV格式的逗号，如DELIMITER AS ‘,’"
 
 #: ../../source/data_load/copy.md:42
 msgid "Example"
 msgstr ""
 
 #: ../../source/data_load/copy.md:44
-msgid "1.Upload data from stdin"
-msgstr ""
+#, fuzzy
+msgid "1. Upload data from stdin"
+msgstr "COPY：从客户端标准输入导入数据到指定表中。"
 
 #: ../../source/data_load/copy.md:66
-msgid "2.Upload data from stdin to CSV"
-msgstr ""
+#, fuzzy
+msgid "2. Upload data from stdin to CSV"
+msgstr "COPY：从客户端标准输入导入数据到指定表中。"
 
 #: ../../source/data_load/copy.md:86
-msgid "3.Update client file using CopyManager"
+msgid "3. Update client file using CopyManager"
 msgstr ""
+
+#~ msgid "1.Upload data from stdin"
+#~ msgstr ""
+
+#~ msgid "2.Upload data from stdin to CSV"
+#~ msgstr ""
+
+#~ msgid "3.Update client file using CopyManager"
+#~ msgstr ""
+

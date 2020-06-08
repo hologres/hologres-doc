@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,16 +25,12 @@ msgstr ""
 msgid "Introduction"
 msgstr ""
 
-#: ../../source/sql_manual/other/cancel_query.md:4
-msgid "CANCEL QUERY： Cancel a backend's current query. <a name=\"vEgcX\"></a>"
+#: ../../source/sql_manual/other/cancel_query.md:5
+msgid "CANCEL QUERY： Cancel a backend's current query."
 msgstr ""
 
 #: ../../source/sql_manual/other/cancel_query.md:6
 msgid "Synopsis"
-msgstr ""
-
-#: ../../source/sql_manual/other/cancel_query.md:10
-msgid "<a name=\"K9TN7\"></a>"
 msgstr ""
 
 #: ../../source/sql_manual/other/cancel_query.md:11
@@ -42,7 +38,7 @@ msgid "Examples"
 msgstr ""
 
 #: ../../source/sql_manual/other/cancel_query.md:13
-msgid "<br />Here is the steps to cancel query in Hologres:"
+msgid "Here is the steps to cancel query in Hologres:"
 msgstr ""
 
 #: ../../source/sql_manual/other/cancel_query.md:15
@@ -50,6 +46,18 @@ msgid "Find the pid of the running query that you are about to cancel:"
 msgstr ""
 
 #: ../../source/sql_manual/other/cancel_query.md:21
-msgid "<br />2.Cancel the query using the identified pid<br />"
+msgid "2.Cancel the query using the identified pid"
 msgstr ""
+
+#~ msgid "CANCEL QUERY： Cancel a backend's current query. <a name=\"vEgcX\"></a>"
+#~ msgstr ""
+
+#~ msgid "<a name=\"K9TN7\"></a>"
+#~ msgstr ""
+
+#~ msgid "<br />Here is the steps to cancel query in Hologres:"
+#~ msgstr ""
+
+#~ msgid "<br />2.Cancel the query using the identified pid<br />"
+#~ msgstr ""
 

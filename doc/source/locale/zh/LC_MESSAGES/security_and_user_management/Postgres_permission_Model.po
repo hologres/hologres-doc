@@ -5,29 +5,29 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Hologres\n"
+"Project-Id-Version:  Hologres\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
 "PO-Revision-Date: 2020-05-15 15:00+0800\n"
+"Last-Translator: \n"
+"Language: zh\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.3.1\n"
-"Language: zh\n"
 
 #: ../../source/security_and_user_management/Postgres_permission_Model.md:1
-msgid "Postgres permission Model"
+#, fuzzy
+msgid "Postgres Permission Model"
 msgstr "标准Postgres授权"
 
 #: ../../source/security_and_user_management/Postgres_permission_Model.md:3
 msgid ""
 "Hologres is compatible with Postgres and uses the same permission system "
 "of Postgres ."
-msgstr ""
-"交互式分析兼容PostgreSQL，因此采用的授权体系也同标准的PostgreSQL语句。"
+msgstr "交互式分析兼容PostgreSQL，因此采用的授权体系也同标准的PostgreSQL语句。"
 
 #: ../../source/security_and_user_management/Postgres_permission_Model.md:5
 msgid "GRANT"
@@ -38,52 +38,53 @@ msgid "The standard Postgresql authorization steps are as follows"
 msgstr "若您的数据库使用标准PostgreSQL授权模式，您可以参照以下步骤来操作。"
 
 #: ../../source/security_and_user_management/Postgres_permission_Model.md:9
-msgid "step1: Create user"
+#, fuzzy
+msgid "Step 1: Create user"
 msgstr "1.创建角色"
 
-#: ../../source/security_and_user_management/Postgres_permission_Model.md:15
+#: ../../source/security_and_user_management/Postgres_permission_Model.md:16
 msgid "more information，see PostgreSQL createrole."
 msgstr "更多关于创建角色请参见：PostgreSQL文档 CREATE ROLE。"
 
-#: ../../source/security_and_user_management/Postgres_permission_Model.md:17
-msgid "step2: Grant user"
+#: ../../source/security_and_user_management/Postgres_permission_Model.md:18
+#, fuzzy
+msgid "Step 2: Grant user"
 msgstr "2.权限授予"
 
-#: ../../source/security_and_user_management/Postgres_permission_Model.md:19
+#: ../../source/security_and_user_management/Postgres_permission_Model.md:20
 msgid ""
 "After the user is created in the role of Hologres, the user needs to be "
 "granted certain permissions ,and then the user can use Hologres within "
 "the scope of permissions.Common GRANT are as follows:"
-msgstr ""
-"将用户创建进Hologres的角色中后，还需要给用户授予一定的权限，该用户才能在"
-"权限范围内使用Hologres。在Hologres中常用的权限授予可以参照以下表："
+msgstr "将用户创建进Hologres的角色中后，还需要给用户授予一定的权限，该用户才能在权限范围内使用Hologres。在Hologres中常用的权限授予可以参照以下表："
 
-#: ../../source/security_and_user_management/Postgres_permission_Model.md:60
+#: ../../source/security_and_user_management/Postgres_permission_Model.md:61
 msgid "More information about GRANT，please see PostgeSQL GRANT."
 msgstr "更多关于权限的授予请参见PostgreSQL GRANT."
 
-#: ../../source/security_and_user_management/Postgres_permission_Model.md:61
+#: ../../source/security_and_user_management/Postgres_permission_Model.md:63
 msgid "REVOKE"
 msgstr "撤销授权"
 
-#: ../../source/security_and_user_management/Postgres_permission_Model.md:63
+#: ../../source/security_and_user_management/Postgres_permission_Model.md:65
 msgid "Use REVOKE to revoke permissions:"
 msgstr "若想撤销子账号的某一个权限，使用REVOKE即可，示例如下："
 
-#: ../../source/security_and_user_management/Postgres_permission_Model.md:67
+#: ../../source/security_and_user_management/Postgres_permission_Model.md:71
 msgid "More information about REVOKE，please see PostgreSQL REVOKE."
 msgstr "更多关于权限的撤销操作请参见：PostgreSQL REVOKE."
 
-#: ../../source/security_and_user_management/Postgres_permission_Model.md:69
+#: ../../source/security_and_user_management/Postgres_permission_Model.md:73
 msgid "DROP user"
 msgstr "删除用户"
 
-#: ../../source/security_and_user_management/Postgres_permission_Model.md:71
+#: ../../source/security_and_user_management/Postgres_permission_Model.md:75
 msgid "To drop a user, use the following command:"
 msgstr "要删除一个用户，使用以下命令来完成:"
 
-#: ../../source/security_and_user_management/Postgres_permission_Model.md:75
+#: ../../source/security_and_user_management/Postgres_permission_Model.md:81
 msgid ""
 "Once the user is drooped, he will not be able to connect to the Hologres "
 "instance and access any objects in the instance."
 msgstr "用户被删除之后，将不能连接实例并访问实例内的任何对象，请谨慎操作."
+

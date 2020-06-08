@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/sql_manual/ddl/database/drop_database.md:1
+msgid "DROP DATABASE"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/database/drop_database.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/database/drop_database.md:5
+msgid "DROP DATABASE -- Drop an existing database."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/database/drop_database.md:7
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/database/drop_database.md:13
+msgid "Limitation"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/database/drop_database.md:15
+msgid ""
+"It can only be executed by the super user of the database owner which is "
+"assigned by the super user."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/database/drop_database.md:16
+msgid "Drop database will remove all the entities of the database."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/database/drop_database.md:17
+msgid "The database will be inaccessible after it is dropped."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/database/drop_database.md:19
+msgid "Example"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/database/drop_database.md:21
+msgid "Drop an existing database."
+msgstr ""
+

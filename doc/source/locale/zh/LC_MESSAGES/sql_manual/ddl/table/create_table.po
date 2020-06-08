@@ -1,0 +1,331 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/sql_manual/ddl/table/create_table.md:1
+msgid "CREATE TABLE"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:3
+msgid "Create Table"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:5
+#: ../../source/sql_manual/ddl/table/create_table.md:152
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:21
+#: ../../source/sql_manual/ddl/table/create_table.md:172
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:23
+msgid ""
+"1.column_type is the data type of the field. please refer to data type "
+"for all supported data types."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:25
+msgid ""
+"2.Column constraints 'column_constraints' and table constraints "
+"'table_constraints' are as follows:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:69
+msgid ""
+"3.set_table_property is used to set properties of the table, see below "
+"for details."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:71
+msgid "Limitation"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:73
+msgid ""
+"1.column_constraints can only use one column as primary key，while "
+"table_constraints can use multiple columns as primary key."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:75
+msgid ""
+"2.Table names and column names are not case sensitive. If you need to "
+"define uppercase or special character for table names, or column names, "
+"you can use double quotes \"\". For example:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:100
+msgid ""
+"3.When creating a table, if there is no table with the same name and the "
+"semantics are correct, the table creation will return success. If there "
+"is a table with the same name without specifying the IF NOT EXISTS "
+"option, an exception is returned. If sql has 'IF NOT EXISTS', Hologres "
+"will print a notice, skip the table creation, and return success. The "
+"rules are as follows:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:124
+msgid ""
+"4.If not using double quotes \"\", table names and column names can not "
+"have special characters. Table names and column names can only have "
+"characters a-z, A-Z, numbers and underscores (_), and  must start with a "
+"letter. Since table names and column names are not sensitive, A-Z will be"
+" regarded as lower case. Examples are as follows:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:133
+msgid ""
+"5.The length of the table name does not exceed 64 bytes, and the bytes "
+"exceeded 64 bytes will be truncated."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:135
+msgid "Example"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:137
+msgid "create table example:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:149
+msgid "Set table properties"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:151
+msgid ""
+"In Hologres, set_table_property helps to organize and query data "
+"efficiently."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:158
+msgid ""
+"Note: It should be noted that the call to set_table_property needs to be "
+"executed in the same transaction as create table."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:160
+msgid "the following syntax are supported:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:174
+msgid "orientation"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:179
+#: ../../source/sql_manual/ddl/table/create_table.md:199
+#: ../../source/sql_manual/ddl/table/create_table.md:251
+#: ../../source/sql_manual/ddl/table/create_table.md:275
+#: ../../source/sql_manual/ddl/table/create_table.md:299
+#: ../../source/sql_manual/ddl/table/create_table.md:324
+msgid "Explanation:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:181
+msgid "orientation：Specifies a table is row store or column store"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:182
+msgid ""
+"Column store is the default setting of orientation. Column store is more "
+"friendly to OLAP scenes, suitable for various complex queries, while row "
+"store is more friendly to kv scenes, suitable for primary key-based query"
+" and scan."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:184
+#: ../../source/sql_manual/ddl/table/create_table.md:206
+#: ../../source/sql_manual/ddl/table/create_table.md:231
+#: ../../source/sql_manual/ddl/table/create_table.md:260
+#: ../../source/sql_manual/ddl/table/create_table.md:284
+#: ../../source/sql_manual/ddl/table/create_table.md:331
+#: ../../source/sql_manual/ddl/table/create_table.md:349
+msgid "Example："
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:193
+msgid "clustering_key"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:201
+msgid ""
+"clustering_key： Create a clustered index on the specified columns. "
+"Hologres will sort the data on the clustered index, and clustered index "
+"can speed up  range and filter queries on the index column."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:202
+msgid "all columns of clustering_key must be not null"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:203
+msgid ""
+"clustering_key can add :desc or :asc after the columnName , and default "
+"is asc."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:204
+msgid "clustering_key cant not contains float/double column."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:220
+msgid "segment_key"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:226
+msgid ""
+"Specify some columns (eg: time columns) as the segment key. When the "
+"query filter condition contains segmented columns, the query can quickly "
+"find the storage locations in files by segment_key values."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:227
+msgid "segment_key can only used by column store."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:228
+msgid "All columns of segment_key must be not null."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:229
+msgid "segment_key cant not contains float/double column."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:245
+msgid "bitmap_columns"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:253
+msgid ""
+"bitmap_columns：create a bit code(Bitmap) for the columns. Bitmap can "
+"quickly filter the data in a segment, the columns, used to filter data is"
+" suggested to use bitmap."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:254
+msgid "bitmap_columns can only used by column store."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:255
+msgid ""
+"Bitmap  is suitable for unordered columns with few values. And each value"
+" is mapped to  a binary value."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:256
+msgid "bitmap_columns can contain null。"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:257
+msgid "all text columns will be added to bitmap_columns by default"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:258
+#: ../../source/sql_manual/ddl/table/create_table.md:282
+msgid "Can be used in the transaction of table creation or separately"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:269
+msgid "dictionary_encoding_columns"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:277
+msgid ""
+"Hologres builds a dictionary map for the value of the columns of "
+"dictionary_encoding_columns. Dictionary encoding can convert string "
+"comparisons to numeric comparisons to speed up queries such as group by "
+"and filter"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:278
+msgid "dictionary_encoding_columns can only used by column store."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:279
+msgid "columns of dictionary_encoding_columns can contain null"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:280
+msgid ""
+"unordered columns with small cardinality are suitable for "
+"dictionary_encoding_columns, which can be compressed and save storage."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:281
+msgid "all text columns will be added to dictionary_encoding_columns by default"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:293
+msgid "time_to_live_in_seconds"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:301
+msgid ""
+"time_to_live_in_seconds：The life time of the table, in seconds, it must "
+"be a non-negative numeric type, either integer or floating point."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:302
+msgid ""
+"Can be used outside the transaction of table creation, to modify the life"
+" time of table"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:304
+msgid "Example:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:318
+msgid "distribution_key"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:326
+msgid "distribution_key specifies distribution strategy of a table."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:327
+msgid ""
+"columnName can not have any white space. and it use comma(,) to separate "
+"multiple columns."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:328
+msgid "distribution_key can contain null"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:329
+msgid ""
+"tables are randomly distributed by default. The data will be randomly "
+"distributed to each shard. If using distribution_key, the data will be "
+"shuffled to each shard according to the specified columns, the rows with "
+"same distribution_key will be shuffle to the same shard.  Hologres can "
+"filter out shards for scanning if query having filter condition of "
+"distribution_key. Hologres can use local join optimization, if join query"
+" joined by distribution_key."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:345
+msgid "Add comments"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table.md:347
+msgid ""
+"Hologres supports adding comments to tables, external tables, columns, "
+"etc. Please refer to PostgreSQL。"
+msgstr ""
+

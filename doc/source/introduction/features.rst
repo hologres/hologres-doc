@@ -9,10 +9,6 @@ What is HSAP？
 
 HSAP is short for Hybrid Serving/Analytics Processing.
 
-<to be added>
-
-
-
 
 Advantages and Key Features
 ============================

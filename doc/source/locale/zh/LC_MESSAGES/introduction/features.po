@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-29 14:32-0700\n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/introduction/features.rst:2
 msgid "Hologres Introduction"
@@ -36,113 +36,109 @@ msgstr ""
 msgid "HSAP is short for Hybrid Serving/Analytics Processing."
 msgstr ""
 
-#: ../../source/introduction/features.rst:11
-msgid "<to be added>"
-msgstr ""
-
-#: ../../source/introduction/features.rst:14
+#: ../../source/introduction/features.rst:12
 msgid "Advantages and Key Features"
 msgstr ""
 
-#: ../../source/introduction/features.rst:18
+#: ../../source/introduction/features.rst:16
 msgid "High Performance"
 msgstr ""
 
-#: ../../source/introduction/features.rst:20
+#: ../../source/introduction/features.rst:18
 msgid ""
 "Ingest real-time and batch data at extremely high throughput (hundreds of"
 " millions RPS) and low ingestion latency. Data ingested is immediately "
 "queryable!"
 msgstr ""
 
-#: ../../source/introduction/features.rst:24
+#: ../../source/introduction/features.rst:22
 msgid "Fast Point-Lookup"
 msgstr ""
 
-#: ../../source/introduction/features.rst:26
+#: ../../source/introduction/features.rst:24
 msgid ""
 "Extremely fast to point-lookup a needle in your haystack with datum's "
 "primary keys."
 msgstr ""
 
-#: ../../source/introduction/features.rst:30
+#: ../../source/introduction/features.rst:28
 msgid "Low Latency"
 msgstr ""
 
-#: ../../source/introduction/features.rst:32
+#: ../../source/introduction/features.rst:30
 msgid ""
 "Query PB-Scale data in sub-second latency, maximizing business values "
 "with multi-dimensional interactive analytics."
 msgstr ""
 
-#: ../../source/introduction/features.rst:36
+#: ../../source/introduction/features.rst:34
 msgid "High Concurrency"
 msgstr ""
 
-#: ../../source/introduction/features.rst:38
+#: ../../source/introduction/features.rst:36
 msgid ""
 "Hologres can run hundreds of large queries at the same time without "
 "compromising query performance!"
 msgstr ""
 
-#: ../../source/introduction/features.rst:40
+#: ../../source/introduction/features.rst:38
 msgid ""
 "Has your team's productivity been restricted by some products that can "
 "only run a handful of queries at the same time otherwise your query "
 "performance will degrade substantially?"
 msgstr ""
 
-#: ../../source/introduction/features.rst:42
+#: ../../source/introduction/features.rst:40
 msgid "If so, Hologres is the a game changer for your team."
 msgstr ""
 
-#: ../../source/introduction/features.rst:46
+#: ../../source/introduction/features.rst:44
 msgid "BI Native"
 msgstr ""
 
-#: ../../source/introduction/features.rst:48
+#: ../../source/introduction/features.rst:46
 msgid ""
 "Seamlessly connect to your favourite BI tools, like Tableau, PowerBI, "
 "Qlik, AWS Quicksight, via JDBC/ODBC"
 msgstr ""
 
-#: ../../source/introduction/features.rst:52
+#: ../../source/introduction/features.rst:50
 msgid "Fully Compatible with PostgreSQL"
 msgstr ""
 
-#: ../../source/introduction/features.rst:54
+#: ../../source/introduction/features.rst:52
 msgid ""
 "Hologres embraces the mature ecosystem of Postgres for all the standards "
 "and protocols."
 msgstr ""
 
-#: ../../source/introduction/features.rst:56
+#: ../../source/introduction/features.rst:54
 msgid "That means, you can:"
 msgstr ""
 
-#: ../../source/introduction/features.rst:58
+#: ../../source/introduction/features.rst:56
 msgid "reuse all your existing favourite PostgreSQL tools without any migration"
 msgstr ""
 
-#: ../../source/introduction/features.rst:59
+#: ../../source/introduction/features.rst:57
 msgid ""
 "operate the same way as you operate a PostgreSQL instance. Minimum "
 "learning curving for people who are familiar with PostgreSQL."
 msgstr ""
 
-#: ../../source/introduction/features.rst:60
+#: ../../source/introduction/features.rst:58
 msgid "leverage existing rich PostgreSQL extensions to get your jobs done"
 msgstr ""
 
-#: ../../source/introduction/features.rst:64
+#: ../../source/introduction/features.rst:62
 msgid "Upsert At-Scale As You Wish"
 msgstr ""
 
-#: ../../source/introduction/features.rst:66
+#: ../../source/introduction/features.rst:64
 msgid "Update and delete data as you wish!"
 msgstr ""
 
-#: ../../source/introduction/features.rst:68
+#: ../../source/introduction/features.rst:66
 msgid ""
 "Hologres empowering you to update and delete data at-scale with strong "
 "consistency. You can update and delete data as frequently as you want "
@@ -151,78 +147,78 @@ msgid ""
 "immediately."
 msgstr ""
 
-#: ../../source/introduction/features.rst:70
+#: ../../source/introduction/features.rst:68
 msgid ""
 "Are you tired of a data warehouse let you only insert data but not update"
 " and delete? Don't let the technology limitation become your business' "
 "bottleneck."
 msgstr ""
 
-#: ../../source/introduction/features.rst:74
+#: ../../source/introduction/features.rst:72
 msgid "Schema Enforcement"
 msgstr ""
 
-#: ../../source/introduction/features.rst:76
+#: ../../source/introduction/features.rst:74
 msgid ""
 "Validate your input data for free. Get no surprise when retrieving and "
 "using your data."
 msgstr ""
 
-#: ../../source/introduction/features.rst:80
+#: ../../source/introduction/features.rst:78
 msgid "Built-in CDC (alpha)"
 msgstr ""
 
-#: ../../source/introduction/features.rst:82
+#: ../../source/introduction/features.rst:80
 msgid ""
 "Replicate your production OLTP database to Hologres directly for OLAP "
 "without any middleware required, for the ultimate simplicity"
 msgstr ""
 
-#: ../../source/introduction/features.rst:86
+#: ../../source/introduction/features.rst:84
 msgid "Full SQL Capability in ANSI Standard SQL"
 msgstr ""
 
-#: ../../source/introduction/features.rst:88
+#: ../../source/introduction/features.rst:86
 msgid ""
 "Run complex joins on your real-time and batch data for 360-degree "
 "insights."
 msgstr ""
 
-#: ../../source/introduction/features.rst:92
+#: ../../source/introduction/features.rst:90
 msgid "Low Cost"
 msgstr ""
 
-#: ../../source/introduction/features.rst:94
+#: ../../source/introduction/features.rst:92
 msgid ""
 "Buy a license, then run as many queries as you like, and scan as much "
 "data as you like! We don't charge you on the data usage!"
 msgstr ""
 
-#: ../../source/introduction/features.rst:96
+#: ../../source/introduction/features.rst:94
 msgid ""
 "You can even scale resources up and down on demand by benefiting from "
 "Hologres' architecture separating compute and storage."
 msgstr ""
 
-#: ../../source/introduction/features.rst:100
+#: ../../source/introduction/features.rst:98
 msgid "Flexible Deployment"
 msgstr ""
 
-#: ../../source/introduction/features.rst:102
+#: ../../source/introduction/features.rst:100
 msgid ""
 "Cloud-Native. Run anywhere: single machine, bare metal, Docker, "
 "Kubernetes."
 msgstr ""
 
-#: ../../source/introduction/features.rst:104
+#: ../../source/introduction/features.rst:102
 msgid "Minimum deployment dependencies."
 msgstr ""
 
-#: ../../source/introduction/features.rst:108
+#: ../../source/introduction/features.rst:106
 msgid "Secure and Reliable"
 msgstr ""
 
-#: ../../source/introduction/features.rst:110
+#: ../../source/introduction/features.rst:108
 msgid "Fault tolerent and highly available, data is replicated for redundancy."
 msgstr ""
 
@@ -304,5 +300,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Key Features"
+#~ msgstr ""
+
+#~ msgid "<to be added>"
 #~ msgstr ""
 

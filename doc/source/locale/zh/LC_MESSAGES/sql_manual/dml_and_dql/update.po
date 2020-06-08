@@ -5,17 +5,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Hologres\n"
+"Project-Id-Version:  Hologres\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
 "PO-Revision-Date: 2020-05-15 18:19+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.3.1\n"
 
 #: ../../source/sql_manual/dml_and_dql/update.md:1
 msgid "Update"
@@ -27,10 +26,10 @@ msgstr "命令介绍"
 
 #: ../../source/sql_manual/dml_and_dql/update.md:5
 msgid ""
-"UPDATE：update rows of a table.  It changes the values of the specified columns "
-"in all rows that satisfy the condition. Only the columns to be modified need be "
-"mentioned in the SET clause; columns not explicitly modified retain their "
-"previous values."
+"UPDATE：update rows of a table.  It changes the values of the specified "
+"columns in all rows that satisfy the condition. Only the columns to be "
+"modified need be mentioned in the SET clause; columns not explicitly "
+"modified retain their previous values."
 msgstr "update：对表指定列的行数据进行更新。"
 
 #: ../../source/sql_manual/dml_and_dql/update.md:7
@@ -42,54 +41,60 @@ msgid "Parameters"
 msgstr "参数说明"
 
 #: ../../source/sql_manual/dml_and_dql/update.md:19
+#, fuzzy
 msgid ""
-"table: The name of the table to update. Optionally, * can be specified after "
-"the table name to explicitly indicate that descendant tables are included.<br />"
+"table: The name of the table to update. Optionally, * can be specified "
+"after the table name to explicitly indicate that descendant tables are "
+"included."
 msgstr "table：需要更新的表名"
 
 #: ../../source/sql_manual/dml_and_dql/update.md:21
 msgid ""
-"alias：A substitute name for the target table. When an alias is provided, it "
-"completely hides the actual name of the table. For example, given UPDATE foo AS "
-"f, the remainder of the UPDATE statement must refer to this table as f not foo."
+"alias：A substitute name for the target table. When an alias is provided, "
+"it completely hides the actual name of the table. For example, given "
+"UPDATE foo AS f, the remainder of the UPDATE statement must refer to this"
+" table as f not foo."
 msgstr "alias：别名，目标表的替代名称"
 
 #: ../../source/sql_manual/dml_and_dql/update.md:23
-msgid "column: The name of a column in table.<br />"
+#, fuzzy
+msgid "column: The name of a column in table."
 msgstr "column：列名"
 
 #: ../../source/sql_manual/dml_and_dql/update.md:25
 msgid ""
-"expression：An expression to assign to the column. The expression can use the "
-"old values of this and other columns in the table."
+"expression：An expression to assign to the column. The expression can use "
+"the old values of this and other columns in the table."
 msgstr "expression：表达式"
 
 #: ../../source/sql_manual/dml_and_dql/update.md:27
 msgid ""
-"from_list：A list of table expressions, allowing columns from other tables to "
-"appear in the WHERE condition and the update expressions."
+"from_list：A list of table expressions, allowing columns from other tables"
+" to appear in the WHERE condition and the update expressions."
 msgstr "from_list：来源"
 
 #: ../../source/sql_manual/dml_and_dql/update.md:29
+#, fuzzy
 msgid ""
-"condition：An expression that returns a value of type boolean. Only rows for "
-"which this expression returns true will be updated.<br />"
+"condition：An expression that returns a value of type boolean. Only rows "
+"for which this expression returns true will be updated."
 msgstr "condition：更新的条件"
 
 #: ../../source/sql_manual/dml_and_dql/update.md:31
 msgid "Examples"
 msgstr "使用示例"
 
-#: ../../source/sql_manual/dml_and_dql/update.md:50
+#: ../../source/sql_manual/dml_and_dql/update.md:51
 msgid ""
-"For more details about UPDATE, please go to official PostgresSQL Documentation "
-"UPDATE."
+"For more details about UPDATE, please go to official PostgresSQL "
+"Documentation UPDATE."
 msgstr "更多关于update的详情请参见PostgreSQL官网文档"
 
-#: ../../source/sql_manual/dml_and_dql/update.md:51
+#: ../../source/sql_manual/dml_and_dql/update.md:52
 msgid "Limitations"
 msgstr "使用限制"
 
-#: ../../source/sql_manual/dml_and_dql/update.md:53
+#: ../../source/sql_manual/dml_and_dql/update.md:54
 msgid "This version does not support updating columns that are part of shard key."
 msgstr "Hologres当前版本不支持对shard key进行update。"
+

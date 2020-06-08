@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,28 +35,43 @@ msgstr ""
 msgid "Synopsis"
 msgstr ""
 
-#: ../../source/sql_manual/extension_functions/hg_create_table_like.md:12
+#: ../../source/sql_manual/extension_functions/hg_create_table_like.md:13
 msgid "Parameters"
 msgstr ""
 
-#: ../../source/sql_manual/extension_functions/hg_create_table_like.md:14
+#: ../../source/sql_manual/extension_functions/hg_create_table_like.md:15
 msgid ""
 "table_name: The name of the new table which could belongs to some schema."
 " The names can contain only alphanumeric characters or an underscore(_). "
 "The first character must be an alphabetic character. All alphabetic "
 "characters are treated as lower case because the table name is case "
-"insensitive.<br />"
+"insensitive."
 msgstr ""
 
-#: ../../source/sql_manual/extension_functions/hg_create_table_like.md:16
-msgid "query_sql : The sql query.<br />"
+#: ../../source/sql_manual/extension_functions/hg_create_table_like.md:17
+msgid "query_sql : The sql query."
 msgstr ""
 
-#: ../../source/sql_manual/extension_functions/hg_create_table_like.md:18
+#: ../../source/sql_manual/extension_functions/hg_create_table_like.md:19
 msgid "partition_clause : The clause which is used to create a partitioned table."
 msgstr ""
 
-#: ../../source/sql_manual/extension_functions/hg_create_table_like.md:20
+#: ../../source/sql_manual/extension_functions/hg_create_table_like.md:21
 msgid "Example"
 msgstr ""
+
+#~ msgid ""
+#~ "table_name: The name of the new "
+#~ "table which could belongs to some "
+#~ "schema. The names can contain only "
+#~ "alphanumeric characters or an underscore(_)."
+#~ " The first character must be an "
+#~ "alphabetic character. All alphabetic "
+#~ "characters are treated as lower case "
+#~ "because the table name is case "
+#~ "insensitive.<br />"
+#~ msgstr ""
+
+#~ msgid "query_sql : The sql query.<br />"
+#~ msgstr ""
 

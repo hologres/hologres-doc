@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:1
+msgid "ALETER TABLE"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:3
+msgid ""
+"Current Hologres version only supports 1. changing name , 2.add new "
+"columns and 3.alter table property by \"ALTER TABLE\". There is no such "
+"limitation against Foreign Tables."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:5
+msgid ""
+"For Hologres Partition Table ATTACH PARTITION and DETACH PARTITION are "
+"also supported. See more details below."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:7
+msgid "Rename Table"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:9
+#: ../../source/sql_manual/ddl/table/alter_table.md:26
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:15
+msgid ""
+"Notes: An error would return if trying to change a name for a table not "
+"exist, or change an exist table to a name conflicting table name."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:17
+#: ../../source/sql_manual/ddl/table/alter_table.md:32
+#: ../../source/sql_manual/ddl/table/alter_table.md:48
+msgid "Example"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:24
+msgid "Add Column"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:38
+msgid "Alter Table Property"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:40
+msgid ""
+"In general, setting table property must be in the same transaction as "
+"\"CREATE TABLE\", however, the following properties can be changed "
+"independently:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:50
+msgid "Change bitmap indexing properties for columns."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:56
+msgid "Change dictionary encoding properties for columns."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/alter_table.md:62
+msgid "Change table's TTL (time-to-live), unit is in seconds."
+msgstr ""
+

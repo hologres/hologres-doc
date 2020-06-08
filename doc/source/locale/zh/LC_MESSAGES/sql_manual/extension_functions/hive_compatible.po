@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,33 +26,57 @@ msgid "Introduction"
 msgstr ""
 
 #: ../../source/sql_manual/extension_functions/hive_compatible.md:5
-msgid ""
-"GET_JSON_OBJECT：Extracts an JSON object from a JSON string. <br "
-"/>GET_JSON_OBJECT is provided by hive_compatible extension. To use it, it"
-" required to create the hive_compatible extension.<br />"
+msgid "GET_JSON_OBJECT：Extracts an JSON object from a JSON string."
 msgstr ""
 
 #: ../../source/sql_manual/extension_functions/hive_compatible.md:7
+msgid ""
+"GET_JSON_OBJECT is provided by hive_compatible extension. To use it, it "
+"required to create the hive_compatible extension."
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:9
 msgid "Synopsis"
 msgstr ""
 
-#: ../../source/sql_manual/extension_functions/hive_compatible.md:14
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:16
 msgid "Parameters"
 msgstr ""
 
-#: ../../source/sql_manual/extension_functions/hive_compatible.md:16
-msgid "json_string：An valid JSON text<br />"
-msgstr ""
-
 #: ../../source/sql_manual/extension_functions/hive_compatible.md:18
-msgid ""
-"path：A JSON path that specified the object to extract. The dollar sign($)"
-" represents a JSON variable. The dot operator(.) and the square brackets "
-"are used to access a member or an array element. NULL is returned if the "
-"json_string is invalid.<br />"
+msgid "json_string：An valid JSON text."
 msgstr ""
 
 #: ../../source/sql_manual/extension_functions/hive_compatible.md:20
+msgid ""
+"path：A JSON path that specified the object to extract. The dollar sign "
+"($) represents a JSON variable. The dot operator(.) and the square "
+"brackets are used to access a member or an array element. NULL is "
+"returned if the json_string is invalid."
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hive_compatible.md:22
 msgid "Example"
 msgstr ""
+
+#~ msgid ""
+#~ "GET_JSON_OBJECT：Extracts an JSON object from"
+#~ " a JSON string. <br />GET_JSON_OBJECT "
+#~ "is provided by hive_compatible extension. "
+#~ "To use it, it required to create"
+#~ " the hive_compatible extension.<br />"
+#~ msgstr ""
+
+#~ msgid "json_string：An valid JSON text<br />"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "path：A JSON path that specified the "
+#~ "object to extract. The dollar sign($)"
+#~ " represents a JSON variable. The dot"
+#~ " operator(.) and the square brackets "
+#~ "are used to access a member or "
+#~ "an array element. NULL is returned "
+#~ "if the json_string is invalid.<br />"
+#~ msgstr ""
 

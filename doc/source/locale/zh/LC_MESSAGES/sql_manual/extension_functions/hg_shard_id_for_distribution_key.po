@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hologres \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-15 14:29+0800\n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,23 +35,32 @@ msgstr ""
 msgid "Synopsis"
 msgstr ""
 
-#: ../../source/sql_manual/extension_functions/hg_shard_id_for_distribution_key.md:11
+#: ../../source/sql_manual/extension_functions/hg_shard_id_for_distribution_key.md:12
 msgid "Parameters"
 msgstr ""
 
-#: ../../source/sql_manual/extension_functions/hg_shard_id_for_distribution_key.md:13
-msgid ""
-"tablename: The table name to calculate the shard Id.<br />column: One or "
-"multiple columns on which calculate the shard Id."
-msgstr ""
-
 #: ../../source/sql_manual/extension_functions/hg_shard_id_for_distribution_key.md:14
-msgid "Example"
+msgid "tablename:  The table name to calculate the shard Id."
 msgstr ""
 
 #: ../../source/sql_manual/extension_functions/hg_shard_id_for_distribution_key.md:16
+msgid "column:  One or multiple columns on which calculate the shard Id."
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hg_shard_id_for_distribution_key.md:18
+msgid "Example"
+msgstr ""
+
+#: ../../source/sql_manual/extension_functions/hg_shard_id_for_distribution_key.md:20
 msgid ""
 "Calculates the shard Id on columns 'ORDERSKEY' and 'CUSKEY' on table "
 "ORDERS"
 msgstr ""
+
+#~ msgid ""
+#~ "tablename: The table name to calculate"
+#~ " the shard Id.<br />column: One or"
+#~ " multiple columns on which calculate "
+#~ "the shard Id."
+#~ msgstr ""
 

@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Hologres
+# This file is distributed under the same license as the Hologres package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Hologres \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-08 11:59-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:1
+msgid "CREATE TABLE LIKE"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:3
+msgid ""
+"create table like：creates a new table represents the result table of the "
+"SELECT query. It does not load any data with the command itself. i.e. it "
+"wont load the result table of the SELECT query into the newly-created  "
+"table."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:5
+msgid "Regular Table"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:7
+#: ../../source/sql_manual/ddl/table/create_table_like.md:44
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:9
+msgid ""
+"To create a regular table with CREATE TABLE LIKE in Hologres, the "
+"following example illustrates the usage:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:15
+msgid ""
+"Note: Within the call to hg_create_table_like, the system will generate a"
+" schema represents the result table of the select_query, and use that "
+"schema to create a new table with the name \"table_name\". It will not "
+"insert any data into the new table."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:17
+#: ../../source/sql_manual/ddl/table/create_table_like.md:52
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:19
+msgid ""
+"table_name: The new table's name.  It must not be for a Foreign Table; It"
+" must be string literal, which means it can not be strings returned from "
+"a function call or composed of other other string or name variables."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:21
+msgid ""
+"select_query : A select query which could be against all tables "
+"(including Foreign Table). It also must be string literals, which means "
+"it can not be strings returned from a function call or composed of other "
+"other string or name variables."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:23
+msgid "Examples"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:25
+msgid "There are some examples of using \"create table like\" in Hologres:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:27
+msgid "Create a new table with the same schema as source table."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:34
+msgid ""
+"2）Create a new table according to a source table but add with extra "
+"columns."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:42
+msgid "Partition Table"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:46
+msgid "The command of \"create table like\" for partition tables:"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:54
+msgid ""
+"_table_name：_The new table's name.  It must not be for an Foreign Table; "
+"It must be string literal, which means it can not be strings returned "
+"from a function call or composed of other other string or name variables."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:56
+msgid ""
+"_select_query：_A select query which could be against all tables "
+"(including Foreign Table). It also must be string literals, which means "
+"it can not be strings returned from a function call or composed of other "
+"other string or name variables."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:58
+msgid ""
+"_partition_clause：_A partition clause following the the same grammar of "
+"creating a partition table."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:60
+msgid "Example"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:73
+msgid "Set Table Property"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:75
+msgid ""
+"In Hologres, a **set_table_property **call can be used after the \"create"
+" table like\" command, to set more customized table properties for the "
+"newly-created table."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:91
+msgid "see more details in set_table_property's documentation."
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:92
+msgid "Limitation"
+msgstr ""
+
+#: ../../source/sql_manual/ddl/table/create_table_like.md:94
+msgid ""
+"There must be unique column names for the select query, otherwise an "
+"error about conflicting column names will be raised. e.g."
+msgstr ""
+
