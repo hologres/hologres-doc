@@ -121,6 +121,15 @@ Once any changes are committed in Github, Github will notify readthedoc via webh
 
 The build page can be found [here](https://readthedocs.org/projects/hologres/).
 
+## Verify
+
+Once a commit is pushed, the author needs to verify by
+
+1. go to the build page mentioned above, and make sure if the commit passes build
+2. go to doc website and make sure if the passed commit has taken effect on the website
+
+If not, there's something wrong, and the author has to recheck.
+
 ## Theme
 
 We use ReadTheDoc's native theme, `sphinx_rtd_theme`.
