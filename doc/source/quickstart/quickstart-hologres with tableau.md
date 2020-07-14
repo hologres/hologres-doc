@@ -1,4 +1,4 @@
-# Using Hologres with Tableau 
+# Load, Query, and Visualize US Flight Dataset in Hologres 
 
 In this tutorial, we will walk through examples of using Hologres and visiualizing in Tableau by the following steps:
 
@@ -18,10 +18,10 @@ In this tutorial, we will walk through examples of using Hologres and visiualizi
 
 1.Data Source
 
-In this tutorial, we use flight data from [the USA government example](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time).
+In this tutorial, we use flight data from [the US Department of Transportation](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time).
 
 
-Github has a repo containing scripts and loaders for the flight data ["On-Time Performance"](https://github.com/Percona-Lab/ontime-airline-performance) data.
+There are scripts and loaders for the flight data ["On-Time Performance"](https://github.com/Percona-Lab/ontime-airline-performance) on Github.
 
 2.Download the Dataset
 
@@ -90,7 +90,7 @@ the following warning might come, choose "N":
 #replace readme.html? [y]es, [n]o, [A]ll, [N]one, [r]ename: 
 ```
 
-## Hologres Activation
+## Create Table in Hologres 
 
 Let's connect to Hologres via psql with the following command..
 
@@ -119,7 +119,7 @@ Create a file first, then save as a text file.
 As fowllowing, create one "data.ddl".
 
 ```
-mkdir /temp/testDDL/data.ddl
+mkdir /temp/data.ddl
 ```
 
 Save the script into the file.
@@ -274,26 +274,9 @@ Let's check the table "ontime" we have just executed.
 
 Now you have prepared one database with one table.
 
-## Data Uploading
+## Copy Data into Hologres 
 
-Let's upload one csv filefor a quick test.
-
-```
-psql -h <hostname> -p <port> -d quickstart -U <username> -c "copy customers from STDIN with delimiter as ',';" < /tmp/customers.csv
-```
-
-Data is uploaded successfully as following.
-```
-COPY 448620
-```
-
-Let's check the data.
-
-```
-select * from ontime limit 100;
-```
-
-Now you could upload the rest in one time (374 files in total)
+Let's copy data into table (374 files in total)
 Note: mutiple csv files should be uploaded in 5 minutes by the following script:
 
 ```
@@ -307,7 +290,7 @@ ERROR:  exec query failed => status:7,error=ERROR:  Query:[20000745330718297] Ge
 msg: "code: kInternalError msg: \"status { code: SERVER_INTERNAL_ERROR message: \\\"query next from pg executor failed from 11.160.224.215:19577: failed to query next, detail:invalid byte sequence for encoding \\\\\\\"UTF8\\\\\\\": 0xe2 0x22 0x2c [method:QueryNext,transaction_id:20000745330718297,query_id:20000745330718297,batch_id:0,actor_id:837916746126030549:23,worker_address:11.160.224.215:37769,11.160.224.215:31851]\\\" }\""
 ```
 
-As I mentioned at the beginning, 14 files fails uploading for the invalid byte sequence for encoding. Delete them and reupload.
+As mentioned at the beginning, 14 files fails uploading for the invalid byte sequence for encoding. Delete them and reupload.
 
 Let's do the final check.
 
@@ -691,17 +674,11 @@ LIMIT 1000;
 Time: 167.635 ms
 ```
 
-## Tableau：
+## Tableau
 
 Tableau is a visual data management tool, which can provide visual analysis by dragging and dropping.
 
-## Tableau Visualization While Connect With Hologres
-
 Below we will example some queries to show you how easy to visualize data in Hologres via Tableau.
-
-## Data Source:
-
-This data shows the specific details about each flight such as filyear, filmonth, delay situation, etc, from this data we can clearly undestand how's each carrier operates and with these data we will be able to analyse the detail like below queries.
 
 ## Preparation work
 
@@ -711,7 +688,7 @@ Please follow the instruction : [Tableau Desktop](https://www.tableau.com/suppor
 
 ### Preparation Work 2: Connect to Hologres with Tableau
 
-Choose PostgreSQL and fill in below necssary information
+Choose PostgreSQL and fill in the necssary information below
 
 ![image](../images/Quickstart/quickstart-Tableau/1.png)
 
@@ -888,7 +865,7 @@ Drag cnt to rows
 
 Drag max,min,rate as details (which will be showed when we click the bar as one graph)
 
-![image](../images/Quickstart/quickstar-Tableau/20.png)
+![image](../images/Quickstart/quickstart-Tableau/20.png)
 
 Drag flights_delayed as label (for each carrier it directly show on the top of the coresponding bar)
 
@@ -901,8 +878,3 @@ To make the report more clear, we can distinguish the carrier by color, here jus
 Now the report has been finished while we are clicking each bars it will show us the detail and each labels in the graph as below.
 
 ![image](../images/Quickstart/quickstart-Tableau/23.png)
-
-
-
-
-
