@@ -4,8 +4,7 @@ Quickstart
 
 .. toctree::
    quickstart
-   quickstart-Hologres
-   quickstart-Tableau
+   quickstart-hologres with tableau
    quickstart-flink
 
    

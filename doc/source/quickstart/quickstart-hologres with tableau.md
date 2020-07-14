@@ -1,32 +1,32 @@
-# Welcome to Hologres
+# Using Hologres with Tableau 
 
-Welcome to Hologres,wait for more ideas from you!
+In this tutorial, we will walk through examples of using Hologres and visiualizing in Tableau by the following steps:
 
-- Hologres Introduction
-- Data Preparation
-- Hologres Initialization
-- Data Uploading
-- Query Time
-- Commands in Linux and SQL 
+1.Data Preparation
 
-## Hologres Introduction
+2.Hologres Activation
 
-Hologres seamlessly opens up with the big data ecology, supporting high concurrency and low delay analysis and processing of PB-level data, allowing you to easily and economically use existing BI tools for multi-dimensional analysis, perspective and business exploration of data.
+3.Data Uploading
 
-For now, we have one stand-alone version of Hologres to try!
+4.Query 
+
+5.Visualization in Tableau
+
+
 
 ## Data Preparation
 
 1.Data Source
 
-First,download a large amount of data to get familiar with Hologres. In this blog,we take some flight data from [the USA government example](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time) without a license and therefore assumed to be in the public domain in the United States.
+In this tutorial, we use flight data from [the USA government example](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time).
 
-Github has a repro containing scripts and loaders for ["On-Time Performance"](https://github.com/Percona-Lab/ontime-airline-performance) data.
+
+Github has a repo containing scripts and loaders for the flight data ["On-Time Performance"](https://github.com/Percona-Lab/ontime-airline-performance) data.
 
 2.Download the Dataset
 
 If you are in Linux, go with the following script and download the data；
-One thing need to remember, choose the right directory before you start.
+One thing to remember, choose one specific directory before you start （data would be downloaded under the current directory by default).
 
 ```
 for s in `seq 1987 2018`
@@ -38,13 +38,15 @@ done
 done
 ```
 
+
 ![image](../images/Quickstart/quickstart-Hologres/datadownload1.gif)
 
 ![image](../images/Quickstart/quickstart-Hologres/datadownload2.gif)
 
-Data is stored in CSV (with , delimiter) format.  Total uncompressed CSV files size is about 79852548 Bytes (about 77GB). 
-Note: in 1987, only 10,11,12 (3 months) data is available for download.
-Note: the following 14 files fails to upload in Hologres for the invalid byte sequence for encoding.
+Data is stored in CSV (with ',' delimiter) format. Total uncompressed CSV files size is about 79852548 Bytes (about 77GB).
+
+
+Note: the following 14 files contain invalid byte sequence for encoding, and thus fails to upload to Hologres.
 
 | NO | FILES |
 |---|---|
@@ -64,13 +66,13 @@ Note: the following 14 files fails to upload in Hologres for the invalid byte se
 | 14 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2002_2.csv |
 
 
-we better delete these 14 files by:
+Let's delete the 14 files via following commands:
 
 ```
 # remove the files in 2001 .12 files in total  
 rm -f On_Time_Reporting_Carrier_On_Time_Performance_\(1987_present\)_2001*.csv
 
-# remove the files in 2002_1 and 2002_2 ,2 files in total  
+# remove the files in 2002_1 and 2002_2 , 2 files in total  
 rm -f On_Time_Reporting_Carrier_On_Time_Performance_\(1987_present\)_2002_1.csv
 rm -f On_Time_Reporting_Carrier_On_Time_Performance_\(1987_present\)_2002_2.csv
 ```
@@ -83,22 +85,22 @@ Once download the data, go to the directory and unzip the data with the followin
 find . -name '*.zip'-exec unzip {} \；
 ```
 
-the following warning might come, [N] is priority:
+the following warning might come, choose "N":
 ```
 #replace readme.html? [y]es, [n]o, [A]ll, [N]one, [r]ename: 
 ```
 
-## Hologres Initialization
+## Hologres Activation
 
-Let's connect Hologres with the following script.
+Let's connect to Hologres via psql with the following command..
 
 ```
-PGPASSWORD=[password] psql -U [username] -h [host] -p [port] -d [database]
+PGPASSWORD=<password> psql -U <username> -h <ip> -p <port> -d <database>
 ```
 
 Now you have landed Hologres successfully.
 
-Let's check the database in Hologres and if nothing goes wrong there shoud be no database.
+Let's check the database in Hologres and there shoud be no database by default.
 
 ```
 \l
@@ -111,8 +113,8 @@ CREATE DATABASE HOLO_TESTDB；
 \l;
 ```
 
-Since the table we need is quite long let's save it into a file.
-Create a file firstly,then save the script.
+Let's save data into a file since the table we need is quite long.
+Create a file first, then save as a text file.
 
 As fowllowing, create one "data.ddl".
 
@@ -245,10 +247,10 @@ CALL set_table_property('ontime', 'time_to_live_in_seconds', '31536000');
 COMMIT;
 ```
 
-After you finish the script file,go to the database you have created and execute the script file.
+After you finish the script file, execute the script file.
 
 ```
-\i /temp/testDDL/data.ddl
+PGPASSWORD=<password> psql -U <username> -h <ip> -p <port> -d <database> -f /temp/data.ddl
 ```
 
 ```
@@ -270,15 +272,14 @@ Let's check the table "ontime" we have just executed.
 \d ontime
 ```
 
-Now you have prepare one database with one table!
+Now you have prepared one database with one table.
 
 ## Data Uploading
 
-Let's upload the data we have prepared early.
-Follow me with uploading one csv file just for a quick test( we take keyword "copy ...from... " to upload data here).
+Let's upload one csv filefor a quick test.
 
 ```
-\COPY ontime FROM '/temp/testdata_file/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_1987_10.csv' DELIMITER ',' CSV HEADER;
+psql -h <hostname> -p <port> -d quickstart -U <username> -c "copy customers from STDIN with delimiter as ',';" < /tmp/customers.csv
 ```
 
 Data is uploaded successfully as following.
@@ -292,29 +293,22 @@ Let's check the data.
 select * from ontime limit 100;
 ```
 
-Congratulation：no bug!
 Now you could upload the rest in one time (374 files in total)
-Note: mutiole csv files should be uploaded in 5 minutes by the following script:
+Note: mutiple csv files should be uploaded in 5 minutes by the following script:
 
 ```
 cat /temp/*.csv |PGPASSWORD=[] psql -U [user] -h [host] -p [port] -d [database] -c 'copy ontime from stdin CSV HEADER'
 ```
 
-you can also upload the data seperately by the following script:
+if the error comes as follow:
 
 ```
-\COPY ontime FROM 'temp/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_1987_10.csv' DELIMITER ',' CSV HEADER;
-```
-
-ops! there is some error.
-
-```
-
 ERROR:  exec query failed => status:7,error=ERROR:  Query:[20000745330718297] Get result failed: code: kActorInvokeError
 msg: "code: kInternalError msg: \"status { code: SERVER_INTERNAL_ERROR message: \\\"query next from pg executor failed from 11.160.224.215:19577: failed to query next, detail:invalid byte sequence for encoding \\\\\\\"UTF8\\\\\\\": 0xe2 0x22 0x2c [method:QueryNext,transaction_id:20000745330718297,query_id:20000745330718297,batch_id:0,actor_id:837916746126030549:23,worker_address:11.160.224.215:37769,11.160.224.215:31851]\\\" }\""
 ```
 
-As I mentioned at the beginning,14 files fails uploading for the invalid byte sequence for encoding.
+As I mentioned at the beginning, 14 files fails uploading for the invalid byte sequence for encoding. Delete them and reupload.
+
 Let's do the final check.
 
 ```
@@ -329,7 +323,7 @@ count
 
 ## Query Time
 
-We prepare 10 easy query for you to have a try:
+We prepare 10 easy queries for you to have a try:
 1.--Query 1: Average monthly flight takeoff and landing records
 
 ```
@@ -697,302 +691,218 @@ LIMIT 1000;
 Time: 167.635 ms
 ```
 
-You could try more in Hologres!
+## Tableau：
 
-## Commands in Linux and SQL
+Tableau is a visual data management tool, which can provide visual analysis by dragging and dropping.
 
-This part is prepared for you to refer !
+## Tableau Visualization While Connect With Hologres
 
-### Commonly used in Linux
+Below we will example some queries to show you how easy to visualize data in Hologres via Tableau.
 
-#### General Commands
+## Data Source:
 
-- history – lists the last used commands on your Linux server
-make – when compiling a software from source, this command will create the binaries
+This data shows the specific details about each flight such as filyear, filmonth, delay situation, etc, from this data we can clearly undestand how's each carrier operates and with these data we will be able to analyse the detail like below queries.
 
-- id – who am I right now? besides the philosophical angle, this command will show you as which user you will be running commands, I use this to check what is my status, and then sudo to the user I need
+## Preparation work
 
-- sudo – execute a command as another user – although  usually use it to change to root
-- ps – list the running processes on the server, it give more info like the process id, the parent process id, running time and much more
+### Preparation Work 1: Download Tableau Desktop:
 
-- man – displays a manual page, whenever you are not sure about a specific command or config file, you should run “man command” to get info about it. to search the man database use “whatis command” to find which man file has the info you need
+Please follow the instruction : [Tableau Desktop](https://www.tableau.com/support/releases)
 
-- df – report file system disk space usage, use “df -h” to get a human formatted listing
+### Preparation Work 2: Connect to Hologres with Tableau
 
-#### Files and Directories Management
+Choose PostgreSQL and fill in below necssary information
 
-- ls – Lists files and directories content, I usually use “ls -la” to have a long listing with all the details and hidden files
-cd – move from the current directory to a different folder
+![image](../images/Quickstart/quickstart-Tableau/1.png)
 
-- pwd – lists your current location
+- Server: Hologres Instance Address
+- Port: Hologres Port Address
+- Database: Connected Hologres Database Name
+- User Name: Hologres Account Access ID
+- Password: Hologres Account Access Key
+- Require SSL: No
 
-- mv – this command can either change the name of a file, or move it to a different location
+After sign in you will see the table under your hologres
 
-- locate – find any file on the Linux server, to get an updated index of files (if for example you just installed a whole bunch of RPM’s) run the command updatedb
+![image](../images/Quickstart/quickstart-Tableau/2.png)
 
-- ln – create a shortcut to a file or folder
+## Query visualization:
 
-- tar – create or extract files out of a storage file. with the correct arguments it will also compress the files 
+### Query 1:
 
-#### Editing and Viewing
+#### Step 1: Add one custom SQL
 
-- tail – lists the last 10 lines of a file, but you tell tell it to show any number of last lines
+Tableau supports to drag the capsle to columns and rows directly to visualize report, but sometimes the data has so many values, in order to simplify the optional capsle we just add one custom SQL to help us select the relevant capsle that we need of each query demand.
 
-- vi – the best command line editing software a little hard to learn how to work this one at first, buts its worth the effort  a little hard to learn how to work this one at first, buts its worth the effort
+For example we would like to know the total flight number of each day of week from 2000 to 2008.
 
-- cat – list the content of the file. better know how long is the file you are running this command on, or you will get a very long scrolling of lines that will fill up your screen
-
-### Commonly used in SQL
-
-#### A. Data Definition Language (DDL)
-
-1.CREATE
-
-CREATE queries are used to create a new database or table.
 
 ```
-CREATE TABLE table_name (
-  column_1 datatype_1,
-  column_2 datatype_2,
-);
+SELECT FltDayOfWeek, count(*) as c
+FROM ontime
+where FltYear>=2000 AND FltYear<=2008
+GROUP BY FltDayOfWeek
+ORDER BY c DESC
 ```
 
-2.ALTER
+In this situantion we just input the query and click ok.
 
-ALTER queries are used to modify the structure of a database or a table such as adding a new column, change the data type, drop, or rename an existing column, etc.
+![image](../images/Quickstart/quickstart-Tableau/3.png)
 
-```
-ALTER TABLE table_name 
-ADD column_name datatype;
-```
+After input your query, the result of the query will be showed here:
 
-3.DROP
+![image](../images/Quickstart/quickstart-Tableau/4.png)
 
-DROP queries are used to delete a database or table. You should also be careful when using this type of query because it will remove everything, including table definition along with all the data, indexes, triggers, constraints and permission specifications for that table.
+### Step 2: Create one work table, ensure each value in dimensions and measures correctiveness
 
-```
-DROP TABLE table_name;
-```
+Notes：
+Measure: usually is consist of a group of variable figures which can be calculated, and based on the calculated results, it represents quantifiable visual elements of the chart such as the area size, bar length, color depth, etc.
+Dimension: mainly used to distinguish the calculation results of numerical variables(Measure), which are shown as visual elements that are difficult to quantify, such as chart color types, graphic positions, classification methods, etc.
 
-4.TRUNCATE
+Drag the Fltdayofwork to dimensions, and keep the value need to be caculated in measures(here the value is C)
 
-TRUNCATE queries are used to clean the table, remove all the existing records, but not the table itself.
+![image](../images/Quickstart/quickstart-Tableau/5.png)
 
-```
-TRUNCATE TABLE table_name;
-```
+### Step 3: Drag the value to columns and rows to show the report
 
-#### B. Data Manipulation Language (DML)
+Drag the dimension value capsule(Fltdayofwork) to columns and drag the measure value capsule(C) to rows, as you can see we got the visualized report in the work list ( According to your perfermance you can switch the columns and rows)
 
-1.SELECT
-- SELECT … FROM … is the most basic and commonly used query in SQL. It’s used for retrieving data from a table.
-A common SELECT query is broken down into four main parts:
-- SELECT
-- FROM
-- WHERE
-- ORDER BY
+![image](../images/Quickstart/quickstart-Tableau/6.png)
 
-Let’s look deeper
-- To see data of an entire table:
+As you can see while putting cursor on the report, it will shows the exact flight numbers in dayofweek(7-Sunday) from 2000 to 2008.
+
+### Query 2:
+
+#### Step 1: Add one custom SQL
+
+In this SQL we would like to know how many flights in total delayed according to different flights origin during 2000 to 2008.
 
 ```
-SELECT * FROM table_name;
+SELECT Origin, count(*) as c
+FROM ontime
+WHERE DepDelay>10 AND FltYear>=2000 AND FltYear<=2008
+GROUP BY Origin
+ORDER BY c DESC
+LIMIT 10
 ```
 
-- To see data in some specific columns:
+
+![image](../images/Quickstart/quickstart-Tableau/7.png)
+
+SQL query result：
+
+![image](../images/Quickstart/quickstart-Tableau/8.png)
+
+#### Step 2: Create one work table, ensure each value in dimensions and measures correctiveness
+
+According to different value attibutives，tableau displays each SQL's query result value to its data type: here origin is under dimensions and C is under measures which need to be cacultated.
+
+![image](../images/Quickstart/quickstart-Tableau/9.png)
+
+#### Step 3: Drag the value to columns and rows to show the report
+
+Drag origin to columns and c to rows, then we can see the report and while choosing any bar in the report you will be able to see the detailed graph.
+
+![image](../images/Quickstart/quickstart-Tableau/10.png)
+
+### Query 3:
+
+#### Step 1: Add one custom SQL
+
+This query figures out the departure delay (departure delay time > 10min) ratio in 2007 according to different carriers.
 
 ```
-SELECT column_name(s) FROM table_name;
+SELECT Carrier, c, c2, c*100/c2 as c3
+FROM
+( SELECT Carrier, count(*) as c FROM ontime WHERE depdelay>10 AND FltYear=2007 GROUP BY Carrier ) A
+INNER JOIN
+( SELECT Carrier, count(*) as c2 FROM ontime WHERE FltYear=2007 GROUP BY Carrier ) B using (Carrier)
+ORDER BY c3 DESC
 ```
 
-- To see data from your table based on some conditions, this is the case for WHERE to be used:
+Add one new custom SQL, input SQL and click ok, result will be showed in the work area
+
+![image](../images/Quickstart/quickstart-Tableau/11.png)
+
+In this visualized report we can see each carriers total flights (c2), total departure delaid (more than 10 min) fight numbers (c1) and the delay ratio (c3) in 2007.
+
+![image](../images/Quickstart/quickstart-Tableau/12.png)
+
+#### Step 2: Create one work table, ensure each value in dimensions and measures correctiveness
+
+In this work area，the dimensions and measures have already been matched by tableau automatically, we just need to check again whether the value has been put in the correct category or not, if not just shift it to the correct category as we have done in query 1 step 2.
+
+![image](../images/Quickstart/quickstart-Tableau/13.png)
+
+#### Step 3: Drag the value to columns and rows to show the report
+
+Drag carrier to columns, c and c2 to rows the the detail data will be showed as bar chart. In this report we put the delay ratio(c3) as label to each bar, which will be more clear, as usual click any of the bar the data of the sepecific carrier will be showed as diagram in the work area.
+
+![image](../images/Quickstart/quickstart-Tableau/14.png)
+
+### Query 4:
+
+#### Step 1: Add one custom SQL
+
+This is one complex query, but it will also quite simple to be visualied in Tableau. In this Sql we aims to analyse different carriers arrival delay time sum total, and the total arrival delay rate before 2010.
 
 ```
-SELECT column_name(s)
-FROM table_name
-WHERE condition(s);
+SELECT
+min(FltYear),
+max(FltYear),
+Carrier,
+count(*) as cnt,
+sum(ArrDelayMinutes) as flights_delayed,
+round(sum(ArrDelayMinutes)/count(*), 2) as rate
+FROM ontime
+WHERE
+FltDayOfWeek not in (6,7) AND
+OriginState not in ('ak', 'hi', 'pr', 'vi') AND
+DestState not in ('ak', 'hi', 'pr', 'vi') AND
+ArrDelayMinutes > 30 AND
+FlightDate < '2010-01-01'
+GROUP BY Carrier HAVING count(*)>100000 AND max(FltYear)>1990
+ORDER BY rate DESC
+LIMIT 1000
 ```
 
-By using WHERE in a SELECT query, we add one or more conditions and restrict the number the records affected by the query.
-Or in other words, it’s being a filter to filter out only the records that match the conditions as the result.
-Example:
+Same step as before add one new custom SQL and paste the sql here then the result will be showed as below:
 
-```
-SELECT * FROM students
-WHERE state_code = 'CA'
-```
+![image](../images/Quickstart/quickstart-Tableau/15.png)
 
-That query to show every record from the table students that match the state_code “CA”.
-- ORDER BY is a clause that indicates you want to sort the result set by a particular column either alphabetically or numerically.
+![image](../images/Quickstart/quickstart-Tableau/16.png)
 
-```
-SELECT column_name
-FROM table_name
-ORDER BY column_name ASC | DESC;
-```
+#### Step 2: Create one work table, ensure each value in dimensions and measures correctiveness
 
-2.INSERT
-INSERT INTO queries are used to insert one or more rows of data (new records) into an existing table.
+![image](../images/Quickstart/quickstart-Tableau/17.png)
 
-```
-INSERT INTO table_name (column_1, column_2, column_3, ...)
-VALUES (value_1, value_2, value_3, ...);
-```
+#### Step 3: Drag the value to colomns and rows to show the report
 
-Example:
-```
-INSERT INTO students (full_name, student_id, state_code)
-VALUES (“Alex Jonas”, 234, "CA");
-```
+Drag carrier to columns
 
-3.UPDATE
-UPDATE queries are used to modify an existing table and update it with new data based on some conditions.
+![image](../images/Quickstart/quickstart-Tableau/18.png)
 
-```
-UPDATE table_name
-SET column_1 = value_1, column_2 = value_2, ...
-WHERE condition;
-```
+Drag cnt to rows
 
-4.DELETE
-DELETE FROM queries are used to remove the records from a table based on some conditions. DELETE FROM is similar to TRUNCATE but it limits the number of rows being affected by the query using the conditions.
+![image](../images/Quickstart/quickstart-Tableau/19.png)
 
-```
-DELETE FROM table_name
-WHERE condition;
-```
-#### C. Aggregate Functions
+Drag max,min,rate as details (which will be showed when we click the bar as one graph)
 
-- AVG() returns the average value for a numeric column.
+![image](../images/Quickstart/quickstar-Tableau/20.png)
 
-```
-SELECT AVG(column_name)
-FROM table_name;
-```
+Drag flights_delayed as label (for each carrier it directly show on the top of the coresponding bar)
 
-- SUM() returns the sum of all the values in a column.
+![image](../images/Quickstart/quickstart-Tableau/21.png)
 
-```
-SELECT SUM(column_name)
-FROM table_name;
-```
+To make the report more clear, we can distinguish the carrier by color, here just drag the left folders carrier dimension to color marks, and on the right of this work area, it shows the carrier legends.
 
-- ROUND() rounds the values in the column to the number of decimal places specified by the integer.
+![image](../images/Quickstart/quickstart-Tableau/22.png)
 
-```
-SELECT ROUND(column_name, integer)
-FROM table_name;
-```
+Now the report has been finished while we are clicking each bars it will show us the detail and each labels in the graph as below.
 
-- MAX() returns the largest value in a column.
+![image](../images/Quickstart/quickstart-Tableau/23.png)
 
-```
-SELECT MAX(column_name)
-FROM table_name;
-```
 
-- MIN() returns the smallest value in a column.
 
-```
-SELECT MIN(column_name)
-FROM table_name;
-```
 
-- COUNT() counts the number of rows where the column is not NULL.
 
-```
-SELECT COUNT(column_name)
-FROM table_name;
-```
-#### Additional clauses and functions
-
-- You can use AS to rename a column or table temporarily using an alias on the result view.
-
-```
-SELECT column_name AS 'Alias'
-FROM table_name;
-```
-
-- The BETWEEN operator is used to select the value within a certain range.
-
-```
-SELECT column_name(s)
-FROM table_name
-WHERE column_name BETWEEN value_1 AND value_2;
-```
-
-- GROUP BY is a clause in SQL that is only used with aggregate functions (COUNT, MAX, MIN, SUM, AVG). It is used in collaboration with the SELECT statement to arrange identical data into groups.
-
-```
-SELECT column_name, COUNT(*)
-FROM table_name
-GROUP BY column_name;
-```
-
-- HAVING is used to replace WHERE to work with aggregate functions. WHERE clause introduces a condition on individual rows; HAVING clause introduces a condition on aggregations.
-HAVING is typically used with GROUP BY.
-
-```
-SELECT column_name, COUNT(*)
-FROM table_name
-GROUP BY column_name
-HAVING COUNT(*) > value;
-```
-
-- IS NULL and IS NOT NULL are used to test whether a column value is empty or not.
-
-```
-SELECT column_name(s)
-FROM table_name
-WHERE column_name IS NULL;
-```
-
-- LIKE is a special operator used with the WHERE clause to search for a specific pattern in a column.
-
-```
-SELECT column_name(s)
-FROM table_name
-WHERE column_name LIKE pattern;
-```
-
-- You can use LIMIT to specify the maximum number of records you want to show in a result set.
-
-```
-SELECT *
-FROM table_name
-LIMIT number;
-```
-
-- OR is used to combine two or more conditions in a where clause. The results have to match at least one of the conditions specified.
-
-```
-SELECT *
-FROM table_name
-WHERE condition_1
-   OR condition_2;
-```
-
-- SELECT DISTINCT returns unique values in the specified column(s).
-
-```
-SELECT DISTINCT column_name
-FROM table_name;
-```
-
-- An OUTER JOIN will combine rows from different tables even if the join condition is not met. Every row in the left table is returned in the result set, and if the join condition is not met, then NULL values are used to fill in the columns from the right table.
-
-```
-SELECT column_name(s)
-FROM table_1
-LEFT JOIN table_2
-  ON table_1.column_name = table_2.column_name;
-```
-
-- An INNER JOIN will combine rows from different tables if the join condition is true.
-
-```
-SELECT column_name(s)
-FROM table_1
-JOIN table_2
-  ON table_1.column_name = table_2.column_name;
-```
