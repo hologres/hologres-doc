@@ -1,12 +1,12 @@
 # Load, Query, and Visualize US Flight Dataset in Hologres 
 
-In this tutorial, we will walk through examples of using Hologres and visiualizing in Tableau by the following steps:
+In this tutorial, we will walk through examples of using Hologres and visualizing in Tableau by the following steps:
 
 1.Data Preparation
 
-2.Hologres Activation
+2.Create Table in Hologres
 
-3.Data Uploading
+3.Copy Data into Hologres 
 
 4.Query 
 
@@ -25,7 +25,7 @@ There are scripts and loaders for the flight data ["On-Time Performance"](https:
 
 2.Download the Dataset
 
-If you are in Linux, go with the following script and download the data；
+If under Linux, go with the following script and download the data；
 One thing to remember, choose one specific directory before you start （data would be downloaded under the current directory by default).
 
 ```
@@ -66,7 +66,7 @@ Note: the following 14 files contain invalid byte sequence for encoding, and thu
 | 14 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2002_2.csv |
 
 
-Let's delete the 14 files via following commands:
+Let's delete these 14 files via the following commands:
 
 ```
 # remove the files in 2001 .12 files in total  
@@ -79,32 +79,26 @@ rm -f On_Time_Reporting_Carrier_On_Time_Performance_\(1987_present\)_2002_2.csv
 
 3.Unzip the Dataset 
 
-Once download the data, go to the directory and unzip the data with the following script:
+Once download the data, unzip it with the following script:
 
 ```
 find . -name '*.zip'-exec unzip {} \；
 ```
 
-the following warning might come, choose "N":
+The following warning might come, choose "N":
 ```
 #replace readme.html? [y]es, [n]o, [A]ll, [N]one, [r]ename: 
 ```
 
 ## Create Table in Hologres 
 
-Let's connect to Hologres via psql with the following command..
+Let's connect to Hologres via psql with the following command.
 
 ```
 PGPASSWORD=<password> psql -U <username> -h <ip> -p <port> -d <database>
 ```
 
-Now you have landed Hologres successfully.
-
-Let's check the database in Hologres and there shoud be no database by default.
-
-```
-\l
-```
+Now you have landed Hologres successfully(there shoud be no database by default).
 
 Let's create some database and check.
 
@@ -113,16 +107,16 @@ CREATE DATABASE HOLO_TESTDB；
 \l;
 ```
 
-Let's save data into a file since the table we need is quite long.
-Create a file first, then save as a text file.
+Let's save script into a file since the table we need is quite long. Create a file first, then save as a text file.
 
-As fowllowing, create one "data.ddl".
+Create a file first as fowllowing.
 
 ```
-mkdir /temp/data.ddl
+mkdir /temp/ddl
 ```
 
-Save the script into the file.
+Save the script into the file as "data.ddl".
+
 ```
 BEGIN;
 CREATE TABLE ontime (
@@ -266,7 +260,7 @@ CALL
 COMMIT
 ```
 
-Let's check the table "ontime" we have just executed.
+Let's check the table "ontime" we have executed.
 
 ```
 \d ontime
@@ -276,14 +270,13 @@ Now you have prepared one database with one table.
 
 ## Copy Data into Hologres 
 
-Let's copy data into table (374 files in total)
-Note: mutiple csv files should be uploaded in 5 minutes by the following script:
+Let's copy data into table (374 files in total). Note: multiple csv files should be uploaded in 5 minutes by the following script:
 
 ```
 cat /temp/*.csv |PGPASSWORD=[] psql -U [user] -h [host] -p [port] -d [database] -c 'copy ontime from stdin CSV HEADER'
 ```
 
-if the error comes as follow:
+If the error comes as follow:
 
 ```
 ERROR:  exec query failed => status:7,error=ERROR:  Query:[20000745330718297] Get result failed: code: kActorInvokeError
@@ -292,7 +285,7 @@ msg: "code: kInternalError msg: \"status { code: SERVER_INTERNAL_ERROR message: 
 
 As mentioned at the beginning, 14 files fails uploading for the invalid byte sequence for encoding. Delete them and reupload.
 
-Let's do the final check.
+Let's do the final confirmation.
 
 ```
 select count(*) from ontime;
@@ -304,10 +297,11 @@ count
 177821031
 ```
 
-## Query Time
+## Query
 
-We prepare 10 easy queries for you to have a try:
-1.--Query 1: Average monthly flight takeoff and landing records
+We prepare 10 queries for you to have a try:
+
+1.--Query: Average monthly flight takeoff and landing records
 
 ```
 SELECT avg(c1) 
@@ -323,7 +317,7 @@ FROM ( SELECT FltYear, FltMonth, count(*) as c1 FROM ontime GROUP BY FltYear, Fl
 Time: 158.323 ms
 ```
 
-2.--Query 2: Daily flights from 2000 to 2008
+2.--Query: Daily flights from 2000 to 2008
 
 ```
 SELECT FltDayOfWeek, count(*) as c 
@@ -349,7 +343,7 @@ Time: 91.850 ms
 ```
 
 
-3.--Query 3: Count the number of flights delayed from 2000 to 2008 (more than 10 minutes, the same below) by week
+3.--Query: Count the number of flights delayed from 2000 to 2008 (more than 10 minutes, the same below) by week
 
 ```
 
@@ -375,7 +369,7 @@ ORDER BY c DESC;
 Time: 96.045 ms
 ```
 
-4.--Query 4:Statistics of the number of delays from 2000 to 2008 by departure airport
+4.--Query: Statistics of the number of delays from 2000 to 2008 by departure airport
 
 ```
 SELECT Origin, count(*) as c 
@@ -404,7 +398,7 @@ LIMIT 10;
 Time: 103.428 ms
 ```
 
-5.--Query 5: According to airline statistics, the number of delays in 2007
+5.--Query: According to airline statistics, the number of delays in 2007
 
 ```
 SELECT Carrier, count(*) 
@@ -442,7 +436,7 @@ ORDER BY count(*) DESC;
 Time: 87.795 ms
 
 ```
-6.--Query 6: According to airline statistics, the percentage of delays in 2007
+6.--Query: According to airline statistics, the percentage of delays in 2007
 
 ```
 SELECT Carrier, c, c2, c*100/c2 as c3
@@ -481,7 +475,7 @@ ORDER BY c3 DESC;
 Time: 196.614 ms
 ```
 
-7.--Query 7: According to airline statistics, the percentage of delays from 2000 to 2008
+7.--Query: According to airline statistics, the percentage of delays from 2000 to 2008
 
 ```
 SELECT Carrier, c, c2, c*100/c2 as c3 
@@ -527,7 +521,7 @@ Time: 195.132 ms
 ```
 
 
-8.--Query 8: Statistics of flight delay rate by year
+8.--Query: Statistics of flight delay rate by year
 
 ```
 SELECT FltYear, c1/c2 as ratio
@@ -578,7 +572,7 @@ Time: 193.892 ms
 ```
 
 
-9.--Query 9: Number of flights per year
+9.--Query: Number of flights per year
 
 ```
 SELECT FltYear, count(*) as c1 
@@ -625,7 +619,7 @@ GROUP BY FltYear;
 Time: 76.353 ms
 ```
 
-10.--Query 10: Multi-dimensional complex filtering and aggregation
+10.--Query: Multi-dimensional complex filtering and aggregation
 
 ```
 SELECT 
@@ -676,9 +670,9 @@ Time: 167.635 ms
 
 ## Tableau
 
-Tableau is a visual data management tool, which can provide visual analysis by dragging and dropping.
+Tableau is a visual data management tool which can provide visual analysis by dragging and dropping.
 
-Below we will example some queries to show you how easy to visualize data in Hologres via Tableau.
+We will example some queries to show you how to visualize data in Hologres via Tableau.
 
 ## Preparation work
 
@@ -688,7 +682,7 @@ Please follow the instruction : [Tableau Desktop](https://www.tableau.com/suppor
 
 ### Preparation Work 2: Connect to Hologres with Tableau
 
-Choose PostgreSQL and fill in the necssary information below
+Choose PostgreSQL and fill in the necessary information below.
 
 ![image](../images/Quickstart/quickstart-Tableau/1.png)
 
@@ -699,20 +693,19 @@ Choose PostgreSQL and fill in the necssary information below
 - Password: Hologres Account Access Key
 - Require SSL: No
 
-After sign in you will see the table under your hologres
+After sign in you will see the table "ontime" under your hologres.
 
 ![image](../images/Quickstart/quickstart-Tableau/2.png)
 
-## Query visualization:
+## Visualization in Tableau
 
 ### Query 1:
 
 #### Step 1: Add one custom SQL
 
-Tableau supports to drag the capsle to columns and rows directly to visualize report, but sometimes the data has so many values, in order to simplify the optional capsle we just add one custom SQL to help us select the relevant capsle that we need of each query demand.
+Tableau supports to drag the capsule to columns and rows directly to visualize report, but sometimes the data has so many values, in order to simplify the optional capsule we add one custom SQL to help us select the relevant capsule that we need of each query demand.
 
 For example we would like to know the total flight number of each day of week from 2000 to 2008.
-
 
 ```
 SELECT FltDayOfWeek, count(*) as c
@@ -722,31 +715,33 @@ GROUP BY FltDayOfWeek
 ORDER BY c DESC
 ```
 
-In this situantion we just input the query and click ok.
+In this situantion we input the query and click ok.
 
 ![image](../images/Quickstart/quickstart-Tableau/3.png)
 
-After input your query, the result of the query will be showed here:
+With your query executed, the result will be showed here:
 
 ![image](../images/Quickstart/quickstart-Tableau/4.png)
 
 ### Step 2: Create one work table, ensure each value in dimensions and measures correctiveness
 
 Notes：
+
 Measure: usually is consist of a group of variable figures which can be calculated, and based on the calculated results, it represents quantifiable visual elements of the chart such as the area size, bar length, color depth, etc.
+
 Dimension: mainly used to distinguish the calculation results of numerical variables(Measure), which are shown as visual elements that are difficult to quantify, such as chart color types, graphic positions, classification methods, etc.
 
-Drag the Fltdayofwork to dimensions, and keep the value need to be caculated in measures(here the value is C)
+Drag the Fltdayofwork to dimensions, and keep the value need to be caculated in measures(here the value is C).
 
 ![image](../images/Quickstart/quickstart-Tableau/5.png)
 
 ### Step 3: Drag the value to columns and rows to show the report
 
-Drag the dimension value capsule(Fltdayofwork) to columns and drag the measure value capsule(C) to rows, as you can see we got the visualized report in the work list ( According to your perfermance you can switch the columns and rows)
+Drag the dimension value capsule(Fltdayofwork) to columns and drag the measure value capsule(C) to rows, as you can see we got the visualized report in the work list ( According to your preference you can switch the columns and rows).
 
 ![image](../images/Quickstart/quickstart-Tableau/6.png)
 
-As you can see while putting cursor on the report, it will shows the exact flight numbers in dayofweek(7-Sunday) from 2000 to 2008.
+As you can see while putting cursor on the report, it will show the exact flight numbers in dayofweek(7-Sunday) from 2000 to 2008.
 
 ### Query 2:
 
@@ -797,23 +792,23 @@ INNER JOIN
 ORDER BY c3 DESC
 ```
 
-Add one new custom SQL, input SQL and click ok, result will be showed in the work area
+Add one new custom SQL, input SQL and click ok, result will be showed in the work area.
 
 ![image](../images/Quickstart/quickstart-Tableau/11.png)
 
-In this visualized report we can see each carriers total flights (c2), total departure delaid (more than 10 min) fight numbers (c1) and the delay ratio (c3) in 2007.
+In this visualized report we can see each carrier total flights (c2), total departure delaid (more than 10 min) fight numbers (c1) and the delay ratio (c3) in 2007.
 
 ![image](../images/Quickstart/quickstart-Tableau/12.png)
 
 #### Step 2: Create one work table, ensure each value in dimensions and measures correctiveness
 
-In this work area，the dimensions and measures have already been matched by tableau automatically, we just need to check again whether the value has been put in the correct category or not, if not just shift it to the correct category as we have done in query 1 step 2.
+In this work area，the dimensions and measures have already been matched by tableau automatically, we need to check again whether the value has been put in the correct category or not, if not, shift it to the correct category as we have done in query 1 step 2.
 
 ![image](../images/Quickstart/quickstart-Tableau/13.png)
 
 #### Step 3: Drag the value to columns and rows to show the report
 
-Drag carrier to columns, c and c2 to rows the the detail data will be showed as bar chart. In this report we put the delay ratio(c3) as label to each bar, which will be more clear, as usual click any of the bar the data of the sepecific carrier will be showed as diagram in the work area.
+Drag carrier to columns, c and c2 to rows the the detail will be showed as bar chart. In this report we put the delay ratio(c3) as label to each bar, which will be more clear. As usual click any of the bar, the data of the sepecific carrier will be showed as diagram in the work area.
 
 ![image](../images/Quickstart/quickstart-Tableau/14.png)
 
@@ -821,7 +816,7 @@ Drag carrier to columns, c and c2 to rows the the detail data will be showed as 
 
 #### Step 1: Add one custom SQL
 
-This is one complex query, but it will also quite simple to be visualied in Tableau. In this Sql we aims to analyse different carriers arrival delay time sum total, and the total arrival delay rate before 2010.
+In this query we aim to analyse different carriers arrival delay time sum total, and the total arrival delay rate before 2010.
 
 ```
 SELECT
@@ -843,7 +838,7 @@ ORDER BY rate DESC
 LIMIT 1000
 ```
 
-Same step as before add one new custom SQL and paste the sql here then the result will be showed as below:
+Same step as before add one new custom SQL and paste the SQL here then the result will be showed as below:
 
 ![image](../images/Quickstart/quickstart-Tableau/15.png)
 
@@ -855,26 +850,26 @@ Same step as before add one new custom SQL and paste the sql here then the resul
 
 #### Step 3: Drag the value to colomns and rows to show the report
 
-Drag carrier to columns
+Drag carrier to columns.
 
 ![image](../images/Quickstart/quickstart-Tableau/18.png)
 
-Drag cnt to rows
+Drag cnt to rows.
 
 ![image](../images/Quickstart/quickstart-Tableau/19.png)
 
-Drag max,min,rate as details (which will be showed when we click the bar as one graph)
+Drag max,min,rate as details (which will be showed when we click the bar as one graph).
 
 ![image](../images/Quickstart/quickstart-Tableau/20.png)
 
-Drag flights_delayed as label (for each carrier it directly show on the top of the coresponding bar)
+Drag flights_delayed as label (for each carrier it directly shows on the top of the coresponding bar).
 
 ![image](../images/Quickstart/quickstart-Tableau/21.png)
 
-To make the report more clear, we can distinguish the carrier by color, here just drag the left folders carrier dimension to color marks, and on the right of this work area, it shows the carrier legends.
+To make the report more clear, we can distinguish the carrier by color, drag the left folders carrier dimension to color marks, and the carrier legends are presented on the right of this work area.
 
 ![image](../images/Quickstart/quickstart-Tableau/22.png)
 
-Now the report has been finished while we are clicking each bars it will show us the detail and each labels in the graph as below.
+Now the report has been finished and the detail will be presented as we click each bar.
 
 ![image](../images/Quickstart/quickstart-Tableau/23.png)
