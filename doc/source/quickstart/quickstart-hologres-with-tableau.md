@@ -28,6 +28,9 @@ There are scripts and loaders for the flight data ["On-Time Performance"](https:
 If under Linux, go with the following script and download the data；
 One thing to remember, choose one specific directory before you start （data would be downloaded under the current directory by default).
 
+Note: in 1987, only 10,11,12 (3 months) data is available for download.
+
+
 ```
 for s in `seq 1987 2018`
 do
@@ -44,7 +47,6 @@ done
 ![image](../images/Quickstart/quickstart-Hologres/datadownload2.gif)
 
 Data is stored in CSV (with ',' delimiter) format. Total uncompressed CSV files size is about 79852548 Bytes (about 77GB).
-
 
 Note: the following 14 files contain invalid byte sequence for encoding, and thus fails to upload to Hologres.
 
@@ -244,7 +246,7 @@ COMMIT;
 After you finish the script file, execute the script file.
 
 ```
-PGPASSWORD=<password> psql -U <username> -h <ip> -p <port> -d <database> -f /temp/data.ddl
+PGPASSWORD=<password> psql -U <username> -h <ip> -p <port> -d <database> -f /temp/ddl/data.ddl
 ```
 
 ```
