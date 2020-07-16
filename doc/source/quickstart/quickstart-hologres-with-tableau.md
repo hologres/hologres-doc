@@ -315,8 +315,6 @@ FROM ( SELECT FltYear, FltMonth, count(*) as c1 FROM ontime GROUP BY FltYear, Fl
 -------------------------
  493947.3083333333333333
 (1 row)
-
-Time: 158.323 ms
 ```
 
 2.--Query: Daily flights from 2000 to 2008
@@ -341,7 +339,6 @@ fltdayofweek |    c
             6 | 6640380
 (7 rows)
 
-Time: 91.850 ms
 ```
 
 
@@ -367,8 +364,6 @@ ORDER BY c DESC;
             2 | 1386450
             6 | 1234510
 (7 rows)
-
-Time: 96.045 ms
 ```
 
 4.--Query: Statistics of the number of delays from 2000 to 2008 by departure airport
@@ -396,8 +391,6 @@ LIMIT 10;
  IAH    | 262098
  DTW    | 254583
 (10 rows)
-
-Time: 103.428 ms
 ```
 
 5.--Query: According to airline statistics, the number of delays in 2007
@@ -434,9 +427,6 @@ ORDER BY count(*) DESC;
  AQ      |   4299
  HA      |   2746
 (20 rows)
-
-Time: 87.795 ms
-
 ```
 6.--Query: According to airline statistics, the percentage of delays in 2007
 
@@ -473,8 +463,6 @@ ORDER BY c3 DESC;
  AQ      |   4299 |   46360 |  9
  HA      |   2746 |   56175 |  4
 (20 rows)
-
-Time: 196.614 ms
 ```
 
 7.--Query: According to airline statistics, the percentage of delays from 2000 to 2008
@@ -517,9 +505,6 @@ ORDER BY c3 DESC;
  AQ      |    9095 |  100583 |  9
  HA      |   15968 |  274265 |  5
 (25 rows)
-
-
-Time: 195.132 ms
 ```
 
 
@@ -569,8 +554,6 @@ ORDER BY FltYear ;
     2017 |    20
     2018 |    20
 (31 rows)
-
-Time: 193.892 ms
 ```
 
 
@@ -617,8 +600,6 @@ GROUP BY FltYear;
     2011 | 6085281
     1991 | 5076925
 (31 rows)
-
-Time: 76.353 ms
 ```
 
 10.--Query: Multi-dimensional complex filtering and aggregation
@@ -666,8 +647,6 @@ LIMIT 1000;
  1988 | 2009 | US      |  949609 |     64507958.00 | 67.93
  1987 | 2009 | WN      | 1045913 |     69074537.00 | 66.04
 (19 rows)
-
-Time: 167.635 ms
 ```
 
 ## Tableau
