@@ -100,14 +100,7 @@ Let's connect to Hologres via psql with the following command.
 PGPASSWORD=<password> psql -U <username> -h <ip> -p <port> -d <database>
 ```
 
-Now you have landed Hologres successfully(there shoud be no database by default).
-
-Let's create some database and check.
-
-```
-CREATE DATABASE HOLO_TESTDB；
-\l;
-```
+Now you have landed Hologres successfully.
 
 Let's save script into a file since the table we need is quite long. Create a file first, then save as a text file.
 
