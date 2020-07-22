@@ -42,44 +42,6 @@ done
 done
 ```
 
-
-![image](../images/Quickstart/quickstart-Hologres/datadownload1.gif)
-
-![image](../images/Quickstart/quickstart-Hologres/datadownload2.gif)
-
-Data is stored in CSV (with ',' delimiter) format. Total uncompressed CSV files size is about 79852548 Bytes (about 77GB).
-
-Note: the following 14 files contain invalid byte sequence for encoding, and thus fails to upload to Hologres.
-
-| NO | FILES |
-|---|---|
-| 1 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_1.csv |
-| 2 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_2.csv |
-| 3 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_3.csv |
-| 4 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_4.csv |
-| 5 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_5.csv |
-| 6 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_6.csv |
-| 7 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_7.csv |
-| 8 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_8.csv |
-| 9 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_9.csv |
-| 10 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_10.csv |
-| 11 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_11.csv |
-| 12 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2001_12.csv |
-| 13 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2002_1.csv |
-| 14 | On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2002_2.csv |
-
-
-Remember to delete these 14 files via the following commands after the dataset is unzipped:
-
-```
-# remove the files in 2001 .12 files in total  
-rm -f On_Time_Reporting_Carrier_On_Time_Performance_\(1987_present\)_2001*.csv
-
-# remove the files in 2002_1 and 2002_2 , 2 files in total  
-rm -f On_Time_Reporting_Carrier_On_Time_Performance_\(1987_present\)_2002_1.csv
-rm -f On_Time_Reporting_Carrier_On_Time_Performance_\(1987_present\)_2002_2.csv
-```
-
 3.Unzip the Dataset 
 
 Once download the data, unzip it with the following script:
@@ -91,6 +53,21 @@ unzip \*.zip;
 The following warning might come, choose "N":
 ```
 #replace readme.html? [y]es, [n]o, [A]ll, [N]one, [r]ename: 
+```
+
+Data is stored in CSV (with ',' delimiter) format. Total uncompressed CSV files size is about 79852548 Bytes (about 77GB).
+
+Note: there are 14 files that contain invalid byte sequence for encoding, and thus fails to upload to Hologres.
+
+Remember to delete these 14 files(12 files in 2001 and 2 files in 2002) via the following commands after the dataset is unzipped:
+
+```
+# remove the files in 2001 .12 files in total  
+rm -f On_Time_Reporting_Carrier_On_Time_Performance_\(1987_present\)_2001*.csv
+
+# remove the files in 2002_1 and 2002_2 , 2 files in total  
+rm -f On_Time_Reporting_Carrier_On_Time_Performance_\(1987_present\)_2002_1.csv
+rm -f On_Time_Reporting_Carrier_On_Time_Performance_\(1987_present\)_2002_2.csv
 ```
 
 ## Create Table in Hologres 
@@ -230,7 +207,6 @@ CREATE TABLE ontime (
 
 CALL set_table_property('ontime', 'clustering_key', 'FltYear, FltQuarter, FltMonth');
 CALL set_table_property('ontime', 'segment_key', 'FltYear');
-CALL set_table_property('ontime', 'shard_count', '1');
 CALL set_table_property('ontime', 'bitmap_columns', 'OriginState, DestState, FltDayofMonth, FltDayOfWeek, Carrier');
 CALL set_table_property('ontime', 'dictionary_encoding_columns', 'UniqueCarrier, Carrier, TailNum, Origin, OriginCityName, OriginState, OriginStateName, Dest, DestCityName, DestState, DestStateName, DepTimeBlk, WheelsOff, WheelsOn, ArrTimeBlk, CancellationCode, Div1Airport, Div1WheelsOn, Div1WheelsOff, Div1TailNum, Div2Airport, Div2WheelsOn, Div2WheelsOff, Div2TailNum, Div3Airport, Div3WheelsOn, Div3WheelsOff, Div3TailNum, Div4Airport, Div4WheelsOn, Div4WheelsOff, Div4TailNum, Div5Airport, Div5WheelsOn, Div5WheelsOff, Div5TailNum');
 CALL set_table_property('ontime', 'time_to_live_in_seconds', '31536000');
@@ -266,7 +242,7 @@ Now you have prepared one database with one table.
 
 ## Copy Data into Hologres 
 
-Let's copy data into table (360 files in total). Note: data should be uploaded in 10 minutes.
+Let's copy data into table (360 files in total).
 
 Save the script into the file as "copy.sql" under "/tmp/ddl". Don't forget to replace "/tmp/" in the script with the directory where you store the dataset.
 
@@ -1017,7 +993,7 @@ Please follow the instruction : [Tableau Desktop](https://www.tableau.com/suppor
 
 Choose PostgreSQL and fill in the necessary information below.
 
-![image](../images/Quickstart/quickstart-Tableau/1.png)
+![](../images/Quickstart/quickstart-Tableau/1.png)
 
 - Server: Hologres Instance Address
 - Port: Hologres Port Address
@@ -1028,7 +1004,7 @@ Choose PostgreSQL and fill in the necessary information below.
 
 After sign in you will see the table "ontime" under your hologres.
 
-![image](../images/Quickstart/quickstart-Tableau/2.png)
+![](../images/Quickstart/quickstart-Tableau/2.png)
 
 ## Visualization in Tableau
 
@@ -1050,11 +1026,11 @@ ORDER BY c DESC
 
 In this situantion we input the query and click ok.
 
-![image](../images/Quickstart/quickstart-Tableau/3.png)
+![](../images/Quickstart/quickstart-Tableau/3.png)
 
 With your query executed, the result will be showed here:
 
-![image](../images/Quickstart/quickstart-Tableau/4.png)
+![](../images/Quickstart/quickstart-Tableau/4.png)
 
 ### Step 2: Create one work table, ensure each value in dimensions and measures correctiveness
 
@@ -1066,13 +1042,13 @@ Dimension: mainly used to distinguish the calculation results of numerical varia
 
 Drag the Fltdayofwork to dimensions, and keep the value need to be caculated in measures(here the value is C).
 
-![image](../images/Quickstart/quickstart-Tableau/5.png)
+![](../images/Quickstart/quickstart-Tableau/5.png)
 
 ### Step 3: Drag the value to columns and rows to show the report
 
 Drag the dimension value capsule(Fltdayofwork) to columns and drag the measure value capsule(C) to rows, as you can see we got the visualized report in the work list ( According to your preference you can switch the columns and rows).
 
-![image](../images/Quickstart/quickstart-Tableau/6.png)
+![](../images/Quickstart/quickstart-Tableau/6.png)
 
 As you can see while putting cursor on the report, it will show the exact flight numbers in dayofweek(7-Sunday) from 2000 to 2008.
 
@@ -1092,23 +1068,23 @@ LIMIT 10
 ```
 
 
-![image](../images/Quickstart/quickstart-Tableau/7.png)
+![](../images/Quickstart/quickstart-Tableau/7.png)
 
 SQL query result：
 
-![image](../images/Quickstart/quickstart-Tableau/8.png)
+![](../images/Quickstart/quickstart-Tableau/8.png)
 
 #### Step 2: Create one work table, ensure each value in dimensions and measures correctiveness
 
 According to different value attibutives，tableau displays each SQL's query result value to its data type: here origin is under dimensions and C is under measures which need to be cacultated.
 
-![image](../images/Quickstart/quickstart-Tableau/9.png)
+![](../images/Quickstart/quickstart-Tableau/9.png)
 
 #### Step 3: Drag the value to columns and rows to show the report
 
 Drag origin to columns and c to rows, then we can see the report and while choosing any bar in the report you will be able to see the detailed graph.
 
-![image](../images/Quickstart/quickstart-Tableau/10.png)
+![](../images/Quickstart/quickstart-Tableau/10.png)
 
 ### Query 3:
 
@@ -1127,23 +1103,23 @@ ORDER BY c3 DESC
 
 Add one new custom SQL, input SQL and click ok, result will be showed in the work area.
 
-![image](../images/Quickstart/quickstart-Tableau/11.png)
+![](../images/Quickstart/quickstart-Tableau/11.png)
 
 In this visualized report we can see each carrier total flights (c2), total departure delaid (more than 10 min) fight numbers (c1) and the delay ratio (c3) in 2007.
 
-![image](../images/Quickstart/quickstart-Tableau/12.png)
+![](../images/Quickstart/quickstart-Tableau/12.png)
 
 #### Step 2: Create one work table, ensure each value in dimensions and measures correctiveness
 
 In this work area，the dimensions and measures have already been matched by tableau automatically, we need to check again whether the value has been put in the correct category or not, if not, shift it to the correct category as we have done in query 1 step 2.
 
-![image](../images/Quickstart/quickstart-Tableau/13.png)
+![](../images/Quickstart/quickstart-Tableau/13.png)
 
 #### Step 3: Drag the value to columns and rows to show the report
 
 Drag carrier to columns, c and c2 to rows the the detail will be showed as bar chart. In this report we put the delay ratio(c3) as label to each bar, which will be more clear. As usual click any of the bar, the data of the sepecific carrier will be showed as diagram in the work area.
 
-![image](../images/Quickstart/quickstart-Tableau/14.png)
+![](../images/Quickstart/quickstart-Tableau/14.png)
 
 ### Query 4:
 
@@ -1173,36 +1149,36 @@ LIMIT 1000
 
 Same step as before add one new custom SQL and paste the SQL here then the result will be showed as below:
 
-![image](../images/Quickstart/quickstart-Tableau/15.png)
+![](../images/Quickstart/quickstart-Tableau/15.png)
 
-![image](../images/Quickstart/quickstart-Tableau/16.png)
+![](../images/Quickstart/quickstart-Tableau/16.png)
 
 #### Step 2: Create one work table, ensure each value in dimensions and measures correctiveness
 
-![image](../images/Quickstart/quickstart-Tableau/17.png)
+![](../images/Quickstart/quickstart-Tableau/17.png)
 
 #### Step 3: Drag the value to colomns and rows to show the report
 
 Drag carrier to columns.
 
-![image](../images/Quickstart/quickstart-Tableau/18.png)
+![](../images/Quickstart/quickstart-Tableau/18.png)
 
 Drag cnt to rows.
 
-![image](../images/Quickstart/quickstart-Tableau/19.png)
+![](../images/Quickstart/quickstart-Tableau/19.png)
 
 Drag max,min,rate as details (which will be showed when we click the bar as one graph).
 
-![image](../images/Quickstart/quickstart-Tableau/20.png)
+![](../images/Quickstart/quickstart-Tableau/20.png)
 
 Drag flights_delayed as label (for each carrier it directly shows on the top of the coresponding bar).
 
-![image](../images/Quickstart/quickstart-Tableau/21.png)
+![](../images/Quickstart/quickstart-Tableau/21.png)
 
 To make the report more clear, we can distinguish the carrier by color, drag the left folders carrier dimension to color marks, and the carrier legends are presented on the right of this work area.
 
-![image](../images/Quickstart/quickstart-Tableau/22.png)
+![](../images/Quickstart/quickstart-Tableau/22.png)
 
 Now the report has been finished and the detail will be presented as we click each bar.
 
-![image](../images/Quickstart/quickstart-Tableau/23.png)
+![](../images/Quickstart/quickstart-Tableau/23.png)
