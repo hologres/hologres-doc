@@ -1,4 +1,4 @@
-## Apache Spark
+# Apache Spark
 
 Spark is a unified analysis engine for large-scale data processing. Hologres and Saprk (Community Edition and EMR Spark Edition) are efficiently opened up, providing Spark Connector, supporting data from Spark to be written into Hologres in stream or batch mode, and quickly helping enterprises to build data warehouses.
 
@@ -8,13 +8,19 @@ Spark is a unified analysis engine for large-scale data processing. Hologres and
 
 ## 1. JDBC Connector
 
-### Batch Writing
+Hologres is compatible with the PostgreSQL and provides JDBC/ODBC driver, so Spark can also be written through JDBC. JDBC can implement stream or batch writes, which will be introduced from two scenarios below.
 
-Use spark jdbc connector directly, one example below, download postgres jdbc jar file
+Before you start, download the [Postgres JDBC driver](https://jdbc.postgresql.org/)
+
+### Scenerio 1: Batch Writing
+
+To start Spark-shell you can execute below code
 
 ```
-./bin/spark-shell --jars postgresql-42.2.14.jar
+./bin/spark-shell --jars /path/to/postgresql-42.2.14.jar
 ```
+
+Prepare data and configure batch writing detail as below
 
 ```
 import org.apache.spark.sql.types._
@@ -42,23 +48,24 @@ df.write.format("jdbc")
   .option("dbtable", "tb001")
   .option("user", "Lxxxxxxxx")
   .option("password", "Dyyyyyyyyyyyyyyyyyyyy")
-  .option("isolationLevel", "NONE")
   .save()
 ```
 
-### Streaming Mode
+### Scenerio 2: Streaming Writing
 
-Spark's jdbc is available, so does emr's jdbc dirver, with micro-batch processing will enhance performance.
+1.Generate JDBC Jar
 
-Could be used in spark-shell like below
+Community Spark's jdbc is available, so does EMR's jdbc dirver, with micro-batch processing will enhance performance.
+
+Could be used in Spark-shell like below
 
 ```
-./bin/spark-shell --jars /path_to/emr-jdbc_2.11-2.1.0-SNAPSHOT.jar,postgresql-42.2.14.jar --driver-class-path /path_to/emr-jdbc_2.11-2.1.0-SNAPSHOT.jar,postgresql-42.2.14.jar
+./bin/spark-shell --jars /path_to/emr-jdbc_2.11-2.1.0-SNAPSHOT.jar,/path/to/postgresql-42.2.14.jar --driver-class-path /path_to/emr-jdbc_2.11-2.1.0-SNAPSHOT.jar,/path/to/postgresql-42.2.14.jar
 ```
 
-One scala example:
+2.Data Writing：prepare data and table in Spark, and configure write-in data in streaming mode to do real-time data writing into Hologres
 
-Attention, provider's name is "jdbc2", means it uses emr jdbc driver. Option ("batchsize", 100) represents micro batch processing configuration.
+Attention, provider's name is "jdbc2", means it uses EMR jdbc driver. `Option ("batchsize", 100)` represents micro batch processing configuration.
 
 ```
 val wordCounts = lines.flatMap(_.split(" ")).groupBy("value").count()
@@ -72,30 +79,43 @@ val query = wordCounts.writeStream
   .option("user", user)
   .option("password", pwd)
   .option("batchsize", 100)
-  .option("isolationLevel", "NONE")
   .option("checkpointLocation", checkpointLocation)
   .start()
 
 query.awaitTermination()
 ```
 
-## 2. Holohub Connector（write)
+## 2. Hologres Spark Connector
+
+Write Spark data by calling the Spark connector built-in Hologres:
 
 ### Jar Usage
 
-1.Emr Spark Sample
+1.Execute blow command to use jar in Spark Shell
+
+EMR Spark Edition
 
 ```
 spark-shell --jars emr-datahub_shaded_2.11-2.0.0-SNAPSHOT.jar --driver-class-path emr-datahub_shaded_2.11-2.0.0-SNAPSHOT.jar
 ```
 
-2.Spark Sample--Community Edition
+Community Edition
 
 ```
 spark-shell --jars emr-datahub_shaded_2.11-2.0.0-SNAPSHOT.jar
 ```
 
-### Configuration Options
+2.Acquire Endpoint of Hologres
+
+To acquire Hologres real-time API endpoint through connector, please execute below command
+
+```
+show hg_datahub_endpoints;
+```
+
+3.Spark Configuration 
+
+Configure below information in Spark
 
 ```
 df.write
@@ -111,20 +131,20 @@ df.write
 
 Highlight：
 
-• batch.size：In order to improve writing efficiency of micro-batch processing, by deafult, value 1, represents no micro-batch processing, support streaming mode. For batch processing it shall be replaced with other suitable values. 
+• `batch.size`：In order to improve writing efficiency of micro-batch processing, by deafult, value 1, represents no micro-batch processing, support streaming mode. For batch processing it shall be replaced with other suitable values. 
 
-• format: Configured as datahub, write through holo instance by holohub interface.
+• `format`: Configured as datahub, write through holo instance by holohub interface.
 
-and decimal precision set up
+and `decimal.precision` set up
 
 ```
 df.option("decimal.precision", 38)
   .option("decimal.scale", 18)
 ```
 
-### Sample
+### Demo of Writing Data through Connector
 
-Create one test table in hologres
+1.Create one table for data receiving, data type mapping shall be in accordance
 
 ```
 BEGIN;
@@ -139,13 +159,13 @@ CREATE TABLE tb001 (
 COMMIT;
 ```
 
-Scala Code: Execute below command in terminal to open spark interactive shell where you can write interactive spark code for result-observing
+2.Scala Code: Execute below command in terminal to open Spark interactive shell where you can write interactive Spark code for result-observing
 
 ```
 spark-shell --jars emr-datahub_shaded_2.11-2.0.0-SNAPSHOT.jar
 ```
 
-And then execute below scala code in spark-shell
+3.Execute below scala code in Spark Shell, demo showed as below
 
 ```
 val data = Seq(
@@ -185,12 +205,12 @@ df.write
 
 | Spark | Hologres |
 |---|---|
-| LongType | BIGINT |
-| StringType | TEXT |
-| DecimalType | NUMERIC(38, 18) |
-| BooleanType | bool |
-| DoubleType | double precision |
-| TimestampType | timestamptz |
+| LONGTYPE | BIGINT |
+| STRINGTYPE | TEXT |
+| DECIMALTYPE(P,S) | NUMERIC(P,S) |
+| BOOLEANTYPE | BOOL |
+| DOUBLETYPE | DOUBLE PRECISION |
+| TIMESTAMPTYPE | TIMESTAMPTZ |
 
 
 
