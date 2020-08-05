@@ -211,20 +211,3 @@ df.write
 | BOOLEANTYPE | BOOL |
 | DOUBLETYPE | DOUBLE PRECISION |
 | TIMESTAMPTYPE | TIMESTAMPTZ |
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
