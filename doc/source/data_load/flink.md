@@ -132,12 +132,11 @@ It's not recommended to use batch sink in Flink DataStream application, as its i
 | STRING | STRING |
 | BTYES | BYTEA |
 | BOOLEAN | BOOLEAN |
-| SMALLINT | SMALLINT |
 | INT | INTEGER |
 | BIGINT | BIGINT |
 | FLOAT  | REAL |
 | DOUBLE | DOUBLE PRECISION |
 | DECIMAL(P,S) | NUMERIC(P,S) |
-| DATA | DATE |
+| DATE | DATE |
 | TIMESTAMP | TIMESTAMP |
 | ARRAY<T> | ARRAY<T> |
