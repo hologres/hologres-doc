@@ -55,6 +55,5 @@ Hologres
    roadmap
    contribute/index
    support
-   partners
    
 
