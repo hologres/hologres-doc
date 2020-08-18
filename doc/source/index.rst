@@ -52,7 +52,6 @@ Hologres
    security_and_user_management/index
    powered_by
    releases/index
-   roadmap
    contribute/index
    support
    
